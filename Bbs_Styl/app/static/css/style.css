@@ -13,3 +13,23 @@ a.nav-link:hover {
 .dorado:hover{
      color: #BA9237;
 }
+
+@media (max-width: 991px){
+.menu-left {
+    display: none;}
+}
+
+a.nav-link:hover {
+    color: #BA9237;
+    
+}
+.dorado:hover{
+     color: #BA9237;
+    
+}
+.nav-link{
+    margin-right: 40px;
+}
+.dorado{
+      margin-left: 30px;
+}
