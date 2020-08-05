@@ -9,8 +9,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 	
+	
+	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-
 </head>
 <body>
 
@@ -23,13 +24,13 @@
 				<div class="row  header-top d-flex justify-content-between align-items-center navbar-expand-lg navbar-expand-sm">
 
 	<div class="col menu-left">
-						<a class="active" href="index.html">Home</a>
-						<a href="about.html">about</a>
-						<a href="barbers.html">barbers</a>
-						<a href="gallery.html">gallery</a>
+						<a class="active dorado" href="index.html">Home</a>
+						<a href="about.html" class="dorado">Sobre la Web</a>
+						<a href="barbers.html" class="dorado" >Profesionales</a>
+						<a href="gallery.html" class="dorado">Galeria</a>
 					</div>
 					<div class="col-3 logo">
-									<a href="index.html"><img class="mx-auto" src="{% static 'img/logo.png' %}" width=200px; alt=""></a>
+									<a href="index.html"><img class="mx-auto" src="{% static 'img/logo.png' %}" width=200px; alt="logo"></a>
 
 								</div>
 
@@ -47,14 +48,14 @@
 									<a class="nav-link" href="index.html">Home</a>
 								</li>
 								<li class="nav-item d-none d-lg-block d-xl-none">
-									<a class="nav-link" href="about.html">about</a>
+									<a class="nav-link" href="about.html">Sobre la web</a>
 								</li>
 							
 								<li class="nav-item d-none d-lg-block d-xl-none">
-									<a class="nav-link" href="barbers.html">barbers</a>
+									<a class="nav-link" href="barbers.html">Profesionales</a>
 								</li>
 								<li class="nav-item d-none d-lg-block d-xl-none">
-									<a class="nav-link" href="gallery.html">gallery</a>
+									<a class="nav-link" href="gallery.html">Galeria</a>
 								</li>
 								<!-- Dropdown -->
 							
