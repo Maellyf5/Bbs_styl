@@ -1,35 +1,30 @@
-/* a:hover{
-    color:#BA9237;
+* {
+    margin: 0;
+    padding: 0;
 }
 
-div{
-    color:red;
-}
- */
-a.nav-link:hover {
-    color: #BA9237;
-    margin-left: 200px;
-}
-.dorado:hover{
-     color: #BA9237;
-}
-
-@media (max-width: 991px){
-.menu-left {
-    display: none;}
+@media (max-width: 991px) {
+    .menu-left {
+        display: none;
+    }
 }
 
 a.nav-link:hover {
     color: #BA9237;
-    
 }
-.dorado:hover{
-     color: #BA9237;
-    
+
+.dorado:hover {
+    color: #BA9237;
 }
-.nav-link{
+
+.nav-link {
     margin-right: 40px;
 }
-.dorado{
-      margin-left: 30px;
+
+.dorado {
+    margin-left: 30px;
+}
+
+.container {
+    margin: 0;
 }
