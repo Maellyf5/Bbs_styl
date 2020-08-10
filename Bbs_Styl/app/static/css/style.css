@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+@media (max-width: 1000px) {
+    .menu-left {
+        display: none;
+    }
+}
+
+a.nav-link:hover {
+    color: #BA9237;
+}
+
+.dorado:hover {
+    color: #BA9237;
+}
+
+.menuD{
+    margin-right: 40px;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.dorado {
+    margin-left: 30px;
+    font-size: 16px;
+
+}
+
+.menu-left{
+    margin-bottom: 20px;
+}
+
+.container {
+    margin: 0;
+}
+
+span {
+    font-weight: 600;
+    margin: 0 10px;
+}  
+
+
+@media ( max-width: 991px) {
+    span {
+        color: red;
+}
+}
