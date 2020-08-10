@@ -1,4 +1,4 @@
- {% load static %} {% load bootstrap4 %}
+{% load static %} {% load bootstrap4 %}
 
 
 <!DOCTYPE html>
@@ -6,10 +6,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Document</title>
 
-	<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
@@ -23,45 +23,45 @@
     <header class="header-area text-center ">
         <div class="contenedor">
             <div class="header-wrap">
-                <div class="row  header-top d-flex justify-content-between align-items-center navbar-expand-lg navbar-expand-sm">
+                <div class="header-top d-flex justify-content-between align-items-center navbar-expand-xl">
 
-                    <div class="col menu-left mb-5">
-                        <a class="active dorado" href="index.html">INICIO</a>
+                    <div class="col-5 menu-left mb-5">
+                        <a class="active dorado " href="index.html">INICIO</a>
                         <a href="about.html" class="dorado">CONÓCENOS</a>
                         <a href="barbers.html" class="dorado">PROFESIONALES</a>
                         <a href="gallery.html" class="dorado">SERVICIOS</a>
                     </div>
-                    <div class="col-2 logo mr-2">
-                        <a href="index.html"><img class="mx-auto mb-3" src="{% static 'img/logodorado.png' %}" width=150px;  alt="logo"></a>
+                    <div class="col-2 logo mr-3">
+                        <a href="index.html"><img class="mx-auto mb-3" src="{% static 'img/logodorado.png' %}" width=150px; alt="logo"></a>
 
                     </div>
 
-                    <nav class="navbar navbar-expand-xl navbar-default">
+                    <nav class="col navbar navbar-expand-xl justify-content-end">
 
                         <!-- Toggler/collapsibe Button -->
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-							<span class="lnr lnr-menu"><i class="fas fa-bars" style="color:rgb(168, 157, 55); font-size:28px;"></i></span>
+                            <span class="lnr lnr-menu"><i class="fas fa-bars" style="color:rgb(168, 157, 55); font-size:28px;"></i></span>
 						</button>
 
                         <!-- Navbar links -->
                         <div class="collapse navbar-collapse menu-right menuD" id="collapsibleNavbar">
                             <ul class="navbar-nav justify-content-center w-100">
-                                <li class="nav-item d-none d-lg-block d-xl-none">
+                                <li class="nav-item hide text-right">
                                     <a class="nav-link menuD" href="index.html">INICIO</a>
                                 </li>
-                                <li class="nav-item d-none d-lg-block d-xl-none">
+                                <li class="nav-item hide text-right">
                                     <a class="nav-link menuD" href="about.html">CONÓCENOS</a>
                                 </li>
 
-                                <li class="nav-item d-none d-lg-block d-xl-none">
+                                <li class="nav-item hide text-right">
                                     <a class="nav-link menuD" href="barbers.html">PROFESIONALES</a>
                                 </li>
-                                <li class="nav-item d-none d-lg-block d-xl-none">
+                                <li class="nav-item hide text-right">
                                     <a class="nav-link menuD" href="gallery.html">SERVICIOS</a>
                                 </li>
                                 <!-- Dropdown -->
 
-                                <li class="nav-item dropdown menuD">
+                                <li class="nav-item dropdown menuD text-right">
                                     <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
 										REGISTRATE
 									</a>
@@ -70,17 +70,17 @@
                                         <a class="dropdown-item menuD" href="elements.html">PROFESIONAL</a>
                                     </div>
                                 </li>
-                                <li class="nav-item menuD">
+                                <li class="nav-item menuD text-right">
                                     <a class="nav-link " href="pricing.html">GALERÍA</a>
                                 </li>
-                                <li class="nav-item menuD">
+                                <li class="nav-item menuD text-right">
                                     <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
 										BLOG
 									</a>
-                                   
+
                                 </li>
-                                <li class="nav-item menuD">
-                                    <a class="nav-link" href="contact.html">CONTACTO</a>
+                                <li class="nav-item menuD text-right">
+                                    <a class="nav-link " href="contact.html">CONTACTO</a>
                                 </li>
                             </ul>
                         </div>
