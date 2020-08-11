@@ -65,3 +65,123 @@ a.dorado {
 .menu-left {
     margin-bottom: 20px;
 }
+
+.banner-area {
+    min-height: 400px;
+  
+  }
+
+  @media ( max-width: 991px){
+        .banner-area {
+            background: #eaeaea;
+    }
+  }
+
+      
+
+.banner-img {
+    position: relative;
+    z-index: inherit ;
+}
+
+ .banner-img::after{
+        top: 15px;
+        border-top: 30px solid #ffffff;
+        content: '';
+        position: absolute;
+        left: 50%;
+        transform:translate(-50%, -50%);
+        z-index: 3;
+        width: 0;
+        height: 0;
+        border-right: 80px solid transparent;
+        border-left: 80px solid transparent;
+}
+
+.banner-img::before {
+        bottom: -15px;
+        border-bottom: 30px solid #ffffff;
+         content: '';
+        position: absolute;
+        left: 50%;
+        transform:translate(-50%, -50%);
+        z-index: 3;
+        width: 0;
+        height: 0;
+        border-right: 80px solid transparent;
+        border-left: 80px solid transparent;
+} 
+
+
+.overlay-bg {
+        background: rgba(0, 0, 0, .3);
+    } 
+
+
+
+
+  
+
+    @media ( max-width: 991px) {
+        .home-banner-area{
+            background: white;
+            padding: 80px 0px 100px;
+        }
+    }
+
+         @media ( max-width: 991px){
+            .no-js .owl-carousel,.owl-carousel.owl-loaded{
+                 display: none;
+        }
+    } 
+    .text-wrapper {
+        width: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform:translate(-50%, -50%);
+        text-align: center;
+        z-index: 2;
+        color: #fff;
+    }
+
+       @media (max-width: 991px) {
+        .text-wrapper{  width: 80%;
+            margin: auto;
+            color: #777777;
+            position: static;
+            
+        }
+        }   
+        @media (max-width: 575px) {
+           .text-wrapper{
+                width: 100%;
+            }
+        }
+
+        h1 {
+            color: black;
+            font-size: 60px;
+        }
+            @media (max-width: 1199px) {
+                .h1{  font-size: 40px;
+            }
+            }
+            @media (max-width: 991px) {
+               .h1{  color:white ;
+            }
+            }
+            @media ( max-width: 575px) {
+               .h1{ font-size: 32px;
+            }
+        }
+        p {
+            margin: 25px 0;
+        }
+              
+    
+  
+
+
+
+
