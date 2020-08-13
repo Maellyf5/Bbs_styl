@@ -10,15 +10,12 @@
     <title>Document</title>
 
     <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
 </head>
 
 <body>
-
-
-
 
     <header class="header-area text-center ">
         <div class="contenedor">
@@ -32,16 +29,19 @@
                         <a href="gallery.html" class="dorado">SERVICIOS</a>
                     </div>
                     <div class="col-2 logo mr-3">
-                        <a href="index.html"><img class="mx-auto mb-3" src="{% static 'img/logodorado.png' %}" width=150px; alt="logo"></a>
+                        <a href="index.html"><img class="mx-auto mb-3 logoIMG" src="{% static 'img/logodorado.png' %}"
+                                width=150px; alt="logo"></a>
 
                     </div>
 
                     <nav class="col navbar navbar-expand-xl justify-content-end">
 
                         <!-- Toggler/collapsibe Button -->
-                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-                            <span class="lnr lnr-menu"><i class="fas fa-bars" style="color:rgb(168, 157, 55); font-size:28px;"></i></span>
-						</button>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse"
+                            data-target="#collapsibleNavbar">
+                            <span class="lnr lnr-menu"><i class="fas fa-bars"
+                                    style="color:rgb(168, 157, 55); font-size:28px;"></i></span>
+                        </button>
 
                         <!-- Navbar links -->
                         <div class="collapse navbar-collapse menu-right menuD" id="collapsibleNavbar">
@@ -62,9 +62,10 @@
                                 <!-- Dropdown -->
 
                                 <li class="nav-item dropdown menuD text-right">
-                                    <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
-										REGISTRATE
-									</a>
+                                    <a class="nav-link dropdown-toggle " href="#" id="navbardrop"
+                                        data-toggle="dropdown">
+                                        REGISTRATE
+                                    </a>
                                     <div class="dropdown-menu">
                                         <a class="dropdown-item menuD" href="services.html">CLIENTE</a>
                                         <a class="dropdown-item menuD" href="elements.html">PROFESIONAL</a>
@@ -75,8 +76,8 @@
                                 </li>
                                 <li class="nav-item menuD text-right">
                                     <a class="nav-link" href="#" id="navbardrop" data-toggle="dropdown">
-										BLOG
-									</a>
+                                        BLOG
+                                    </a>
 
                                 </li>
                                 <li class="nav-item menuD text-right">
@@ -90,29 +91,23 @@
         </div>
     </header>
 
-<!--================ Start banner Area =================-->
-	<section class="home-banner-area ">
-	
-			<div class="banner-img">
-				<img class="img-fluid" style="width:100%; height: auto; " src="{% static 'img/b1.jpg' %}" alt="">
-				<div class="overlay overlay-bg"></div>
-			</div>
-		</div>
+    <!--================ Start banner Area =================-->
+    <section class="home-banner-area ">
 
-		<div class="text-wrapper">
-			<h1>
-				For All Occasion <br>
-				HairStyle is a Must Try Fashion
-			</h1>
-			<p>
-				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or <br>
-				incididunt ut labore et dolore
-				magna aliqua. Ut enim ad minim.
-			</p>
-		
-			
-		</div>
-	</section>
+        <div class="banner-img">
+            <img class="img-fluid" style="width:100%; height: auto; " src="{% static 'img/b1.jpg' %}" alt="">
+            <div class="overlay overlay-bg"></div>
+        </div>
+
+
+        <div class="text-wrapper">
+            <h1 class="bannerH1">
+                For All Occasion <br>
+                HairStyle is a Must Try Fashion
+            </h1>
+
+        </div>
+    </section>
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>

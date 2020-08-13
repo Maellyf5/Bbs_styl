@@ -3,6 +3,28 @@
     padding: 0;
 }
 
+@media (max-width: 1199px) {
+    .logo {
+        height: 110px;
+        position: fixed;
+    }
+    .logoIMG{
+        width: 120px;
+    }
+}
+
+
+@media (max-width: 1199px){
+.header-area {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    z-index: 999999;
+    transition: all 0.4s ease 0s;
+}
+}
+
+
 @media (max-width: 1295px) {
     .menu-left {
         display: none;
@@ -66,25 +88,16 @@ a.dorado {
     margin-bottom: 20px;
 }
 
-.banner-area {
-    min-height: 400px;
-  
-  }
-
-  @media ( max-width: 991px){
-        .banner-area {
-            background: #eaeaea;
-    }
-  }
-
-      
-
 .banner-img {
     position: relative;
-    z-index: inherit ;
+    z-index: 1;
+} 
+
+.overlay-bg {
+    background: rgba(0, 0, 0, .3);
 }
 
- .banner-img::after{
+.banner-img::after{
         top: 15px;
         border-top: 30px solid #ffffff;
         content: '';
@@ -101,7 +114,7 @@ a.dorado {
 .banner-img::before {
         bottom: -15px;
         border-bottom: 30px solid #ffffff;
-         content: '';
+        content: '';
         position: absolute;
         left: 50%;
         transform:translate(-50%, -50%);
@@ -113,27 +126,13 @@ a.dorado {
 } 
 
 
-.overlay-bg {
-        background: rgba(0, 0, 0, .3);
-    } 
-
-
-
-
-  
-
-    @media ( max-width: 991px) {
+    @media ( max-width: 1197px) {
         .home-banner-area{
             background: white;
             padding: 80px 0px 100px;
         }
     }
 
-         @media ( max-width: 991px){
-            .no-js .owl-carousel,.owl-carousel.owl-loaded{
-                 display: none;
-        }
-    } 
     .text-wrapper {
         width: 100%;
         position: absolute;
@@ -142,42 +141,44 @@ a.dorado {
         transform:translate(-50%, -50%);
         text-align: center;
         z-index: 2;
-        color: #fff;
+        
     }
 
-       @media (max-width: 991px) {
-        .text-wrapper{  width: 80%;
+        @media (max-width: 900px) {
+        .text-wrapper{  
+            width: 80%;
             margin: auto;
-            color: #777777;
             position: static;
-            
+            transform:translate(0%, 0%);
         }
-        }   
+        }    
         @media (max-width: 575px) {
            .text-wrapper{
                 width: 100%;
             }
         }
 
-        h1 {
-            color: black;
-            font-size: 60px;
-        }
+.bannerH1{
+    font-size: 60px;
+    color: white;
+}
             @media (max-width: 1199px) {
-                .h1{  font-size: 40px;
+                .bannerH1{  
+                    font-size: 50px;
             }
             }
-            @media (max-width: 991px) {
-               .h1{  color:white ;
+            @media (max-width: 900px) {
+                .bannerH1{  
+                   color:black;
+                   font-size: 35px;
             }
             }
             @media ( max-width: 575px) {
-               .h1{ font-size: 32px;
+               .bannerH1{
+                    font-size: 32px;
             }
         }
-        p {
-            margin: 25px 0;
-        }
+
               
     
   
