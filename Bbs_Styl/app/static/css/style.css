@@ -136,7 +136,7 @@ a.dorado {
     .text-wrapper {
         width: 100%;
         position: absolute;
-        top: 50%;
+        top: 65%;
         left: 50%;
         transform:translate(-50%, -50%);
         text-align: center;
@@ -178,9 +178,22 @@ a.dorado {
                     font-size: 32px;
             }
         }
-
-              
-    
+        .bannerP{
+            color:white;
+            font-size: 25px;
+            margin-top: 16px;
+            text-align: center;
+            margin-left: 40px;
+        }
+  
+        .bannerCp{
+            margin-top: 40px; 
+        }
+      
+/* .button:hover {
+    background-color: #4CAF50;Green 
+    color: white;
+}*/
   
 
 
