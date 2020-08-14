@@ -1,201 +1,260 @@
 * {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 @media (max-width: 1199px) {
-    .logo {
-        height: 110px;
-        position: fixed;
-    }
-    .logoIMG{
-        width: 120px;
-    }
+  .logo {
+    height: 110px;
+    position: fixed;
+  }
+  .logoIMG {
+    width: 120px;
+  }
 }
 
-
-@media (max-width: 1199px){
-.header-area {
+@media (max-width: 1199px) {
+  .header-area {
     position: absolute;
     background-color: #fff;
     width: 100%;
     z-index: 999999;
     transition: all 0.4s ease 0s;
+  }
 }
-}
-
 
 @media (max-width: 1295px) {
-    .menu-left {
-        display: none;
-    }
+  .menu-left {
+    display: none;
+  }
 }
 
-@media (max-width: 1296px) {
-    .hide {
-        display: inline-block;
-    }
-}
 
 @media (min-width: 1296px) {
-    .hide {
-        display: none;
-    }
+  .hide {
+    display: none;
+  }
 }
 
 @media (max-width: 1197px) {
-    .mx-auto {
-        position: fixed;
-        top: 0;
-    }
+  .logoIMG {
+    position: fixed;
+    top: 0;
+  }
 }
 
 @media (max-width: 570px) {
-    .menuD {
-        margin-right: 0px;
-    }
+  .menuD {
+    margin-right: 0px;
+  }
 }
 
 .dorado {
-    margin-left: 30px;
-    font-size: 16px;
+  margin-left: 30px;
+  font-size: 16px;
 }
 
 a.nav-link:hover {
-    color: #BA9237;
+  color: #ba9237;
 }
 
 a.nav-link {
-    color: black;
+  color: black;
 }
 
 .dorado:hover {
-    color: #BA9237;
-    text-decoration: none;
+  color: #ba9237;
+  text-decoration: none;
 }
 
 a.dorado {
-    color: black;
+  color: black;
 }
 
 .menuD {
-    margin-right: 40px;
-    font-size: 15px;
-    margin-bottom: 20px;
+  margin-right: 40px;
+  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 .menu-left {
-    margin-bottom: 20px;
+  margin-bottom: 20px;
 }
 
 .banner-img {
-    position: relative;
-    z-index: 1;
-} 
-
-.overlay-bg {
-    background: rgba(0, 0, 0, .3);
+  position: relative;
+  z-index: 1;
 }
 
-.banner-img::after{
-        top: 15px;
-        border-top: 30px solid #ffffff;
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform:translate(-50%, -50%);
-        z-index: 3;
-        width: 0;
-        height: 0;
-        border-right: 80px solid transparent;
-        border-left: 80px solid transparent;
+.overlay-bg {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.banner-img::after {
+  top: 15px;
+  border-top: 30px solid #ffffff;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-right: 80px solid transparent;
+  border-left: 80px solid transparent;
 }
 
 .banner-img::before {
-        bottom: -15px;
-        border-bottom: 30px solid #ffffff;
-        content: '';
-        position: absolute;
-        left: 50%;
-        transform:translate(-50%, -50%);
-        z-index: 3;
-        width: 0;
-        height: 0;
-        border-right: 80px solid transparent;
-        border-left: 80px solid transparent;
-} 
-
-
-    @media ( max-width: 1197px) {
-        .home-banner-area{
-            background: white;
-            padding: 80px 0px 100px;
-        }
-    }
-
-    .text-wrapper {
-        width: 100%;
-        position: absolute;
-        top: 65%;
-        left: 50%;
-        transform:translate(-50%, -50%);
-        text-align: center;
-        z-index: 2;
-        
-    }
-
-        @media (max-width: 900px) {
-        .text-wrapper{  
-            width: 80%;
-            margin: auto;
-            position: static;
-            transform:translate(0%, 0%);
-        }
-        }    
-        @media (max-width: 575px) {
-           .text-wrapper{
-                width: 100%;
-            }
-        }
-
-.bannerH1{
-    font-size: 60px;
-    color: white;
+  bottom: -15px;
+  border-bottom: 30px solid #ffffff;
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
+  width: 0;
+  height: 0;
+  border-right: 80px solid transparent;
+  border-left: 80px solid transparent;
 }
-            @media (max-width: 1199px) {
-                .bannerH1{  
-                    font-size: 50px;
-            }
-            }
-            @media (max-width: 900px) {
-                .bannerH1{  
-                   color:black;
-                   font-size: 35px;
-            }
-            }
-            @media ( max-width: 575px) {
-               .bannerH1{
-                    font-size: 32px;
-            }
-        }
-        .bannerP{
-            color:white;
-            font-size: 25px;
-            margin-top: 16px;
-            text-align: center;
-            margin-left: 40px;
-        }
-  
-        .bannerCp{
-            margin-top: 40px; 
-        }
-      
-/* .button:hover {
-    background-color: #4CAF50;Green 
-    color: white;
-}*/
-  
 
+@media (max-width: 1197px) {
+  .home-banner-area {
+    background: white;
+    padding: 80px 0px 100px;
+  }
+}
 
+.text-wrapper {
+  width: 100%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 2;
+}
 
+@media (max-width: 900px) {
+  .text-wrapper {
+    width: 80%;
+    margin: auto;
+    position: static;
+    transform: translate(0%, 0%);
+  }
+}
+@media (max-width: 575px) {
+  .text-wrapper {
+    width: 100%;
+  }
+}
+
+.bannerH1 {
+  font-size: 60px;
+  color: white;
+}
+@media (max-width: 1199px) {
+  .bannerH1 {
+    font-size: 50px;
+  }
+}
+@media (max-width: 900px) {
+  .bannerH1 {
+    color: black;
+    font-size: 35px;
+  }
+}
+@media (max-width: 575px) {
+  .bannerH1 {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 900px) {
+  .bannerH1 {
+    color: black;
+    font-size: 35px;
+    padding-top: 12px;
+  }
+}
+
+.bannerP {
+  color: white;
+  font-size: 25px;
+  margin-top: 16px;
+  text-align: center;
+  margin-left: 40px;
+}
+
+.bannerCp {
+  margin-top: 40px;
+}
+
+@media (max-width: 900px) {
+  .bannerP {
+    color: rgb(56, 56, 56);
+    font-size: 25px;
+    margin-left: 0;
+  }
+  .bannerCp {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 900px) {
+  input.form-control.mr-sm-2 {
+    width: 60%;
+  }
+}
+
+.form-inline {
+  margin-left: 16px;
+}
+
+@media (max-width: 900px) {
+  .form-inline {
+    margin-left: 0;
+  }
+  button.btn.my-2 {
+    margin-left: 10px;
+  }
+}
+
+input.form-control.mr-sm-2 {
+  width: 60%;
+}
+
+button.btn.my-2 {
+  display: inline-block;
+  background-color: #ba9237;
+  color: white;
+  text-align: center;
+  transition: all 0.5s;
+  cursor: pointer;
+}
+
+button.btn.my-2 span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.btn.my-2 span:after {
+  content: "\00bb";
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+.btn.my-2:hover span {
+  padding-right: 25px;
+}
+
+.btn.my-2:hover span:after {
+  opacity: 1;
+  right: 0;
+}
 
