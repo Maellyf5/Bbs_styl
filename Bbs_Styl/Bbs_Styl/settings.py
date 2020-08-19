@@ -12,6 +12,8 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
+
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -80,8 +82,15 @@ WSGI_APPLICATION = 'Bbs_Styl.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'djongo',
+        'NAME': 'BbsStyl',
+        'CLIENT': {
+            'host':'mongodb+srv://Bbs:12345@cluster0.pv42x.mongodb.net/test?retryWrites=true&w=majority', 
+            'username': 'Bbs',
+            'password': '12345',
+            'port' : 27017,
+            
+        }
     }
 }
 
@@ -117,6 +126,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+
+
 
 
 # Static files (CSS, JavaScript, Images)
