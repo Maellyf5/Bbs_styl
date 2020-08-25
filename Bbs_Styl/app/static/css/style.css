@@ -3,6 +3,17 @@
   padding: 0;
 }
 
+
+.foto{
+  height: 250px;
+  width: 200px;
+  /*los siguientes valores son independientes del tamaño del círculo */
+  background-repeat: no-repeat;
+  background-position: 50%;
+  border-radius: 5%;
+  background-size: 100% auto;
+}
+
 @media (max-width: 1199px) {
   .logo {
     height: 110px;
@@ -291,4 +302,9 @@ button.btn.my-2 span {
 
 .h2servicio{
   font: italic bold 40px Georgia, Serif;
+}
+.titu_card:hover{
+  color: #ba9237;
+  text-decoration: none;
+  font-size: 30px;
 }
