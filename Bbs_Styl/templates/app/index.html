@@ -120,24 +120,22 @@
     </header>
 
     <!--================ Start banner Area =================-->
-    {% block content%}
+    {% block content%}{% for p in mi %}
     <section class="home-banner-area">
       <div class="banner-img">
         <img
           class="img-fluid"
           style="width: 100%; height: auto;"
-          src="{% static 'img/b1.jpg' %}"
+           src="{{ p.imgFondo.url }}"
           alt=""
         />
         <div class="overlay overlay-bg"></div>
       </div>
 
       <div class="text-wrapper">
-        <h1 class="bannerH1">
-          For All Occasion <br />
-          HairStyle is a Must Try Fashion
-        </h1>
+        {% autoescape off %} <h1 class="bannerH1"> {{ p.textFondo }}</h1>    {% endautoescape %}
 
+        {% endfor %}
         <nav class="navbar bannerCp justify-content-center">
           <p class="bannerP">Encuentra a tu profesional más cercano</p>
           <form class="form-inline">
@@ -198,26 +196,25 @@
         <div class="row align-items-center">
           <div class="col-md-5 mr-auto">
             <h2 class="h2servicio mb-3">Nuestros servicios</h2>
-            <p class="font-weight-bold">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum,
-              consequuntur?
+            {% for p in mi %}
+            <p class="font-weight"> {% autoescape off %}
+            {{p.dscrServicio}}
             </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea
-              nesciunt, amet officia soluta, dolores dolor?
-            </p>
+      {% endautoescape %}
+
           </div>
           <div class="col-md-6">
             <div class="d-flex align-items-center">
               <div
-                class="bg-img-1 mr-md-4 mt-md-5"
-                style="background-image: url('/static/img/CYMERA.jpg');"
+                class="bg-img-1 mr-4"
+                style="background-image: url('{{ p.imgServi1.url }}')"
               ></div>
               <div
                 class="bg-img-1"
-                style="background-image: url('/static/img/CYMERA2.jpg');"
+                style="background-image: url('{{ p.imgServi2.url }}')"
               ></div>
             </div>
+            {% endfor %}
           </div>
         </div>
       </div>
@@ -236,7 +233,9 @@
             <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">
                 <div class="blog-entry align-self-stretch">
                     <h3 class="heading mt-2 titu_card" style="vertical-align: inherit;">{{ p.titulo }}</h3>
-                    <img alt="Card image cap" class="card-img-top embed-responsive foto" src="{{ p.imagen.url }}"></a>
+            
+                      <img alt="blog destacado" class="card-img-top embed-responsive imagen" src="{{ p.imagen.url }}"></a>
+  
                 
                 <div class="text py-4 d-block">
                     <div class="meta">
@@ -250,7 +249,7 @@
             {% endfor %}          
         </div>
       </section>
-    {% endblock content%}
+    {% endblock content %}
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>

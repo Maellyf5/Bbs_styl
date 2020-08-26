@@ -4,11 +4,11 @@ from .models import *
 
 # Create your views here.
 
-class Peluquero(TemplateView):
+class Index(TemplateView):
     template_name = 'app/index.html'
     def get_context_data(self,**kwargs):
-        context=super(Peluquero, self).get_context_data(**kwargs)
-        context['mi']= Peluqueros.objects.all()
+        context=super(Index, self).get_context_data(**kwargs)
+        context['mi']= Inicio.objects.all()
         context['destacados']= EntradaBlog.objects.filter(destacados = True)[:3]
         return context
     

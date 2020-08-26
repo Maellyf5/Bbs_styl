@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Peluqueros,EntradaBlog
+from .models import Inicio,EntradaBlog
 # Register your models here.
-admin.site.register(Peluqueros)
+admin.site.register(Inicio)
 admin.site.register(EntradaBlog)
