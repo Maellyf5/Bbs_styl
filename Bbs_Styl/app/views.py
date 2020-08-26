@@ -9,7 +9,7 @@ class Peluquero(TemplateView):
     def get_context_data(self,**kwargs):
         context=super(Peluquero, self).get_context_data(**kwargs)
         context['mi']= Peluqueros.objects.all()
-        context['destacados']= EntradaBlog.objects.filter(destacados = True)[:]
+        context['destacados']= EntradaBlog.objects.filter(destacados = True)[:3]
         return context
     
 class Blog(ListView):
@@ -22,12 +22,13 @@ class Blog(ListView):
     def get_context_data(self,**kwargs):
         context=super(Blog, self).get_context_data(**kwargs)
         context['destacados']= EntradaBlog.objects.filter(destacados = True)[:3]
+        context['mi']= Peluqueros.objects.all()
         #context['template']= 'app:blog' 
         #context['contacto']= Contacto.objects.all()
         #context['mi']= Inicio.objects.all()[0]
+        
         return context 
 
-     
 class InfoBlog(DetailView):
     template_name = 'app/infoBlog.html'
     model =  EntradaBlog

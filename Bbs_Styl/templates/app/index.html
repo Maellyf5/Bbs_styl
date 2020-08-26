@@ -30,18 +30,18 @@
             class="header-top d-flex justify-content-between align-items-center navbar-expand-xl"
           >
             <div class="col-5 menu-left mb-5">
-              <a class="active dorado" href="index.html">INICIO</a>
+              <a class="active dorado" href="{% url 'app:index' %}">INICIO</a>
               <a href="about.html" class="dorado">CONÓCENOS</a>
               <a href="barbers.html" class="dorado">PROFESIONALES</a>
               <a href="gallery.html" class="dorado">SERVICIOS</a>
             </div>
             <div class="col-2 logo mr-3">
-              <a href="index.html"
+              <a  href="{% url 'app:index' %}"
                 ><img
                   class="mx-auto mb-3 logoIMG"
                   src="{% static 'img/logodorado.png' %}"
                   width="150px;"
-                  alt="logo"
+                  alt="logo"                 
               /></a>
             </div>
 
@@ -68,7 +68,7 @@
               >
                 <ul class="navbar-nav justify-content-center w-100">
                   <li class="nav-item hide text-right">
-                    <a class="nav-link menuD" href="index.html">INICIO</a>
+                    <a class="nav-link menuD" href="{% url 'app:index' %}">INICIO</a>
                   </li>
                   <li class="nav-item hide text-right">
                     <a class="nav-link menuD" href="about.html">CONÓCENOS</a>
@@ -106,14 +106,7 @@
                     <a class="nav-link" href="pricing.html">GALERÍA</a>
                   </li>
                   <li class="nav-item menuD text-right">
-                    <a
-                      class="nav-link"
-                      id="navbardrop"
-                      data-toggle="dropdown"
-                      href="blog.html"
-                    >
-                      BLOG
-                    </a>
+                    <a class="nav-link" href="{% url 'app:blog' %}">BLOG</a>
                   </li>
                   <li class="nav-item menuD text-right">
                     <a class="nav-link" href="contact.html">CONTACTO</a>
@@ -243,20 +236,18 @@
             <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">
                 <div class="blog-entry align-self-stretch">
                     <h3 class="heading mt-2 titu_card" style="vertical-align: inherit;">{{ p.titulo }}</h3>
-                    <img alt="Card image cap" class="card-img-top embed-responsive foto" src="{{ p.imagen.url }}">
-                </a>
+                    <img alt="Card image cap" class="card-img-top embed-responsive foto" src="{{ p.imagen.url }}"></a>
+                
                 <div class="text py-4 d-block">
                     <div class="meta">
                     <div style="vertical-align: inherit;"style="vertical-align: inherit;">{{ p.fecha }}</div>
 
-                    </div>
-               
+                    </div>             
                   <div><a href="#" class="meta-chat"><span class="icon-chat"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Leer mas...</font></font></a></div>
                 </div>
               </div>
             </div>
-            {% endfor %}
-           
+            {% endfor %}          
         </div>
       </section>
     {% endblock content%}

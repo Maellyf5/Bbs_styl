@@ -6,6 +6,6 @@ urlpatterns = [
     path('inicio/', Peluquero.as_view(), name='inicio'),
 
     #path('index', Index.as_view(), name='index'),
-    path('blog/', Blog.as_view(), name = 'blog'),
+    path('blog/', Blog.as_view(), name='blog'),
     
 ]
