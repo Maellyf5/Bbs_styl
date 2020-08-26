@@ -54,12 +54,12 @@
   }
 }
 
-@media (max-width: 1197px) {
+/* @media (max-width: 1197px) { Con este media query el logo se desplaza un poco a la drch y se queda estático
   .logoIMG {
     position: fixed;
     top: 0;
   }
-}
+} */
 
 @media (max-width: 570px) {
   .menuD {
@@ -88,6 +88,20 @@ a.nav-link {
 a.dorado {
   color: black;
 }
+
+a.pBlogUrl{
+  color: black;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px
+}
+
+a.pBlogUrl:hover {
+  color: #ba9237;
+  text-decoration: none;
+  border-bottom: 1px solid #000;
+  padding-bottom: 3px
+}
+
 
 .menuD {
   margin-right: 40px;
@@ -142,6 +156,13 @@ a.dorado {
     padding: 80px 0px 100px;
   }
 }
+/* 
+@media (max-width: 900px){
+.home-banner-area {
+    background: white;
+    padding-bottom: 30px;
+}
+} */
 
 .text-wrapper {
   width: 100%;
