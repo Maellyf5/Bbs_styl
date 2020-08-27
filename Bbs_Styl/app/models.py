@@ -4,9 +4,11 @@ from django.db import models
 class Inicio(models.Model):
     imgFondo = models.ImageField(upload_to='static/img')
     textFondo = models.TextField(null=True)
-    dscrServicio = models.TextField(null=True)
+    textServicio = models.TextField(null=True)
     imgServi1 = models.ImageField(upload_to='static/img')
     imgServi2 = models.ImageField(upload_to='static/img')
+    proInicio = models.ImageField(upload_to='static/img')
+    textProfesional = models.TextField(null=True)
     
     def __str__(self):         
         return self.textFondo

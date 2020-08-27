@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta
       name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+      content="width=min-width, initial-scale=1, shrink-to-fit=no"
     />
     <title>Document</title>
 
@@ -123,12 +123,12 @@
     {% block content%}{% for p in mi %}
     <section class="home-banner-area">
       <div class="banner-img">
-        <img
+         <img
           class="img-fluid"
           style="width: 100%; height: auto;"
            src="{{ p.imgFondo.url }}"
-          alt=""
-        />
+          alt="Imagen de fondo"
+        /> 
         <div class="overlay overlay-bg"></div>
       </div>
 
@@ -193,13 +193,40 @@
     </div>
     <div class="site-section mt-5">
       <div class="container">
+        <!-- SECCION PROFESIONALES -->
+        <div class="row align-items-center mb-5">
+          {% for p in mi %}
+          <div class="col-md-6 mr-5">
+            <div class="d-flex align-items-center">
+              <div
+                class="bg-img-2"
+                style="background-image: url('{{ p.proInicio.url }}')"
+              ></div>
+            </div>
+
+          </div>
+          <div class="col-md-5">
+            <h2 class="h2servicio mb-3">Nuestros profesionales</h2>
+            
+            <p class="font-weight">{% autoescape off %}
+            {{p.textProfesional}}
+            </p>{% endautoescape %}
+            <a href="#">Ver más...</a>
+    
+          </div>
+          {% endfor %}
+        </div>
+
+        <!--SECCION SERVICIOS-->
+
         <div class="row align-items-center">
           <div class="col-md-5 mr-auto">
             <h2 class="h2servicio mb-3">Nuestros servicios</h2>
             {% for p in mi %}
             <p class="font-weight"> {% autoescape off %}
-            {{p.dscrServicio}}
+            {{p.textServicio}}
             </p>
+            <a href="#">Ver más...</a>
       {% endautoescape %}
 
           </div>
