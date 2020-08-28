@@ -66,7 +66,7 @@
                 class="collapse navbar-collapse menu-right menuD"
                 id="collapsibleNavbar"
               >
-                <ul class="navbar-nav justify-content-center w-100">
+                <ul class="navbar-nav justify-content-center">
                   <li class="nav-item hide text-right">
                     <a class="nav-link menuD" href="{% url 'app:index' %}">INICIO</a>
                   </li>
@@ -162,29 +162,29 @@
         <h2 style="color: red; ">{{ p.nombre }}</h2>
         {% endfor %} -->
     <!-- seccion Instrucciones -->
-    <div class="pasos mt-4">
-      <div class="row justify-content-center">
+    <div class="container-fluid mt-4">
+      <div class="row">
         <h1 class="titularI">Pasos a seguir</h1>
       </div>
-      <div class="row text-center mt-5">
-        <div class="col-md-6">
+      <div class="row text-center mt-5 justify-content-center">
+        <div class="col-lg-5">
           <i class="fas fa-map-marker-alt fa-5x mb-3"></i>
           <h4>1-Introduce tu códido postal</h4>
           <p>Localiza a tu profesional más cercano</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-lg-5">
           <i class="fas fa-cut fa-5x mb-3"></i>
           <h4>2-Selecciona tu servicio</h4>
           <p>Elige lo que necesites</p>
         </div>
       </div>
-      <div class="row text-center mt-5">
-        <div class="col-md-6">
+      <div class="row text-center mt-5 justify-content-center">
+        <div class="col-lg-5">
           <i class="fas fa-phone fa-5x mb-3"></i>
           <h4>3-Contacta con tu profesional</h4>
           <p>Concreta fecha y hora</p>
         </div>
-        <div class="col-md-6">
+        <div class="col-5">
           <i class="fas fa-money-check-alt fa-5x mb-3"></i>
           <h4>4-Sin pagos por adelantado</h4>
           <p>Pagarás después de estar guap@</p>
@@ -194,9 +194,9 @@
     <div class="site-section mt-5">
       <div class="container">
         <!-- SECCION PROFESIONALES -->
-        <div class="row align-items-center mb-5">
+        <div class="row align-items-center mb-5 prof">
           {% for p in mi %}
-          <div class="col-md-6 mr-5">
+          <div class="col-md-6">
             <div class="d-flex align-items-center">
               <div
                 class="bg-img-2"
@@ -230,7 +230,7 @@
       {% endautoescape %}
 
           </div>
-          <div class="col-md-6">
+          <div class="col-md-6 mt-4">
             <div class="d-flex align-items-center">
               <div
                 class="bg-img-1 mr-4"
@@ -278,6 +278,45 @@
         </div>
       </section>
     {% endblock content %}
+
+    <footer class="site-footer bg-footer overlay" style="background-image: url('/static/img/manicura.jpg')">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center mb-5">
+            <h3 class="font-weight-bold serif text-white">WellSpa</h3>
+          </div>
+          <div class="col-12 text-center mb-5">
+            <a href="#" class="">Home</a>
+            <span class="mx-3"></span>
+            <a href="#" class="">About</a>
+            <span class="mx-3"></span>
+            <a href="#" class="">Services</a>
+            <span class="mx-3"></span>
+            <a href="#" class="">Contact</a>
+          </div>
+          <div class="col-12">
+            <div class="social_29128 white text-center">
+              
+              <a href="#"><span class="icon-twitter"></span></a>
+              <a href="#"><span class="icon-instagram"></span></a>
+              <a href="#"><span class="icon-facebook"></span></a>
+              <a href="#"><span class="icon-linkedin"></span></a>
+              
+            </div>
+          </div>
+        </div>
+        <div class="row pt-5 mt-5 text-center">
+          <div class="col-md-12">
+            <div class="border-top pt-5">
+              <p class="small">
+   <!-- avisolegal -->
+            </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>

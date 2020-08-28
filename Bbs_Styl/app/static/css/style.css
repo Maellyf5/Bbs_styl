@@ -45,6 +45,16 @@ html, body
   }
 }
 
+@media (min-width: 1300px) {
+  .header-area {
+    position: absolute;
+    background-color: #fff;
+    width: 100%;
+    z-index: 999999;
+    transition: all 0.4s ease 0s;
+  }
+}
+
 @media (max-width: 1295px) {
   .menu-left {
     display: none;
@@ -71,6 +81,10 @@ html, body
   }
 }
 
+/* .navbar{
+  padding: inherit !important;
+}
+ */
 .dorado {
   margin-left: 30px;
   font-size: 16px;
@@ -108,7 +122,7 @@ a.pBlogUrl:hover {
 
 
 .menuD {
-  margin-right: 40px;
+  margin-right: 23px;
   font-size: 15px;
   margin-bottom: 20px;
 }
@@ -160,6 +174,13 @@ a.pBlogUrl:hover {
     padding: 80px 0px 100px;
   }
 }
+
+@media (max-width: 850px){
+.home-banner-area {
+    background: white;
+    padding: 80px 0px 50px;
+}
+}
 /* 
 @media (max-width: 900px){
 .home-banner-area {
@@ -171,7 +192,7 @@ a.pBlogUrl:hover {
 .text-wrapper {
   width: 100%;
   position: absolute;
-  top: 65%;
+  top: 57%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
@@ -189,6 +210,12 @@ a.pBlogUrl:hover {
 @media (max-width: 575px) {
   .text-wrapper {
     width: 100%;
+  }
+}
+
+@media (max-width: 1060px) {
+  .text-wrapper {
+    top: 50%;
   }
 }
 
@@ -218,6 +245,16 @@ a.pBlogUrl:hover {
     color: black;
     font-size: 35px;
     padding-top: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .bannerH1 {
+    color: black;
+    font-size: 27px;
+    padding-top: 12px;
+    margin-right: 10px;
+    margin-left: 10px;
   }
 }
 
@@ -326,6 +363,7 @@ button.btn.my-2 span {
   background-repeat: no-repeat;
   width: 100%;
   height: 350px;
+  margin-right: 10px
 }
 
 .h2servicio{
@@ -337,6 +375,49 @@ button.btn.my-2 span {
   font-size: 30px;
 }
 
+@media (max-width: 767px) {
+.bg-img-2{
+  margin-right: 0;
+  margin-bottom: 20px;
 
+}
+}
 
+/* FOOTER SECTION*/
+
+.bg-footer.overlay {
+  position: relative;
+}
+.bg-image {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+@media (min-width: 768px){
+.site-footer {
+  padding: 8em 0;
+}
+}
+.site-footer {
+  padding: 4em 0;
+  background: #000;
+}
+
+.bg-footer > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.bg-footer.overlay:after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.7);
+}
 
