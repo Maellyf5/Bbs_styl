@@ -2,330 +2,284 @@
 
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta
-      name="viewport"
-      content="width=min-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <title>Document</title>
 
-    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=min-width, initial-scale=1, shrink-to-fit=no" />
+  <title>Document</title>
 
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-    />
-  </head>
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" />
 
-  <body>
-    <header class="header-area text-center">
-      <div class="contenedor">
-        <div class="header-wrap">
-          <div
-            class="header-top d-flex justify-content-between align-items-center navbar-expand-xl"
-          >
-            <div class="col-5 menu-left mb-5">
-              <a class="active dorado" href="{% url 'app:index' %}">INICIO</a>
-              <a href="about.html" class="dorado">CONÓCENOS</a>
-              <a href="barbers.html" class="dorado">PROFESIONALES</a>
-              <a href="gallery.html" class="dorado">SERVICIOS</a>
-            </div>
-            <div class="col-2 logo mr-3">
-              <a  href="{% url 'app:index' %}"
-                ><img
-                  class="mx-auto mb-3 logoIMG"
-                  src="{% static 'img/logodorado.png' %}"
-                  width="150px;"
-                  alt="logo"                 
-              /></a>
-            </div>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
 
-            <nav class="col navbar navbar-expand-xl justify-content-end">
-              <!-- Toggler/collapsibe Button -->
-              <button
-                class="navbar-toggler"
-                type="button"
-                data-toggle="collapse"
-                data-target="#collapsibleNavbar"
-              >
-                <span class="lnr lnr-menu"
-                  ><i
-                    class="fas fa-bars"
-                    style="color: rgb(168, 157, 55); font-size: 28px;"
-                  ></i
-                ></span>
-              </button>
-
-              <!-- Navbar links -->
-              <div
-                class="collapse navbar-collapse menu-right menuD"
-                id="collapsibleNavbar"
-              >
-                <ul class="navbar-nav justify-content-center">
-                  <li class="nav-item hide text-right">
-                    <a class="nav-link menuD" href="{% url 'app:index' %}">INICIO</a>
-                  </li>
-                  <li class="nav-item hide text-right">
-                    <a class="nav-link menuD" href="about.html">CONÓCENOS</a>
-                  </li>
-
-                  <li class="nav-item hide text-right">
-                    <a class="nav-link menuD" href="barbers.html"
-                      >PROFESIONALES</a
-                    >
-                  </li>
-                  <li class="nav-item hide text-right">
-                    <a class="nav-link menuD" href="gallery.html">SERVICIOS</a>
-                  </li>
-                  <!-- Dropdown -->
-
-                  <li class="nav-item dropdown menuD text-right">
-                    <a
-                      class="nav-link dropdown-toggle"
-                      href="#"
-                      id="navbardrop"
-                      data-toggle="dropdown"
-                    >
-                      REGISTRATE
-                    </a>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item menuD" href="services.html"
-                        >CLIENTE</a
-                      >
-                      <a class="dropdown-item menuD" href="elements.html"
-                        >PROFESIONAL</a
-                      >
-                    </div>
-                  </li>
-                  <li class="nav-item menuD text-right">
-                    <a class="nav-link" href="pricing.html">GALERÍA</a>
-                  </li>
-                  <li class="nav-item menuD text-right">
-                    <a class="nav-link" href="{% url 'app:blog' %}">BLOG</a>
-                  </li>
-                  <li class="nav-item menuD text-right">
-                    <a class="nav-link" href="contact.html">CONTACTO</a>
-                  </li>
-                </ul>
-              </div>
-            </nav>
+<body>
+  <header class="header-area text-center">
+    <div class="contenedor">
+      <div class="header-wrap">
+        <div class="header-top d-flex justify-content-between align-items-center navbar-expand-xl">
+          <div class="col-5 menu-left mb-5">
+            <a class="active dorado" href="{% url 'app:index' %}">INICIO</a>
+            <a href="about.html" class="dorado">CONÓCENOS</a>
+            <a href="barbers.html" class="dorado">PROFESIONALES</a>
+            <a href="gallery.html" class="dorado">SERVICIOS</a>
           </div>
-        </div>
-      </div>
-    </header>
+          <div class="col-2 logo mr-3">
+            <a href="{% url 'app:index' %}"><img class="mx-auto mb-3 logoIMG" src="{% static 'img/logodorado.png' %}"
+                width="150px;" alt="logo" /></a>
+          </div>
 
-    <!--================ Start banner Area =================-->
-    {% block content%}{% for p in mi %}
-    <section class="home-banner-area">
-      <div class="banner-img">
-         <img
-          class="img-fluid"
-          style="width: 100%; height: auto;"
-           src="{{ p.imgFondo.url }}"
-          alt="Imagen de fondo"
-        /> 
-        <div class="overlay overlay-bg"></div>
-      </div>
-
-      <div class="text-wrapper">
-        {% autoescape off %} <h1 class="bannerH1"> {{ p.textFondo }}</h1>    {% endautoescape %}
-
-        {% endfor %}
-        <nav class="navbar bannerCp justify-content-center">
-          <p class="bannerP">Encuentra a tu profesional más cercano</p>
-          <form class="form-inline">
-            <input
-              class="form-control mr-sm-2 text-center"
-              type="search"
-              placeholder="Codigo Postal"
-              aria-label="Search"
-            />
-            <button
-              class="btn my-2 my-sm-0"
-              style="vertical-align: middle;"
-              type="submit"
-              src="#"
-            >
-              <span>Buscar</span>
+          <nav class="col navbar navbar-expand-xl justify-content-end">
+            <!-- Toggler/collapsibe Button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+              <span class="lnr lnr-menu"><i class="fas fa-bars"
+                  style="color: rgb(168, 157, 55); font-size: 28px;"></i></span>
             </button>
-          </form>
-        </nav>
-      </div>
-    </section>
 
-    <!--   seccion añadir profesionales {% for p in mi %}
-        <h2 style="color: red; ">{{ p.nombre }}</h2>
-        {% endfor %} -->
-    <!-- seccion Instrucciones -->
-    <div class="container-fluid mt-4">
-      <div class="row">
-        <h1 class="titularI">Pasos a seguir</h1>
-      </div>
-      <div class="row text-center mt-5 justify-content-center">
-        <div class="col-lg-5">
-          <i class="fas fa-map-marker-alt fa-5x mb-3"></i>
-          <h4>1-Introduce tu códido postal</h4>
-          <p>Localiza a tu profesional más cercano</p>
-        </div>
-        <div class="col-lg-5">
-          <i class="fas fa-cut fa-5x mb-3"></i>
-          <h4>2-Selecciona tu servicio</h4>
-          <p>Elige lo que necesites</p>
-        </div>
-      </div>
-      <div class="row text-center mt-5 justify-content-center">
-        <div class="col-lg-5">
-          <i class="fas fa-phone fa-5x mb-3"></i>
-          <h4>3-Contacta con tu profesional</h4>
-          <p>Concreta fecha y hora</p>
-        </div>
-        <div class="col-5">
-          <i class="fas fa-money-check-alt fa-5x mb-3"></i>
-          <h4>4-Sin pagos por adelantado</h4>
-          <p>Pagarás después de estar guap@</p>
+            <!-- Navbar links -->
+            <div class="collapse navbar-collapse menu-right menuD" id="collapsibleNavbar">
+              <ul class="navbar-nav justify-content-center">
+                <li class="nav-item hide text-right">
+                  <a class="nav-link menuD" href="{% url 'app:index' %}">INICIO</a>
+                </li>
+                <li class="nav-item hide text-right">
+                  <a class="nav-link menuD" href="about.html">CONÓCENOS</a>
+                </li>
+
+                <li class="nav-item hide text-right">
+                  <a class="nav-link menuD" href="barbers.html">PROFESIONALES</a>
+                </li>
+                <li class="nav-item hide text-right">
+                  <a class="nav-link menuD" href="gallery.html">SERVICIOS</a>
+                </li>
+                <!-- Dropdown -->
+
+                <li class="nav-item dropdown menuD text-right">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    REGISTRATE
+                  </a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item menuD" href="services.html">CLIENTE</a>
+                    <a class="dropdown-item menuD" href="elements.html">PROFESIONAL</a>
+                  </div>
+                </li>
+                <li class="nav-item menuD text-right">
+                  <a class="nav-link" href="pricing.html">GALERÍA</a>
+                </li>
+                <li class="nav-item menuD text-right">
+                  <a class="nav-link" href="{% url 'app:blog' %}">BLOG</a>
+                </li>
+                <li class="nav-item menuD text-right">
+                  <a class="nav-link" href="contact.html">CONTACTO</a>
+                </li>
+              </ul>
+            </div>
+          </nav>
         </div>
       </div>
     </div>
-    <div class="site-section mt-5">
-      <div class="container">
-        <!-- SECCION PROFESIONALES -->
-        <div class="row align-items-center mb-5 prof">
-          {% for p in mi %}
-          <div class="col-md-6">
-            <div class="d-flex align-items-center">
-              <div
-                class="bg-img-2"
-                style="background-image: url('{{ p.proInicio.url }}')"
-              ></div>
-            </div>
+  </header>
 
+  <!--================ Start banner Area =================-->
+  {% block content%}{% for p in mi %}
+  <section class="home-banner-area">
+    <div class="banner-img">
+      <img class="img-fluid" style="width: 100%; height: auto;" src="{{ p.imgFondo.url }}" alt="Imagen de fondo" />
+      <div class="overlay overlay-bg"></div>
+    </div>
+
+    <div class="text-wrapper">
+      {% autoescape off %} <h1 class="bannerH1"> {{ p.textFondo }}</h1> {% endautoescape %}
+
+      {% endfor %}
+      <nav class="navbar bannerCp justify-content-center">
+        <p class="bannerP">Encuentra a tu profesional más cercano</p>
+        <form class="form-inline">
+          <input class="form-control mr-sm-2 text-center" type="search" placeholder="Codigo Postal"
+            aria-label="Search" />
+          <button class="btn my-2 my-sm-0" style="vertical-align: middle;" type="submit" src="#">
+            <span>Buscar</span>
+          </button>
+        </form>
+      </nav>
+    </div>
+  </section>
+
+  <!--   seccion añadir profesionales {% for p in mi %}
+        <h2 style="color: red; ">{{ p.nombre }}</h2>
+        {% endfor %} -->
+  <!-- seccion Instrucciones -->
+  <div class="container-fluid mt-4">
+    <div class="row">
+      <h1 class="titularI">Pasos a seguir</h1>
+    </div>
+    <div class="row text-center mt-5 justify-content-center">
+      <div class="col-lg-5">
+        <i class="fas fa-map-marker-alt fa-5x mb-3"></i>
+        <h4>1-Introduce tu códido postal</h4>
+        <p>Localiza a tu profesional más cercano</p>
+      </div>
+      <div class="col-lg-5">
+        <i class="fas fa-cut fa-5x mb-3"></i>
+        <h4>2-Selecciona tu servicio</h4>
+        <p>Elige lo que necesites</p>
+      </div>
+    </div>
+    <div class="row text-center mt-5 justify-content-center">
+      <div class="col-lg-5">
+        <i class="fas fa-phone fa-5x mb-3"></i>
+        <h4>3-Contacta con tu profesional</h4>
+        <p>Concreta fecha y hora</p>
+      </div>
+      <div class="col-5">
+        <i class="fas fa-money-check-alt fa-5x mb-3"></i>
+        <h4>4-Sin pagos por adelantado</h4>
+        <p>Pagarás después de estar guap@</p>
+      </div>
+    </div>
+  </div>
+  <div class="site-section mt-5">
+    <div class="container">
+      <!-- SECCION PROFESIONALES -->
+      <div class="row align-items-center mb-5 prof">
+        {% for p in mi %}
+        <div class="col-md-6">
+          <div class="d-flex align-items-center">
+            <div class="bg-img-2" style="background-image: url('{{ p.proInicio.url }}')"></div>
           </div>
-          <div class="col-md-5">
-            <h2 class="h2servicio mb-3">Nuestros profesionales</h2>
-            
-            <p class="font-weight">{% autoescape off %}
+
+        </div>
+        <div class="col-md-5">
+          <h2 class="h2servicio mb-3">Nuestros profesionales</h2>
+
+          <p class="font-weight">{% autoescape off %}
             {{p.textProfesional}}
-            </p>{% endautoescape %}
-            <a href="#">Ver más...</a>
-    
+          </p>{% endautoescape %}
+          <a href="#">Ver más...</a>
+
+        </div>
+        {% endfor %}
+      </div>
+
+      <!--SECCION SERVICIOS-->
+
+      <div class="row align-items-center">
+        <div class="col-md-5 mr-auto">
+          <h2 class="h2servicio mb-3">Nuestros servicios</h2>
+          {% for p in mi %}
+          <p class="font-weight"> {% autoescape off %}
+            {{p.textServicio}}
+          </p>
+          <a href="#">Ver más...</a>
+          {% endautoescape %}
+
+        </div>
+        <div class="col-md-6 mt-4">
+          <div class="d-flex align-items-center">
+            <div class="bg-img-1 mr-4" style="background-image: url('{{ p.imgServi1.url }}')"></div>
+            <div class="bg-img-1" style="background-image: url('{{ p.imgServi2.url }}')"></div>
           </div>
           {% endfor %}
         </div>
-
-        <!--SECCION SERVICIOS-->
-
-        <div class="row align-items-center">
-          <div class="col-md-5 mr-auto">
-            <h2 class="h2servicio mb-3">Nuestros servicios</h2>
-            {% for p in mi %}
-            <p class="font-weight"> {% autoescape off %}
-            {{p.textServicio}}
-            </p>
-            <a href="#">Ver más...</a>
-      {% endautoescape %}
-
-          </div>
-          <div class="col-md-6 mt-4">
-            <div class="d-flex align-items-center">
-              <div
-                class="bg-img-1 mr-4"
-                style="background-image: url('{{ p.imgServi1.url }}')"
-              ></div>
-              <div
-                class="bg-img-1"
-                style="background-image: url('{{ p.imgServi2.url }}')"
-              ></div>
-            </div>
-            {% endfor %}
-          </div>
-        </div>
       </div>
     </div>
+  </div>
 
-    <section class="ftco-section mt-5">
-        <div class="container">      
-          <div class="row justify-content-center mb-3 pb-3">
-            <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated">
-              <h2 class="mb-3 mt-4 " style="font: italic bold 40px Georgia, Serif;">Lo más destacado del blog</h2>
-              <p style="font-size: 21px;">Descubre los temas interesantes en <a class="pBlogUrl" style="font: italic;" href="{% url 'app:blog' %}">nuestro blog</a></p>
-            </div>
-          </div>
-          
-          <div class="row d-flex">
-            {% for p in destacados %}
-            <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">
-                <div class="blog-entry align-self-stretch">
-                    <h3 class="heading mt-2 titu_card" style="vertical-align: inherit;">{{ p.titulo }}</h3>
-            
-                      <img alt="blog destacado" class="card-img-top embed-responsive imagen" src="{{ p.imagen.url }}"></a>
-  
-                
-                <div class="text py-4 d-block">
-                    <div class="meta">
-                    <div style="vertical-align: inherit;"style="vertical-align: inherit;">{{ p.fecha }}</div>
-
-                    </div>             
-                  <div><a href="#" class="meta-chat"><span class="icon-chat"></span><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Leer mas...</font></font></a></div>
-                </div>
-              </div>
-            </div>
-            {% endfor %}          
-        </div>
-      </section>
-    {% endblock content %}
-
-    <footer class="site-footer bg-footer overlay" style="background-image: url('/static/img/manicura.jpg')">
-      <div class="container">
-        <div class="row">
-          <div class="col-12 text-center mb-5">
-            <h3 class="font-weight-bold serif text-white">WellSpa</h3>
-          </div>
-          <div class="col-12 text-center mb-5">
-            <a href="#" class="">Home</a>
-            <span class="mx-3"></span>
-            <a href="#" class="">About</a>
-            <span class="mx-3"></span>
-            <a href="#" class="">Services</a>
-            <span class="mx-3"></span>
-            <a href="#" class="">Contact</a>
-          </div>
-          <div class="col-12">
-            <div class="social_29128 white text-center">
-              
-              <a href="#"><span class="icon-twitter"></span></a>
-              <a href="#"><span class="icon-instagram"></span></a>
-              <a href="#"><span class="icon-facebook"></span></a>
-              <a href="#"><span class="icon-linkedin"></span></a>
-              
-            </div>
-          </div>
-        </div>
-        <div class="row pt-5 mt-5 text-center">
-          <div class="col-md-12">
-            <div class="border-top pt-5">
-              <p class="small">
-   <!-- avisolegal -->
-            </p>
-            </div>
-          </div>
-
+  <section class="ftco-section mt-5">
+    <div class="container">
+      <div class="row justify-content-center mb-3 pb-3">
+        <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated">
+          <h2 class="mb-3 mt-4 " style="font: italic bold 40px Georgia, Serif;">Lo más destacado del blog</h2>
+          <p style="font-size: 21px;">Descubre los temas interesantes en <a class="pBlogUrl" style="font: italic;"
+              href="{% url 'app:blog' %}">nuestro blog</a></p>
         </div>
       </div>
-    </footer>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js "></script>
-    <script
-      src="https://kit.fontawesome.com/94d365e8cc.js "
-      crossorigin="anonymous "
-    ></script>
-    <script src="https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js "></script>
-    <script src="{% static 'js/main.js' %} "></script>
-  </body>
+      <div class="row d-flex">
+        {% for p in destacados %}
+        <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">
+          <div class="blog-entry align-self-stretch">
+            <h3 class="heading mt-2 titu_card" style="vertical-align: inherit;">{{ p.titulo }}</h3>
+
+            <img alt="blog destacado" class="card-img-top embed-responsive imagen" src="{{ p.imagen.url }}"></a>
+
+
+            <div class="text py-4 d-block">
+              <div class="meta">
+                <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ p.fecha }}</div>
+
+              </div>
+              <div><a href="#" class="meta-chat"><span class="icon-chat"></span>
+                  <font style="vertical-align: inherit;">
+                    <font style="vertical-align: inherit;">Leer mas...</font>
+                  </font>
+                </a></div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+  </section>
+  {% endblock content %}
+
+  <footer class="site-footer bg-footer overlay" style="background-image: url('/static/img/manicura.jpg')">
+    <div class="container">
+      <div class="row footer-inner justify-content-end">
+        <div class="col-lg-4 col-sm-6">
+          
+        </div>
+        <div class="col-lg-4 col-sm-6">
+         
+          <aside class="f-widget ">
+            <div class="f-title ">
+              <h3 class="f-titles mb-3">Contacto para profesionales</h3>
+            </div>
+            <ul>
+              <li class="f-texto">Telefono: 644497593</li>
+              <li class="f-texto">Email: bbs_styl@gmail.com</li>
+              <li class="f-texto">Horario: 9-00 a 14-00 </li>
+              
+            </ul>
+
+          </aside>
+        </div>
+       
+        <div class="col-lg-2 ">
+          <aside class="f-widget social-widget">
+            <div>
+              <h3 class="f-titles">Síguenos</h3>
+            </div>
+            <p class="f-texto mt-2">Nuestras redes sociales</p>
+            <div class="list f-titles mt-3 ">
+              <a href="#"><i class="fab fa-facebook fa-2x iconoR mr-2"></i></a>
+              <a href="#"><i class="fab fa-instagram fa-2x iconoR"></i></a>
+           
+            </div>
+          </aside>
+        </div>
+
+      </div>
+
+      <div class="row pt-5 mt-5 text-center">
+        <div class="col-md-12">
+          <div class="border-top pt-5">
+            <p class="small">
+             Aviso legal <!-- avisolegal -->
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js "></script>
+  <script src="https://kit.fontawesome.com/94d365e8cc.js " crossorigin="anonymous "></script>
+  <script src="https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js "></script>
+  <script src="{% static 'js/main.js' %} "></script>
+</body>
+
 </html>
