@@ -144,13 +144,13 @@
       <!-- SECCION PROFESIONALES -->
       <div class="row align-items-center mb-5 prof">
         {% for p in mi %}
-        <div class="col-md-6">
+        <div class="col-md-6 mrRespon">
           <div class="d-flex align-items-center">
             <div class="bg-img-2" style="background-image: url('{{ p.proInicio.url }}')"></div>
           </div>
 
         </div>
-        <div class="col-md-5">
+        <div class="col-md-5 mrRespon">
           <h2 class="h2servicio mb-3">Nuestros profesionales</h2>
 
           <p class="font-weight">{% autoescape off %}
@@ -165,7 +165,7 @@
       <!--SECCION SERVICIOS-->
 
       <div class="row align-items-center">
-        <div class="col-md-5 mr-auto">
+        <div class="col-md-5 mr-auto mrRespon">
           <h2 class="h2servicio mb-3">Nuestros servicios</h2>
           {% for p in mi %}
           <p class="font-weight"> {% autoescape off %}
@@ -175,7 +175,7 @@
           {% endautoescape %}
 
         </div>
-        <div class="col-md-6 mt-4">
+        <div class="col-md-6 mt-4 mrRespon">
           <div class="d-flex align-items-center">
             <div class="bg-img-1 mr-4" style="background-image: url('{{ p.imgServi1.url }}')"></div>
             <div class="bg-img-1" style="background-image: url('{{ p.imgServi2.url }}')"></div>
@@ -189,7 +189,7 @@
   <section class="ftco-section mt-5">
     <div class="container">
       <div class="row justify-content-center mb-3 pb-3">
-        <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated">
+        <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated mrRespon">
           <h2 class="mb-3 mt-4 " style="font: italic bold 40px Georgia, Serif;">Lo más destacado del blog</h2>
           <p style="font-size: 21px;">Descubre los temas interesantes en <a class="pBlogUrl" style="font: italic;"
               href="{% url 'app:blog' %}">nuestro blog</a></p>
@@ -198,7 +198,7 @@
 
       <div class="row d-flex">
         {% for p in destacados %}
-        <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated">
+        <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated mrRespon">
           <div class="blog-entry align-self-stretch">
             <h3 class="heading mt-2 titu_card" style="vertical-align: inherit;">{{ p.titulo }}</h3>
 
@@ -225,48 +225,57 @@
 
   <footer class="site-footer bg-footer overlay" style="background-image: url('/static/img/manicura.jpg')">
     <div class="container">
-      <div class="row footer-inner justify-content-end">
-        <div class="col-lg-4 col-sm-6">
-          
-        </div>
-        <div class="col-lg-4 col-sm-6">
-         
+      <div class="row footer-inner justify-content-lg-end justify-content-sm-start ">
+        <div class="col-lg-4 col-sm-5 mb-4 footerMl">
+          {% for p in contacto %}
           <aside class="f-widget ">
             <div class="f-title ">
               <h3 class="f-titles mb-3">Contacto para profesionales</h3>
             </div>
-            <ul>
-              <li class="f-texto">Telefono: 644497593</li>
-              <li class="f-texto">Email: bbs_styl@gmail.com</li>
-              <li class="f-texto">Horario: 9-00 a 14-00 </li>
+            <span>
+              {% if p.tel %}
+              <span class="f-texto">Telefono: {{ p.tel }}</span>{% endif %}<br>
+              <span class="f-texto">Email: {{ p.mail }}</span><br>
               
-            </ul>
+              <span class="f-texto">Horario: {{ p.horario }} </span>
+              
+            </span>
 
           </aside>
+          
         </div>
        
-        <div class="col-lg-2 ">
+        <div class="col-lg-2 col-sm-5 footerMl">
+          
           <aside class="f-widget social-widget">
             <div>
               <h3 class="f-titles">Síguenos</h3>
             </div>
             <p class="f-texto mt-2">Nuestras redes sociales</p>
             <div class="list f-titles mt-3 ">
-              <a href="#"><i class="fab fa-facebook fa-2x iconoR mr-2"></i></a>
-              <a href="#"><i class="fab fa-instagram fa-2x iconoR"></i></a>
+              {% if p.facebook %}
+              <a href="{{ p.facebook }}"><i class="fab fa-facebook fa-2x iconoR mr-2"></i></a>{% endif %}
+              {% if p.instagram %}
+              <a href="{{ p.instagram }}"><i class="fab fa-instagram fa-2x iconoR"></i></a>{% endif %}
            
             </div>
           </aside>
         </div>
-
+        {% endfor %}
       </div>
 
-      <div class="row pt-5 mt-5 text-center">
+
+
+
+      <div class="row pt-5 mt-5 text-center ">
         <div class="col-md-12">
           <div class="border-top pt-5">
-            <p class="small">
+            <a href="{% url 'app:avisoLegal' %}" class="small mr-3">
              Aviso legal <!-- avisolegal -->
-            </p>
+            </a>
+            <a href="{% url 'app:cookies' %}" class="small">
+              Política de cookies <!-- cookies -->
+             </a>
           </div>
         </div>
 

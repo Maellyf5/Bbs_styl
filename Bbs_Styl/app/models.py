@@ -13,6 +13,23 @@ class Inicio(models.Model):
     def __str__(self):         
         return self.textFondo
 
+class Footer(models.Model):
+    tel = models.IntegerField(null= True,blank=True)
+    horario = models.CharField(max_length=80, null=True)
+    mail = models.EmailField(null= True,blank=True)
+    instagram = models.URLField(null=True,blank=True)
+    facebook= models.URLField(null=True,blank=True)
+    aviso= models.TextField(max_length=10000, null=True,blank=True)
+    cookies= models.TextField(max_length=10000, null=True,blank=True)
+    
+    
+    def __str__(self):         
+        return self.mail
+ 
+    
+
+    
+
 class EntradaBlog(models.Model):
     titulo = models.CharField(max_length=70)
     descripcion = models.TextField(null=True)
