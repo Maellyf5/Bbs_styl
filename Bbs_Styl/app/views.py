@@ -65,14 +65,18 @@ class Blog(ListView):
 class Profesional(TemplateView):
     template_name = 'app/profesionales.html'
     
+    
     def get_context_data(self,**kwargs):
         context=super(Profesional, self).get_context_data(**kwargs)
         context['peluqueros']= Peluqueros.objects.all()
+        
         context['mi']= Inicio.objects.all()
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
 
         return context
+
+
 
 
 

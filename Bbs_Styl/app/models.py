@@ -51,3 +51,5 @@ class Peluqueros(models.Model):
         return self.nombre
 
     
+
+    
