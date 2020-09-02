@@ -40,10 +40,12 @@ class EntradaBlog(models.Model):
     def __str__(self):         
         return self.titulo
     
+    
 class Peluqueros(models.Model):
     nombre = models.CharField(max_length=80, null=True)
-    textoPerfil = models.TextField(null=True)
-    
+    precio = models.IntegerField(null=True)
+    valoracion=models.IntegerField(null=True)
+    disponibilidad=models.CharField(max_length=80,null=True)
     def __str__(self):         
         return self.nombre
 
