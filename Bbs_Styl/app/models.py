@@ -46,6 +46,7 @@ class Peluqueros(models.Model):
     precio = models.IntegerField(null=True)
     valoracion=models.IntegerField(null=True)
     disponibilidad=models.CharField(max_length=80,null=True)
+    
     def __str__(self):         
         return self.nombre
 

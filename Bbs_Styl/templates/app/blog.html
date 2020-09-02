@@ -1,6 +1,21 @@
-{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
-
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
 
 {% block content%}
-    <p style="color:red">HOLA</p>
-    {% endblock content%}
+
+<div class="container-fluid mb-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <!-- Blog Details Area -->
+            <div class="blog-details-area marginAviso text-center">
+                <h2>AVISO LEGAL</h2>
+                {% for p in peluqueros %}
+
+                <p class="descripcion text-justify mt-4">{{ p.nombre }} </p>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content%}

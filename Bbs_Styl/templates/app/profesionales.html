@@ -1,12 +1,97 @@
-{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
+
 {% block content%}
+<!-- 
+<div class="container-fluid mb-5">
     
-    <div class="container">
+        <div class="col-12"
+            <div class="blog-details-area marginAviso text-center">
+                <h2>Profesionales</h2>
+                {% for p in peluqueros %}
+
+                <p class="descripcion text-justify mt-4">{{ p.nombre }} </p>
+                <p class="descripcion text-justify mt-4">{{ p.precio }} </p>
+                <p class="descripcion text-justify mt-4">{{ p.valoracion }} </p>
+                <p class="descripcion text-justify mt-4">{{ p.disponibilidad }} </p>
+                {% endfor %}
+            </div>
+        </div>
+    
+</div> -->
+
+<!-- <div class="row">
+    			<div class="col-md-3 ftco-animate fadeInUp ftco-animated">
+                    {% for p in peluqueros %}
+    				<div class="product-entry text-center">
+    					<a href="#"><img src="{% static 'img/logodorado.png' %}" class="img-fluid" alt="Plantilla Colorlib"></a>
+    					<div class="text">
+                            <h3><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ p.nombre }}</font></font></a></h3>
+                            <p class="rate"><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star_half"></span>{{ p.valoracion }}</p>
+
+                            <p class="rate"><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star_half"></span>{{ p.disponibilidad }}</p>
+    						<span class="price mb-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ p.precio }}</font></font></span>
+    						<p><a href="#" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Añadir al carrito</font></font></a></p>
+    					</div>
+    				</div>
+                    {% endfor %}
+    			</div>
+    			
+    		</div> -->
 
 
 
-    </div>
-    
-    
-    
-    {% endblock content%}
+<!-- 
+
+            <!-- Card -->
+<div class="card booking-card">
+ 
+  <!-- Card image -->
+  <div class="view overlay">
+      {% for p in peluqueros %}
+    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
+    <a href="#!">
+      <div class="mask rgba-white-slight"></div>
+    </a>
+  </div>
+
+  <!-- Card content -->
+  <div class="card-body">
+
+    <!-- Title -->
+    <h4 class="card-title font-weight-bold"><a>{{ p.nombre }}</a></h4>
+    <!-- Data -->
+    <ul class="list-unstyled list-inline rating mb-0">
+        
+      <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+      <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+      <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+      <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+      <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+      <li class="list-inline-item"><p class="text-muted">{{ p.valoracion }} (413)</p></li>
+    </ul>
+
+          
+
+    <p class="mb-2">{{ p.precio }}€</p>
+    <!-- Text -->
+    <hr class="my-4">
+    <p class="lead"><strong>{{ p.disponibilidad }}</strong></p>
+ 
+    <!-- Button -->
+    <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">Button</a> 
+
+  </div>
+  {% endfor %}
+</div>
+{% if  p.precio  %}
+         <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+
+{% endif %}
+
+<!-- Card -->
+
+{% for valoracion in peluqueros %}
+         <li class="list-inline-item mr-0">{{ p.valoracion }} <i class="fas fa-star amber-text"> </i></li>
+
+ {% endfor %}
+{% endblock content%}
