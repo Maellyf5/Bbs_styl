@@ -40,82 +40,77 @@
 
 
 
-
-
-            <!-- Card -->
-<div class="card booking-card">
- 
-  <!-- Card image -->
-  <div class="view overlay">
+<!--
+<div class="row">
+  <div class="card booking-card">
+    <div class="view overlay">
       {% for p in peluqueros %}
-    <img class="card-img-top" src="https://mdbootstrap.com/img/Photos/Horizontal/Food/8-col/img (5).jpg" alt="Card image cap">
-    <a href="#!">
-      <div class="mask rgba-white-slight"></div>
-    </a>
-  </div>
+        <div class="col-sm-6">
+          <img class="card-img-top" src="{% static 'img/logodorado.png' %}" alt="Card image cap">
+          <a href="#!"><div class="mask rgba-white-slight"></div></a>
+        </div>
+    </div>
 
-  <!-- Card content -->
   <div class="card-body">
-
-    <!-- Title -->
     <h4 class="card-title font-weight-bold"><a>{{ p.nombre }}</a></h4>
-    <!-- Data -->
-    <ul class="list-unstyled list-inline rating mb-0">
-        
+    <!--star-->
+   <!-- <ul class="list-unstyled list-inline rating mb-0">
       <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
       <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
       <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
       <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
       <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-      <li class="list-inline-item"><p class="text-muted">{{ p.valoracion }} (413)</p></li>
+      <li class="list-inline-item"><p class="text-muted">{{ p.valoracion }}</p></li>
     </ul>
-
-          
-
     <p class="mb-2">{{ p.precio }}€</p>
-    <!-- Text -->
+
     <hr class="my-4">
     <p class="lead"><strong>{{ p.disponibilidad }}</strong></p>
  
-    <!-- Button -->
+    <!-- Button 
     <a href="#" class="btn btn-flat deep-purple-text p-1 mx-0 mb-0">contactar</a> 
 
   </div>
+
+</div>
+{% endfor %}
+
+</div>-->
+  
+
+
+<div class="row">
+  {% for p in peluqueros %}
+  <div class="col-md-4  ftco-animate fadeInUp ftco-animated mrRespon cardPro mt-5 container-fluid mb-5"">
+    <div class="blog-entry align-self-stretch text-center">
+    
+      <div class="col-sm-12 marginProf ">
+      
+        <img alt="" class="card-img-top embed-responsive imagen" src="{% static 'img/gallery-5.jpg' %}">
+
+        <a href="#!"><div class="mask rgba-white-slight"></div></a>
+      </div>
+
+      <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
+      <ul>
+        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text">{{ p.valoracion }}</i></li>
+        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+        <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+        <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+      </ul>
+
+      <div class="text py-4 d-block ">
+        <div class="meta">
+          <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ p.precio }}</div>
+        </div>
+        <div ><span class="icon-chat "></span>
+          <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
+         </div>
+      </div>
+    </div>
+  </div>
   {% endfor %}
 </div>
-
-
-<!-- Card -->
-
-
-
-{% for x in peluqueros %}
-      
-        {% for p in peluqueros %} {% cycle 'start' '' as slidestart silent %} {% cycle '' 'end' as slideend silent %} {% if slidestart == 'start' %}
-              {% if forloop.first %} {% endif %}
-                  
-                        {% endif %}
-
-                        
-                                <!--Avatar-->
-                             
-                                <i class="fas fa-star amber-text"{{ p.valoracion  }} ></i>
-                               
-                        <!-- Comprueba cierre de slide-->
-                        {% if slideend == 'end' or forloop.last %}
-                  
-                {% endif %} {% endfor %}
-      
-    {% endfor %}
-
-
-<!-- {%for num in peluqueros%}
-    Number is : <i class="fas fa-star amber-text"> {{num.valoracion}}</i>
-  {%endfor%} -->
-
-
-
-        
-
-  
-{% endblock content%}
+</section>
+{% endblock content %}
