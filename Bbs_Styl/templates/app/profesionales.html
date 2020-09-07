@@ -1,25 +1,40 @@
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
 
 {% block content%}
-<!-- 
 <div class="container-fluid mb-5">
-    
-        <div class="col-12"
-            <div class="blog-details-area marginAviso text-center">
-                <h2>Profesionales</h2>
-                {% for p in peluqueros %}
-
-                <p class="descripcion text-justify mt-4">{{ p.nombre }} </p>
-                <p class="descripcion text-justify mt-4">{{ p.precio }} </p>
-                <p class="descripcion text-justify mt-4">{{ p.valoracion }} </p>
-                <p class="descripcion text-justify mt-4">{{ p.disponibilidad }} </p>
-                {% endfor %}
-            </div>
+  <div class="row">
+    {% for p in peluqueros %}
+    <div class="col-md-4  ftco-animate fadeInUp ftco-animated mrRespon cardPro mt-5 container-fluid mb-5"">
+      <div class="blog-entry align-self-stretch text-center">
+      
+        <div class="col-sm-12 marginProf ">
+        
+          <img alt="" class="card-img-top embed-responsive imagen" src="{% static 'img/CYMERA.jpg' %}">
+  
+          <a href="#!"><div class="mask rgba-white-slight"></div></a>
         </div>
-    
-</div> -->
+  
+        <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
+        <ul>
+          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text">{{ p.valoracion }}</i></li>
+        </ul>
+  
+        <div class="text py-4 d-block ">
+          <div class="meta">
+            <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ p.precio }}</div>
+          </div>
+          <div ><span class="icon-chat "></span>
+            <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
+           </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+  </div>
+  {% endblock content %}
 
-<!-- <div class="row">
+<!-- PLANTILLA <div class="row">
     			<div class="col-md-3 ftco-animate fadeInUp ftco-animated">
                     {% for p in peluqueros %}
     				<div class="product-entry text-center">
@@ -27,7 +42,6 @@
     					<div class="text">
                             <h3><a href="#"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ p.nombre }}</font></font></a></h3>
                             <p class="rate"><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star_half"></span>{{ p.valoracion }}</p>
-
                             <p class="rate"><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star2"></span><span class="icon-star_half"></span>{{ p.disponibilidad }}</p>
     						<span class="price mb-4"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">{{ p.precio }}</font></font></span>
     						<p><a href="#" class="btn btn-primary"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Añadir al carrito</font></font></a></p>
@@ -40,7 +54,7 @@
 
 
 
-<!--
+<!--BOOTSTRAP
 <div class="row">
   <div class="card booking-card">
     <div class="view overlay">
@@ -79,38 +93,3 @@
   
 
 
-<div class="row">
-  {% for p in peluqueros %}
-  <div class="col-md-4  ftco-animate fadeInUp ftco-animated mrRespon cardPro mt-5 container-fluid mb-5"">
-    <div class="blog-entry align-self-stretch text-center">
-    
-      <div class="col-sm-12 marginProf ">
-      
-        <img alt="" class="card-img-top embed-responsive imagen" src="{% static 'img/gallery-5.jpg' %}">
-
-        <a href="#!"><div class="mask rgba-white-slight"></div></a>
-      </div>
-
-      <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
-      <ul>
-        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text">{{ p.valoracion }}</i></li>
-        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-        <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-        <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-        <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-      </ul>
-
-      <div class="text py-4 d-block ">
-        <div class="meta">
-          <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ p.precio }}</div>
-        </div>
-        <div ><span class="icon-chat "></span>
-          <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
-         </div>
-      </div>
-    </div>
-  </div>
-  {% endfor %}
-</div>
-</section>
-{% endblock content %}
