@@ -1,4 +1,5 @@
 from django.shortcuts import redirect, render
+from django.contrib.contenttypes.models import ContentType
 from django.views.generic import *
 from .models import *
 
@@ -62,19 +63,20 @@ class Blog(ListView):
         return context  """    
 
 
-class Profesional(TemplateView):
+class Profesional(ListView):
     template_name = 'app/profesionales.html'
-    
+    context_object_name= 'peluqueros' 
+    queryset = Peluqueros.objects.all() 
     
     def get_context_data(self,**kwargs):
         context=super(Profesional, self).get_context_data(**kwargs)
-        context['peluqueros']= Peluqueros.objects.all()
-        
+        context['object_list']= Peluqueros.objects.filter(ratings__isnull=False).order_by('ratings')
         context['mi']= Inicio.objects.all()
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
 
         return context
+
 
 
 

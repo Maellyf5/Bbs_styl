@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.contenttypes.fields import GenericRelation
+from star_ratings.models import Rating, AbstractBaseRating
 
 # Create your models here.
 class Inicio(models.Model):
@@ -46,9 +48,13 @@ class Peluqueros(models.Model):
     precio = models.IntegerField(null=True)
     valoracion=models.IntegerField(null=True)
     disponibilidad=models.CharField(max_length=80,null=True)
+    ratings =  GenericRelation(Rating, related_query_name= 'object_list')
     
     def __str__(self):         
         return self.nombre
+
+class MyRating (AbstractBaseRating):
+   Peluqueros = models.TextField()
 
     
 
