@@ -1,0 +1,26 @@
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
+
+{% block content%}
+
+<div class="container-fluid mb-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <!-- Blog Details Area -->
+            <div class="blog-details-area marginAviso text-center">
+                <h2>AVISO LEGAL</h2>
+                {% for p in servicios %}
+
+                <p class="descripcion text-justify mt-4">{{ p.nombre }} </p>and
+                <p class="descripcion text-justify mt-4">{{ p.servicio }} </p>
+                {% endfor %}
+
+
+                   {% for y in p.peluqueros.all %}
+                            <span class="dropdown-item-text">{{ y.nombre }}</span> {% endfor %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock content%}

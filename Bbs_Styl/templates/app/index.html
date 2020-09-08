@@ -25,7 +25,7 @@
             <a class="active dorado" href="{% url 'app:index' %}">INICIO</a>
             <a href="about.html" class="dorado">CONÓCENOS</a>
             <a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a>
-            <a href="gallery.html" class="dorado">SERVICIOS</a>
+            <a href="{% url 'app:servicios' %}" class="dorado">SERVICIOS</a>
           </div>
           <div class="col-2 logo mr-3">
             <a href="{% url 'app:index' %}"><img class="mx-auto mb-3 logoIMG" src="{% static 'img/logodorado.png' %}"
@@ -53,7 +53,7 @@
                   <a class="nav-link menuD" href="{% url 'app:profesional' %}">PROFESIONALES</a>
                 </li>
                 <li class="nav-item hide text-right">
-                  <a class="nav-link menuD" href="gallery.html">SERVICIOS</a>
+                  <a class="nav-link menuD" href="{% url 'app:servicios' %}" >SERVICIOS</a>
                 </li>
                 <!-- Dropdown -->
 
@@ -173,7 +173,7 @@
           <p class="font-weight"> {% autoescape off %}
             {{p.textServicio}}
           </p>
-          <a href="#">Ver más...</a>
+          <a href="{% url 'app:servicios' %}" >Ver más...</a>
           {% endautoescape %}
 
         </div>

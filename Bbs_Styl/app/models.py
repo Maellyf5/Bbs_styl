@@ -46,15 +46,27 @@ class EntradaBlog(models.Model):
 class Peluqueros(models.Model):
     nombre = models.CharField(max_length=80, null=True)
     precio = models.IntegerField(null=True)
-    valoracion=models.IntegerField(null=True)
-    disponibilidad=models.CharField(max_length=80,null=True)
+    valoracion = models.IntegerField(null=True)
+    disponibilidad = models.TextField(max_length=200, null=True,blank=True)
+    imagen = models.ImageField(upload_to='static/img')
     ratings =  GenericRelation(Rating, related_query_name= 'object_list')
+    
+
     
     def __str__(self):         
         return self.nombre
 
 class MyRating (AbstractBaseRating):
    Peluqueros = models.TextField()
+
+
+class Servicio(models.Model):
+    nombre= models.CharField(max_length=80, null= True)
+    peluquero= models.ManyToManyField(Peluqueros)
+    def __str__(self):         
+        return self.nombre
+   
+
 
     
 

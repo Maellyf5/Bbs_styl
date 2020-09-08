@@ -8,5 +8,7 @@ urlpatterns = [
     path('cookies', Cookies.as_view(), name='cookies'),
     path('blog', Blog.as_view(), name='blog'),
     path('profesionales', Profesional.as_view(), name='profesional'),
+    path('servicios', Servicios.as_view(), name='servicios'),
+
     
 ]

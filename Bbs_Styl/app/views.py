@@ -74,6 +74,24 @@ class Profesional(ListView):
         context['mi']= Inicio.objects.all()
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
+        context['servicios']= Servicio.objects.all()
+
+        return context
+
+
+
+
+class Servicios(ListView):
+    template_name = 'app/servicios.html'
+    context_object_name= 'servicios' 
+    queryset = Servicio.objects.all() 
+    
+    def get_context_data(self,**kwargs):
+        context=super(Servicios, self).get_context_data(**kwargs)
+        context['object_list']= Peluqueros.objects.filter(ratings__isnull=False).order_by('ratings')
+        context['mi']= Inicio.objects.all()
+        #context['template']= 'app:blog' 
+        context['contacto']= Footer.objects.all()
 
         return context
 
