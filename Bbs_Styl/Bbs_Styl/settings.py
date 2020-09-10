@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'app',
     'bootstrap4',
     'star_ratings',
+    
 ]
 
 MIDDLEWARE = [
@@ -131,6 +132,10 @@ USE_TZ = True
 STAR_RATINGS_RERATE = False
 
 STAR_RATINGS_RATING_MODEL = 'app.MyRating'
+
+STAR_RATINGS_RANGE = 5 
+
+
 
 
 

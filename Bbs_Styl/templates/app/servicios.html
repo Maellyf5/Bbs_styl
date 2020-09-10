@@ -8,19 +8,26 @@
             <!-- Blog Details Area -->
             <div class="blog-details-area marginAviso text-center">
                 <h2>AVISO LEGAL</h2>
-                {% for p in servicios %}
+                {% for p in servi %}
 
-                <p class="descripcion text-justify mt-4">{{ p.nombre }} </p>and
-                <p class="descripcion text-justify mt-4">{{ p.servicio }} </p>
+                <p class="descripcion text-justify mt-4">{{ p.nombreServicio }} </p>and
+                <div>
+                    {% for y in p.peluquero.all %}
+                    <span class="dropdown-item-text">{{ y.nombre }}</span> {% endfor %}
+                </div>
                 {% endfor %}
 
 
-                   {% for y in p.peluqueros.all %}
-                            <span class="dropdown-item-text">{{ y.nombre }}</span> {% endfor %}
+
             </div>
         </div>
     </div>
 </div>
+
+
+
+
+
 
 
 {% endblock content%}

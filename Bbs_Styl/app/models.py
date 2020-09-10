@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.contenttypes.fields import GenericRelation
+from django.contrib.contenttypes.models import ContentType
 from star_ratings.models import Rating, AbstractBaseRating
 
 # Create your models here.
@@ -61,10 +62,10 @@ class MyRating (AbstractBaseRating):
 
 
 class Servicio(models.Model):
-    nombre= models.CharField(max_length=80, null= True)
+    nombreServicio= models.CharField(max_length=80, null= True)
     peluquero= models.ManyToManyField(Peluqueros)
     def __str__(self):         
-        return self.nombre
+        return self.nombreServicio
    
 
 

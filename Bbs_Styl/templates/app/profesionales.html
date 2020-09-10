@@ -38,11 +38,17 @@
   </div>
 </div>
 
-<!-- start ratings {% for p in object_list %}
+ start ratings {% for p in object_list %}
 
   <div> {{ p.nombre }} and {{ p.ratings }}</div> 
 
-{% endfor %} -->
+{% endfor %} 
+
+icon_height : el valor predeterminado es STAR_RATINGS_STAR_HEIGHT
+icon_width : predeterminado en STAR_RATINGS_STAR_WIDTH
+read_only : anula el comportamiento editable para hacer que el widget sea de solo lectura
+template_name : anula la plantilla que se usará para el widget
+
 
 
 {% endblock content%}
