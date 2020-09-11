@@ -11,10 +11,10 @@
                 {% for p in servi %}
 
                 <p class="descripcion text-justify mt-4">{{ p.nombreServicio }} </p>and
-                <div>
+                
                     {% for y in p.peluquero.all %}
                     <span class="dropdown-item-text">{{ y.nombre }}</span> {% endfor %}
-                </div>
+                
                 {% endfor %}
 
 

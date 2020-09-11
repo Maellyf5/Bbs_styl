@@ -1,4 +1,4 @@
-{% load static %} {% load bootstrap4 %} 
+{% load static %} {% load bootstrap4 %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,8 +23,15 @@
           <div class="col-5 menu-left mb-5">
             <a class="active dorado" href="{% url 'app:index' %}">INICIO</a>
             <a href="about.html" class="dorado">CONÓCENOS</a>
-            <a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a>
-            <a href="{% url 'app:servicios' %}" class="dorado">SERVICIOS</a>
+            <a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a> 
+            <a class="dorado dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              SERVICIOS
+            </a>            
+            <div class="dropdown-menu">
+              {% for p in servi %}
+              <a class="dropdown-item menuD" href="{% url 'app:infoServi' p.id %} ">{{ p.nombreServicio }}</a>
+              {% endfor %}
+            </div>
           </div>
           <div class="col-2 logo mr-3">
             <a href="{% url 'app:index' %}"><img class="mx-auto mb-3 logoIMG" src="{% static 'img/logodorado.png' %}"
@@ -51,9 +58,18 @@
                 <li class="nav-item hide text-right">
                   <a class="nav-link menuD" href="{% url 'app:profesional' %}">PROFESIONALES</a>
                 </li>
-                <li class="nav-item hide text-right">
-                  <a class="nav-link menuD" href="{% url 'app:servicios' %}" >SERVICIOS</a>
+
+                <li class="nav-item dropdown hide menuD text-right">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                    SERVICIOS
+                  </a>
+                  <div class="dropdown-menu">
+                    {% for p in servi %}
+                    <a class="dropdown-item menuD" href="{% url 'app:infoServi' p.id %} ">{{ p.nombreServicio }}</a>
+                    {% endfor %}
+                  </div>
                 </li>
+
                 <!-- Dropdown -->
 
                 <li class="nav-item dropdown menuD text-right">
@@ -172,7 +188,7 @@
           <p class="font-weight"> {% autoescape off %}
             {{p.textServicio}}
           </p>
-          <a href="{% url 'app:servicios' %}" >Ver más...</a>
+          <a href="{% url 'app:servicios' %}">Ver más...</a>
           {% endautoescape %}
 
         </div>
@@ -237,17 +253,17 @@
               {% if p.tel %}
               <span class="f-texto">Telefono: {{ p.tel }}</span>{% endif %}<br>
               <span class="f-texto">Email: {{ p.mail }}</span><br>
-              
+
               <span class="f-texto">Horario: {{ p.horario }} </span>
-              
+
             </span>
 
           </aside>
-          
+
         </div>
-       
+
         <div class="col-lg-2 col-sm-5 footerMl">
-          
+
           <aside class="f-widget social-widget">
             <div>
               <h3 class="f-titles">Síguenos</h3>
@@ -258,7 +274,7 @@
               <a href="{{ p.facebook }}"><i class="fab fa-facebook fa-2x iconoR mr-2"></i></a>{% endif %}
               {% if p.instagram %}
               <a href="{{ p.instagram }}"><i class="fab fa-instagram fa-2x iconoR"></i></a>{% endif %}
-           
+
             </div>
           </aside>
         </div>
@@ -272,11 +288,13 @@
         <div class="col-md-12">
           <div class="border-top pt-5">
             <a href="{% url 'app:avisoLegal' %}" class="small mr-3">
-             Aviso legal <!-- avisolegal -->
+              Aviso legal
+              <!-- avisolegal -->
             </a>
             <a href="{% url 'app:cookies' %}" class="small">
-              Política de cookies <!-- cookies -->
-             </a>
+              Política de cookies
+              <!-- cookies -->
+            </a>
           </div>
         </div>
 

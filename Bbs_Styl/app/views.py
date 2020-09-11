@@ -7,11 +7,15 @@ from .models import *
 
 class Index(TemplateView):
     template_name = 'app/index.html'
+
     def get_context_data(self,**kwargs):
         context=super(Index, self).get_context_data(**kwargs)
         context['mi']= Inicio.objects.all()
         context['destacados']= EntradaBlog.objects.filter(destacados = True)[:3]
         context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
+        context['pelu'] = Peluqueros.objects.all()       
+        
         return context
     
 class Aviso(TemplateView):
@@ -21,6 +25,7 @@ class Aviso(TemplateView):
         context=super(Aviso, self).get_context_data(**kwargs)
         context['mi']= Inicio.objects.all()
         context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
         return context
 
 class Cookies(TemplateView):
@@ -30,6 +35,7 @@ class Cookies(TemplateView):
         context=super(Cookies, self).get_context_data(**kwargs)
         context['mi']= Inicio.objects.all()
         context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
         return context
 
 class Blog(ListView):
@@ -45,6 +51,7 @@ class Blog(ListView):
         context['mi']= Inicio.objects.all()
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
         
         return context 
 
@@ -75,6 +82,7 @@ class Profesional(ListView):
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
         context['servicios']= Servicio.objects.all()
+        context['servi']= Servicio.objects.all()
 
         return context
 
@@ -90,13 +98,51 @@ class Servicios(ListView):
     def get_context_data(self,**kwargs):
         context=super(Servicios, self).get_context_data(**kwargs)
         context['mi']= Inicio.objects.all()
-        context['pelu'] = Peluqueros.objects.all()
-        #context['template']= 'app:blog' 
+        context['servi']= Servicio.objects.all()
+        context['pelu'] = Peluqueros.objects.all()       
         context['contacto']= Footer.objects.all()
 
         return context
 
+class InfoServicio(DetailView):
+    template_name = 'app/servicios.html'
+    model = Servicio
 
+    def get_context_data(self,**kwargs):
+        context=super(InfoServicio, self).get_context_data(**kwargs)
+        idSer = self.kwargs.get('pk',None)
+        context['infoSer']= Servicio.objects.get(pk = idSer)
+        context['servi'] = Servicio.objects.all()
+        context['mi']= Inicio.objects.all()
+        context['contacto']= Footer.objects.all()
+
+        return context
+
+""" 
+class Proyectos(ListView):
+    model = Proyecto
+    template_name = 'app/proyectos.html'
+    context_object_name= 'pro' 
+    queryset = Proyecto.objects.all()
+
+ 
+    def get_context_data(self,**kwargs):
+        context=super(Proyectos, self).get_context_data(**kwargs)
+        
+        context['pro'] = Proyecto.objects.all()
+    
+        return context 
+
+class Infoproyectos(DetailView):
+    template_name = 'app/infoproyectos.html'
+    model = Proyecto
+
+    def get_context_data(self,**kwargs):
+        context=super(Infoproyectos, self).get_context_data(**kwargs)
+        idpro = self.kwargs.get('pk',None)
+        context['infop']= Proyecto.objects.get(pk = idpro)
+        context['pro'] = Proyecto.objects.all()
+        return context """
 
 
 
