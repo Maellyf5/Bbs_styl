@@ -1,10 +1,11 @@
-html, body
-{
-     width: 100%;
-     margin: auto;
-     padding: 0;
-}
 
+
+* {
+  margin: 0;
+  padding: 0;
+  border: o none;
+  position: relative;
+}
 
 /* esta es la parte que adapta las img */
 .imagen{
@@ -495,3 +496,102 @@ img {
   border: 2px solid #c4a868;
   
 }
+
+/*-----------------------------------------SECCION DE SERVICIOS GENERALES*/
+.section-gap {
+  padding: 120px 0;
+}
+
+.single-service {
+  position: relative;
+  overflow: hidden;
+}
+
+.single-service img {
+  width: 100%;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.single-service h4 {
+  position: absolute;
+  bottom: 0;
+  text-align: center;
+  width: 100%;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.single-service img {
+  width: 100%;
+  -webkit-transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+  transition: all 0.4s ease 0s;
+}
+
+.single-service{
+  transition: all 0.5s;
+  cursor: pointer;
+} 
+
+/*----------------------------------------- END SECCION DE SERVICIOS GENERALES*/
+
+/*--------LISTA DESPLEGABLE NAVBAR SERVICIO*/
+
+
+.menu-left {
+  width: 80%;
+  margin: 1.5rem auto;
+}
+.menu-left ul {
+  list-style-type: none; 
+  text-align: center;
+  font-size: 0;
+  width: 30%;
+}
+.menu-left > ul li {
+  display: inline-block;
+  width: 100%;
+  position: relative;
+
+}
+.menu-left li a {
+  display: block;
+  text-decoration: none;
+  font-size: 1rem;
+  line-height: 2.5rem;
+
+}
+.menu-left li:hover a, .menu-left li a:focus {
+
+  color: rgb(0, 0, 0);
+}
+
+.menu-left li ul {
+  background-color: cadetblue;
+  width: 0;
+  overflow: hidden;
+}
+.menu-left li:hover ul, .menu-left li:focus ul {
+  width: 30%; 
+}
+
+.menu-left li li {
+  display: block;
+  width: 100%;
+}
+.menu-left li:hover li a, .menu-left li:focus li a {
+  font-size: .9rem;
+  line-height: 1.7rem;
+
+}
+
+

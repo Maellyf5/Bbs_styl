@@ -23,15 +23,16 @@
           <div class="col-5 menu-left mb-5">
             <a class="active dorado" href="{% url 'app:index' %}">INICIO</a>
             <a href="about.html" class="dorado">CONÓCENOS</a>
-            <a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a> 
-            <a class="dorado dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-              SERVICIOS
-            </a>            
-            <div class="dropdown-menu">
-              {% for p in servi %}
-              <a class="dropdown-item menuD" href="{% url 'app:infoServi' p.id %} ">{{ p.nombreServicio }}</a>
-              {% endfor %}
-            </div>
+            <a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a>
+            <ul>
+              <li><a class="dorado" href="{% url 'app:servicios' %}">servicios</a>
+                {% for p in servi %}
+                <ul>
+                  <li><a href="{% url 'app:infoServi' p.id %}">{{ p.nombreServicio }}</a></li>
+                </ul>
+                {% endfor %}
+              </li>
+            </ul>
           </div>
           <div class="col-2 logo mr-3">
             <a href="{% url 'app:index' %}"><img class="mx-auto mb-3 logoIMG" src="{% static 'img/logodorado.png' %}"
@@ -239,6 +240,16 @@
       </div>
   </section>
   {% endblock content %}
+
+  <nav class=" menu-left ">
+
+  </nav>
+
+
+  
+
+
+
 
   <footer class="site-footer bg-footer overlay" style="background-image: url('/static/img/manicura.jpg')">
     <div class="container">

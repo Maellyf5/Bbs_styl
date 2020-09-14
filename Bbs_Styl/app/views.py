@@ -105,7 +105,7 @@ class Servicios(ListView):
         return context
 
 class InfoServicio(DetailView):
-    template_name = 'app/servicios.html'
+    template_name = 'app/infoServicio.html'
     model = Servicio
 
     def get_context_data(self,**kwargs):

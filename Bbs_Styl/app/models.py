@@ -64,6 +64,7 @@ class MyRating (AbstractBaseRating):
 class Servicio(models.Model):
     nombreServicio= models.CharField(max_length=80, null= True)
     peluquero= models.ManyToManyField(Peluqueros)
+    imagen = models.ImageField(upload_to='static/img')
     def __str__(self):         
         return self.nombreServicio
    
