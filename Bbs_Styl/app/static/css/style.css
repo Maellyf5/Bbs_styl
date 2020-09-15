@@ -1,5 +1,4 @@
 
-
 * {
   margin: 0;
   padding: 0;
@@ -555,7 +554,7 @@ img {
   list-style-type: none; 
   text-align: center;
   font-size: 0;
-  width: 30%;
+  width: 100%;
 }
 .menu-left > ul li {
   display: inline-block;
@@ -571,17 +570,24 @@ img {
 
 }
 .menu-left li:hover a, .menu-left li a:focus {
-
   color: rgb(0, 0, 0);
 }
 
 .menu-left li ul {
   background-color: cadetblue;
+  position: absolute;
   width: 0;
   overflow: hidden;
 }
 .menu-left li:hover ul, .menu-left li:focus ul {
-  width: 30%; 
+  width: 100%;
+  margin: 1px;
+  padding: 0 0 10px 0;
+  border: 1px solid #d1d1d1;
+  border-radius: 3px;
+  text-align: center; 
+  background-color: white;
+  z-index: 5;
 }
 
 .menu-left li li {
@@ -594,4 +600,7 @@ img {
 
 }
 
+.menu-left li li a:hover, .menu-left li li a:focus {
+    background: #d8bf86; 
+}
 

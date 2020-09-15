@@ -20,17 +20,18 @@
     <div class="contenedor">
       <div class="header-wrap">
         <div class="header-top d-flex justify-content-between align-items-center navbar-expand-xl">
-          <div class="col-5 menu-left mb-5">
-            <a class="active dorado" href="{% url 'app:index' %}">INICIO</a>
-            <a href="about.html" class="dorado">CONÓCENOS</a>
-            <a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a>
-            <ul>
-              <li><a class="dorado" href="{% url 'app:servicios' %}">servicios</a>
-                {% for p in servi %}
+          <div class="col-5 menu-left mb-5 float-left">
+            <ul class="navbar-nav ml">
+              <li><a class="active dorado" href="{% url 'app:index' %}">INICIO</a></li>
+              <li><a href="about.html" class="dorado">CONÓCENOS</a></li>
+              <li><a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a></li>
+
+              <li><a class="dorado" href="{% url 'app:servicios' %}">SERVICIOS</a>                
                 <ul>
+                  {% for p in servi %}
                   <li><a href="{% url 'app:infoServi' p.id %}">{{ p.nombreServicio }}</a></li>
-                </ul>
-                {% endfor %}
+                  {% endfor %}
+                </ul>               
               </li>
             </ul>
           </div>
@@ -246,7 +247,7 @@
   </nav>
 
 
-  
+
 
 
 
