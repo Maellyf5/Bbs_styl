@@ -29,9 +29,7 @@ class Footer(models.Model):
     def __str__(self):         
         return self.mail
  
-    
-
-    
+ 
 
 class EntradaBlog(models.Model):
     titulo = models.CharField(max_length=70)
