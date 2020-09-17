@@ -18,86 +18,65 @@
 <body>
   <header class="header-area text-center">
     <div class="contenedor">
-      <div class="header-wrap">
-        <div class="header-top d-flex justify-content-between align-items-center navbar-expand-xl">
-          <div class="col-5 menu-left mb-5 float-left">
-            <ul class="navbar-nav ml">
-              <li><a class="active dorado" href="{% url 'app:index' %}">INICIO</a></li>
-              <li><a href="about.html" class="dorado">CONÓCENOS</a></li>
-              <li><a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a></li>
+      <div class="header-top d-flex align-items-center navbar-expand-xl">
+        <div class="col-5 menu-left displayLeft mb-5">
+          <ul class="navbar-nav ml">
+            <li><a class="active dorado" href="{% url 'app:index' %}">INICIO</a></li>
+            <li><a href="about.html" class="dorado">CONÓCENOS</a></li>
+            <li><a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a></li>
 
-              <li class="listArrow"><a class="dorado pr-2" href="{% url 'app:servicios' %}">SERVICIOS</a>                
+            <li class="listArrow"><a class="dorado pr-2" href="{% url 'app:servicios' %}">SERVICIOS</a>
+              <ul>
+                {% for p in servi %}
+                <li><a href="{% url 'app:infoServi' p.id %}">{{ p.nombreServicio }}</a></li>
+                {% endfor %}
+              </ul>
+            </li>
+          </ul>
+        </div>
+        <div class="col-2 logo mr-3">
+          <a href="{% url 'app:index' %}"><img class="mx-auto mb-3 logoIMG" src="{% static 'img/logodorado.png' %}"
+              width="140px;" alt="logo" /></a>
+        </div>
+
+        <nav class="col navbar navbar-expand-xl justify-content-end menuDrch">
+          <!-- Toggler/collapsibe Button -->
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+            <span class="lnr lnr-menu"><i class="fas fa-bars"
+                style="color: rgb(168, 157, 55); font-size: 28px;"></i></span>
+          </button>
+
+          <!-- Navbar links -->
+          <div class="collapse navbar-collapse menu-left" id="collapsibleNavbar">
+            <ul class="navbar-nav">
+              <li class="hide nav-item"><a class="active dorado" href="{% url 'app:index' %}">INICIO</a></li>
+              <li class="hide nav-item"><a href="about.html" class="dorado">CONÓCENOS</a></li>
+              <li class="hide nav-item"><a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a></li>
+  
+              <li class="hide listArrow nav-item"><a class="dorado pr-2" href="{% url 'app:servicios' %}">SERVICIOS</a>
                 <ul>
                   {% for p in servi %}
                   <li><a href="{% url 'app:infoServi' p.id %}">{{ p.nombreServicio }}</a></li>
                   {% endfor %}
-                </ul>               
+                </ul>
+              </li>
+              <li class="nav-item"><a class="active dorado " href="{% url 'app:index' %}">GALERÍA</a></li>
+              <li class="nav-item"><a class="active dorado " href="{% url 'app:index' %}">BLOG</a></li>
+              <li class="nav-item"><a class="active dorado " href="{% url 'app:index' %}">CONTACTO</a></li>
+              <li class="nav-item listArrow">
+                <a class="active dorado " href="{% url 'app:servicios' %}">REGISTRATE</a>
+                <ul>
+                  <li>
+                    <a href="services.html">CLIENTE</a>
+                    <a href="{% url 'app:profesional' %}">PROFESIONAL</a>
+                  </li>
+                </ul>
               </li>
             </ul>
           </div>
-          <div class="col-2 logo mr-3">
-            <a href="{% url 'app:index' %}"><img class="mx-auto mb-3 logoIMG" src="{% static 'img/logodorado.png' %}"
-                width="140px;" alt="logo" /></a>
-          </div>
-
-          <nav class="col navbar navbar-expand-xl justify-content-end">
-            <!-- Toggler/collapsibe Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
-              <span class="lnr lnr-menu"><i class="fas fa-bars"
-                  style="color: rgb(168, 157, 55); font-size: 28px;"></i></span>
-            </button>
-
-            <!-- Navbar links -->
-            <div class="collapse navbar-collapse menu-right menuD" id="collapsibleNavbar">
-              <ul class="navbar-nav justify-content-center">
-                <li class="nav-item hide text-right">
-                  <a class="nav-link menuD" href="{% url 'app:index' %}">INICIO</a>
-                </li>
-                <li class="nav-item hide text-right">
-                  <a class="nav-link menuD" href="about.html">CONÓCENOS</a>
-                </li>
-
-                <li class="nav-item hide text-right">
-                  <a class="nav-link menuD" href="{% url 'app:profesional' %}">PROFESIONALES</a>
-                </li>
-
-                <li class="nav-item dropdown hide menuD text-right select">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    SERVICIOS
-                  </a>
-                  <div class="dropdown-menu">
-                    {% for p in servi %}                      
-                      <a class="dropdown-item menuD" href="{% url 'app:infoServi' p.id %} ">{{p.nombreServicio}}</a>                     
-                    {% endfor %}
-                  </div>
-                </li>
-                
-
-                <!-- Dropdown -->
-
-                <li class="nav-item dropdown menuD text-right">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
-                    REGISTRATE
-                  </a>
-                  <div class="dropdown-menu">
-                    <a class="dropdown-item menuD" href="services.html">CLIENTE</a>
-                    <a class="dropdown-item menuD" href="{% url 'app:profesional' %}">PROFESIONAL</a>
-                  </div>
-                </li>
-                <li class="nav-item menuD text-right">
-                  <a class="nav-link" href="pricing.html">GALERÍA</a>
-                </li>
-                <li class="nav-item menuD text-right">
-                  <a class="nav-link" href="{% url 'app:blog' %}">BLOG</a>
-                </li>
-                <li class="nav-item menuD text-right">
-                  <a class="nav-link" href="contact.html">CONTACTO</a>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
+        </nav>
       </div>
+
     </div>
   </header>
 

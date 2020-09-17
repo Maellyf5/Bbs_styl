@@ -56,7 +56,7 @@
 }
 
 @media (max-width: 1295px) {
-  .menu-left {
+  .displayLeft {
     display: none;
   }
 }
@@ -64,7 +64,7 @@
 
 @media (min-width: 1296px) {
   .hide {
-    display: none;
+    display: none !important;
   }
 }
 
@@ -74,6 +74,18 @@
     top: 0;
   }
 } */
+
+.menuDrch{
+  padding: 0 0 25px 0 !important;
+}
+
+@media (max-width: 1199px) {
+  .mele{
+    justify-content: center;
+    display: flex;
+  }
+}
+
 
 @media (max-width: 570px) {
   .menuD {
@@ -127,7 +139,7 @@ a.pBlogUrl:hover {
   margin-bottom: 20px;
 }
 
-.menu-left {
+.displayLeft {
   margin-bottom: 20px;
 }
 
@@ -546,7 +558,7 @@ img {
 /*--------LISTA DESPLEGABLE NAVBAR SERVICIO*/
 
 
-.menu-left {
+.menu-left  {
   width: 80%;
   margin: 1.5rem auto;
 }
@@ -613,3 +625,6 @@ img {
   line-height: inherit;
   font-family: FontAwesome;
 }
+
+/*----------------------MENU RIGHT-------------------------*/
+
