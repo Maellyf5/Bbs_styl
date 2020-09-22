@@ -3,6 +3,7 @@ from django.contrib.contenttypes.fields import GenericRelation
 from django.contrib.contenttypes.models import ContentType
 from star_ratings.models import Rating, AbstractBaseRating
 
+
 # Create your models here.
 class Inicio(models.Model):
     imgFondo = models.ImageField(upload_to='static/img')
@@ -29,7 +30,6 @@ class Footer(models.Model):
     def __str__(self):         
         return self.mail
  
- 
 
 class EntradaBlog(models.Model):
     titulo = models.CharField(max_length=70)
@@ -41,33 +41,44 @@ class EntradaBlog(models.Model):
     def __str__(self):         
         return self.titulo
     
-    
-class Peluqueros(models.Model):
-    nombre = models.CharField(max_length=80, null=True)
-    precio = models.IntegerField(null=True)
-    valoracion = models.IntegerField(null=True)
-    disponibilidad = models.TextField(max_length=200, null=True,blank=True)
-    imagen = models.ImageField(upload_to='static/img')
-    ratings =  GenericRelation(Rating, related_query_name= 'object_list')
-    
-
-    
-    def __str__(self):         
-        return self.nombre
 
 class MyRating (AbstractBaseRating):
    Peluqueros = models.TextField()
 
 
 class Servicio(models.Model):
+    precio = models.IntegerField(null=True)
     nombreServicio= models.CharField(max_length=80, null= True)
-    peluquero= models.ManyToManyField(Peluqueros)
     imagen = models.ImageField(upload_to='static/img')
     def __str__(self):         
         return self.nombreServicio
+    
+class CodigoPostal(models.Model):
+    codigo = models.IntegerField(null=True)
+    
+    def __str__(self):         
+        return str(self.codigo)
+    
+class Profesionales(models.Model):
+    nombre = models.CharField(max_length=80, null=True)
+    valoracion = models.IntegerField(null=True)
+    disponibilidad = models.TextField(max_length=200, null=True,blank=True)
+    imagen = models.ImageField(upload_to='static/img')
+    ratings =  GenericRelation(Rating, related_query_name= 'object_list')
+    nombreServicio = models.ManyToManyField(Servicio)
+    CodigoFK = models.ManyToManyField(CodigoPostal)
+        
+    def __str__(self):         
+        return self.nombre
+    
+
+    
+
+
+
    
 
 
     
 
-    
+

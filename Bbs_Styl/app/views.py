@@ -14,7 +14,7 @@ class Index(TemplateView):
         context['destacados']= EntradaBlog.objects.filter(destacados = True)[:3]
         context['contacto']= Footer.objects.all()
         context['servi']= Servicio.objects.all()
-        context['pelu'] = Peluqueros.objects.all()       
+        context['pelu'] = Profesionales.objects.all()       
         
         return context
     
@@ -73,11 +73,11 @@ class Blog(ListView):
 class Profesional(ListView):
     template_name = 'app/profesionales.html'
     context_object_name= 'peluqueros' 
-    queryset = Peluqueros.objects.all() 
+    queryset = Profesionales.objects.all() 
     
     def get_context_data(self,**kwargs):
         context=super(Profesional, self).get_context_data(**kwargs)
-        context['object_list']= Peluqueros.objects.filter(ratings__isnull=False).order_by('ratings')
+        context['object_list']= Profesionales.objects.filter(ratings__isnull=False).order_by('ratings')
         context['mi']= Inicio.objects.all()
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
@@ -99,7 +99,7 @@ class Servicios(ListView):
         context=super(Servicios, self).get_context_data(**kwargs)
         context['mi']= Inicio.objects.all()
         context['servi']= Servicio.objects.all()
-        context['pelu'] = Peluqueros.objects.all()       
+        context['pelu'] = Profesionales.objects.all()       
         context['contacto']= Footer.objects.all()
 
         return context
