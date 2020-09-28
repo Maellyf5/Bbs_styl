@@ -3,6 +3,7 @@ from django.contrib.contenttypes.models import ContentType
 from django.views.generic import *
 from .models import *
 
+
 # Create your views here.
 
 class Index(TemplateView):
@@ -77,12 +78,24 @@ class Profesional(ListView):
     
     def get_context_data(self,**kwargs):
         context=super(Profesional, self).get_context_data(**kwargs)
-        context['object_list']= Profesionales.objects.filter(ratings__isnull=False).order_by('ratings')
         context['mi']= Inicio.objects.all()
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
         context['servicios']= Servicio.objects.all()
         context['servi']= Servicio.objects.all()
+
+        return context
+class profesionalCP(DetailView):
+    template_name = 'app/profesionalcp.html'
+    model = Profesional
+
+    def get_context_data(self,**kwargs):
+        context=super(profesionalCP, self).get_context_data(**kwargs)
+        idpro = self.kwargs.get('pk',None)
+        context['proCP']= Profesional.objects.get(pk = idpro)
+        context['servi'] = Servicio.objects.all()
+        context['mi']= Inicio.objects.all()
+        context['contacto']= Footer.objects.all()
 
         return context
 

@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'bootstrap4',
-    'star_ratings',
+    
     
     
 ]
@@ -130,11 +130,10 @@ USE_L10N = True
 
 USE_TZ = True
 
-STAR_RATINGS_RERATE = False
 
-STAR_RATINGS_RATING_MODEL = 'app.MyRating'
 
-STAR_RATINGS_RANGE = 5 
+
+
 
 
 

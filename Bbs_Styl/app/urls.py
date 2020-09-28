@@ -10,6 +10,8 @@ urlpatterns = [
     path('profesionales', Profesional.as_view(), name='profesional'),
     path('servicios', Servicios.as_view(), name='servicios'),
     path('infoServicios/<int:pk>', InfoServicio.as_view(), name='infoServi'),
+    path('profesionalcp/<int:pk>', profesionalCP.as_view(), name='profesionalCP'),
+
 
     
 ]

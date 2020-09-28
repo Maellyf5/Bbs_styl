@@ -1,14 +1,24 @@
-{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} {% load ratings %}
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
 
 {% block content%}
-<div class="container-fluid mb-5">
-  <div class="row marginAviso">
+<div class="container-fluid mb-5 marginAviso">
+  <nav class="navbar bannerCp justify-content-center">
+    <p class="bannerP" style="color:black;">Encuentra a tu profesional más cercano</p>
+    <form action="{% url 'app:profesionalCP' p.id %}" method="GET"class="form-inline">
+      <input class="form-control mr-sm-2 text-center" type="search" placeholder="Codigo Postal" aria-label="Search" />
+      <button class="btn my-2 my-sm-0" style="vertical-align: middle" type="submit" src="#">
+        <span>Buscar</span>
+      </button>
+    </form>
+  </nav>
+  <div class="row ">
+
     {% for p in peluqueros %}
     <div class="col-md-3  ftco-animate fadeInUp ftco-animated mrRespon cardPro mt-5 container-fluid mb-5">
       <div class="blog-entry align-self-stretch text-center">
-           <div class="avatar mx-auto d-flex justify-content-center pt-3" >
-              <div class="imgProfesional" style="background-image: url('{{ p.imagen.url }}')"></div>
-            </div>
+        <div class="avatar mx-auto d-flex justify-content-center pt-3">
+          <div class="imgProfesional" style="background-image: url('{{ p.imagen.url }}')"></div>
+        </div>
 
         <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
         <ul class="list-unstyled list-inline rating mb-0">
@@ -31,23 +41,16 @@
             <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
           </div>
         </div>
-         
+
       </div>
     </div>
+
     {% endfor %}
+
   </div>
 </div>
 
- start ratings {% for p in object_list %}
 
-  <div> {{ p.nombre }} and {{ p.ratings }}</div> 
-
-{% endfor %} 
-
-icon_height : el valor predeterminado es STAR_RATINGS_STAR_HEIGHT
-icon_width : predeterminado en STAR_RATINGS_STAR_WIDTH
-read_only : anula el comportamiento editable para hacer que el widget sea de solo lectura
-template_name : anula la plantilla que se usará para el widget
 
 
 
