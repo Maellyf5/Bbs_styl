@@ -131,6 +131,14 @@ class InfoServicio(DetailView):
 
         return context
 
+
+def BuscadorCP(request):
+    if request.method == 'GET':
+        Buscar= request.GET.get('search')
+        post= Profesionales.objects.all().filter(nombre=Buscar)
+        return render(request,'profesionalcp.html', {'post':post})
+    
+
 """ 
 class Proyectos(ListView):
     model = Proyecto

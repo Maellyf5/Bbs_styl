@@ -1,8 +1,23 @@
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
+
 {% block content%}
 
+<div class="container-fluid mb-5 marginAviso">
+    {% if post %}
 
+    {% for i in post %}
 
+        <h2>
+            {{ i.nombre }}
+        </h2>
+    {% endfor %}
+
+        {% else %}
+
+        <h1>No hay profesionales en tu zona</h1>
+    
+    {% endif %}
+</div>
 
 
 

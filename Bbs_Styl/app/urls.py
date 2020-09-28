@@ -1,5 +1,6 @@
 from django.urls import path, include
 from .views import *
+from . import views
 
 urlpatterns = [
     path('', Index.as_view(), name='index'),
@@ -10,7 +11,7 @@ urlpatterns = [
     path('profesionales', Profesional.as_view(), name='profesional'),
     path('servicios', Servicios.as_view(), name='servicios'),
     path('infoServicios/<int:pk>', InfoServicio.as_view(), name='infoServi'),
-    path('profesionalcp/<int:pk>', profesionalCP.as_view(), name='profesionalCP'),
+    path('buscarCP', views.BuscadorCP, name='profesionalCP'),
 
 
     
