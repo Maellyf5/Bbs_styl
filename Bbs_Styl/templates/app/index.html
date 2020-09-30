@@ -97,13 +97,12 @@
       {% endfor %}
       <nav class="navbar bannerCp justify-content-center">
         <p class="bannerP">Encuentra a tu profesional más cercano</p>
-        <form class="form-inline">
-          <input class="form-control mr-sm-2 text-center" type="search" placeholder="Codigo Postal"
-            aria-label="Search" />
-          <button class="btn my-2 my-sm-0" style="vertical-align: middle;" type="submit" src="#">
-            <span>Buscar</span>
-          </button>
-        </form>
+      <form action="{% url 'app:profesionalCP' %}" method="GET"class="form-inline">
+      <input class="form-control mr-sm-2 text-center" type="search" name="search" placeholder="Codigo Postal" aria-label="Search" />
+      <button class="btn my-2 my-sm-0" style="vertical-align: middle" type="submit" src="#">
+        <span>Buscar</span>
+      </button>
+    </form>
       </nav>
     </div>
   </section>

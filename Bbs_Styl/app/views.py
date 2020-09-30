@@ -133,10 +133,16 @@ class InfoServicio(DetailView):
 
 
 def BuscadorCP(request):
+    
     if request.GET["search"]:
         Buscar= request.GET["search"]
         post= Profesionales.objects.filter(CodigoPostales__codigo=Buscar)
         return render(request,"app/profesionalcp.html", {"post":post, "query":Buscar})
+
+
+
+        
+
 
 
 
