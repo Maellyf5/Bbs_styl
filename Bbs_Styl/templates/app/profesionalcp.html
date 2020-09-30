@@ -7,17 +7,49 @@
    <p>Estas buscando: <strong>{{query}}</strong></p>
     {% if post %}
 
-        <p>Articulos Encontrados:{{post|length}} articulos</p>
+        <p>Profesionales Encontrados:{{post|length}} profesional</p>
 
         {% for i in post %}
        
-                    
-        
-          
+             
+            
+              <div class="row ">
 
-            
-            {{ i.nombre }} 
-            
+    
+    <div class="col-md-3  ftco-animate fadeInUp ftco-animated mrRespon cardPro mt-5 container-fluid mb-5">
+      <div class="blog-entry align-self-stretch text-center">
+        <div class="avatar mx-auto d-flex justify-content-center pt-3">
+          <div class="imgProfesional" style="background-image: url('{{ i.imagen.url }}')"></div>
+        </div>
+
+        <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ i.nombre }}</h3>
+        <ul class="list-unstyled list-inline rating mb-0">
+          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+          <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+          <li class="list-inline-item">
+            <p class="text-muted">{{ i.valoracion }}</p>
+          </li>
+        </ul>
+
+
+        <div class="text py-4 d-block ">
+          <div class="meta">
+            <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ i.precio }}$</div>
+          </div>
+          <div><span class="icon-chat "></span>
+            <p class="descripcion text-justify mt-4 text-center">{{ i.disponibilidad }} </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    
+
+  </div>
         
         {% endfor %}
 
