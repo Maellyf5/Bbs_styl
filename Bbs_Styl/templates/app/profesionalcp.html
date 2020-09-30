@@ -1,23 +1,43 @@
-{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
 
 {% block content%}
 
 <div class="container-fluid mb-5 marginAviso">
+
+   <p>Estas buscando: <strong>{{query}}</strong></p>
     {% if post %}
 
-    {% for i in post %}
+        <p>Articulos Encontrados:{{post|length}} articulos</p>
 
-        <h2>
-            {{ i.nombre }}
-        </h2>
-    {% endfor %}
+        {% for i in post %}
+       
+                    
+        
+          
 
-        {% else %}
+            
+            {{ i.nombre }} 
+            {{ i.profesional}} 
+              {{ i.codigo }} 
 
-        <h1>No hay profesionales en tu zona</h1>
+
     
+
+           
+        
+        {% endfor %}
+
+    {% else %}
+
+    <h1>No hay profesionales en tu zona</h1>
+
     {% endif %}
 </div>
+
+
+
+ 
+
 
 
 

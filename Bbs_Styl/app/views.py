@@ -133,11 +133,35 @@ class InfoServicio(DetailView):
 
 
 def BuscadorCP(request):
-    if request.method == 'GET':
-        Buscar= request.GET.get('search')
-        post= Profesionales.objects.all().filter(nombre=Buscar)
-        return render(request,'profesionalcp.html', {'post':post})
+    if request.GET["search"]:
+        Buscar= request.GET["search"]
+        post= Profesionales.objects.filter(CodigoPostales__codigo=Buscar)
+        return render(request,"app/profesionalcp.html", {"post":post, "query":Buscar})
+
+
+
     
+
+
+""" def buscar(request):
+    
+    if request.GET["prd"]:
+        #mensaje="Articulo buscado: %r" %request.GET["prd"]
+        producto= request.GET["prd"]
+        articulos = Producto.objects.filter(nombre__icontains=producto) #icontains es como el like de sql asi: like nombre ="raqueta"
+        return render(request,"app/resultados_busqueda.html",{"articulos": articulos, "query":producto})
+    else:
+        mensaje="No has introducido nada"
+    
+    return HttpResponse(mensaje) """
+
+
+
+
+
+
+
+
 
 """ 
 class Proyectos(ListView):

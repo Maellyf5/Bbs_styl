@@ -43,11 +43,6 @@ class EntradaBlog(models.Model):
     
 
 
-class CodigoPostal(models.Model):
-    codigo = models.IntegerField(null=True)
-    
-    def __str__(self):         
-        return str(self.codigo)
 
 
 
@@ -75,20 +70,30 @@ class Precio(models.Model):
     def __str__(self):         
         return str(self.precio)
 
+class CodigoPostal(models.Model):
+    codigo = models.IntegerField(null=True)
+    
+    
+    def __str__(self):         
+        return str(self.codigo)
+
 
 class Profesionales(models.Model):
     nombre = models.CharField(max_length=80, null=True)
     valoracion = models.IntegerField(null=True)
     disponibilidad = models.TextField(max_length=200, null=True,blank=True)
     imagen = models.ImageField(upload_to='static/img')
-    nombreEspecialidad = models.ManyToManyField(Especialidades)
-    CodigoF = models.ManyToManyField(CodigoPostal)
-    precioEspecialidad = models.ManyToManyField(Precio)
+    nombreEspecialidades = models.ManyToManyField(Especialidades)
+    CodigoPostales = models.ManyToManyField(CodigoPostal,related_name=("profesionales"))
+    precioEspecialidades = models.ManyToManyField(Precio)
 
    
         
     def __str__(self):         
         return self.nombre
+
+
+
     
 class Blog(models.Model):
     EntradaBlog=models.TextField(max_length=200, null=True,blank=True)
