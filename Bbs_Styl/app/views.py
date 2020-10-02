@@ -2,6 +2,7 @@ from django.shortcuts import redirect, render
 from django.contrib.contenttypes.models import ContentType
 from django.views.generic import *
 from .models import *
+from django.http import HttpResponseRedirect
 
 
 # Create your views here.
@@ -132,17 +133,22 @@ class InfoServicio(DetailView):
         return context
 
 
-def BuscadorCP(request):
-    
-    if request.GET["search"]:
-        Buscar= request.GET["search"]
-        post= Profesionales.objects.filter(CodigoPostales__codigo=Buscar)
-        return render(request,"app/profesionalcp.html", {"post":post, "query":Buscar})
+     
 
+class BuscadorCP(TemplateView):
+    template_name = 'app/profesionalcp.html'
 
+    def get(self, request, *args, **kwargs):
+        Buscar = request.GET.get('search', '')
+        self.results = Profesionales.objects.filter(CodigoPostales__codigo=Buscar)
+        return super().get(request, *args, **kwargs)
 
-        
-
+    def get_context_data(self, **kwargs):
+        context=super(BuscadorCP, self).get_context_data(post=self.results, **kwargs)
+        context['mi']= Inicio.objects.all()
+        context['servi'] = Servicio.objects.all()
+        context['contacto']= Footer.objects.all()
+        return context
 
 
 
