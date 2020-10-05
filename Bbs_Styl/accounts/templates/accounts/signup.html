@@ -1,0 +1,16 @@
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
+
+{% block content%}
+
+
+<h1 class="blog-details-area marginAviso text-center">Signup</h1>
+<form action="/accounts/signup/" method="post">
+    {% csrf_token %}
+    {{ form }}
+    <input type="submit" value="Signup">
+</form>
+
+
+
+
+{% endblock content%}
