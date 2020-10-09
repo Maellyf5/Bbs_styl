@@ -662,4 +662,12 @@ img {
 }
 
 /*----------------------MENU RIGHT-------------------------*/
-
+.fieldWrapper{
+ 
+  text-align: center;
+  
+}
+.fieldWrapper form{
+   background-color: red;
+  
+}

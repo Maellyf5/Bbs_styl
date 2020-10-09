@@ -3,14 +3,39 @@
 {% block content%}
 
 
-<h1 class="blog-details-area marginAviso text-center">Signup</h1>
-<form action="/accounts/signup/" method="post">
-    {% csrf_token %}
-    {{ form }}
-    <input type="submit" value="Signup">
-</form>
+
+<link rel="stylesheet" href="{% static 'static/css/styleforms.css' %}" />
+<h1 class="blog-details-area marginAviso text-center este">Registrate</h1>
+<div class="formulario">
+     {% if messages %}
+            <ul>
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+        {% endif %}
+    <form action="/accounts/signup/" method="post">
+        {% csrf_token %}
+
+        {% for field in form %}
+
+        <div class="fieldWrapper">
+
+            {{ field.label_tag }} {{ field }}
+            {% if field.help_text %}
+            <p class="help">{{ field.help_text|safe }}</p>
+            {% endif %}
+  
+        {% endfor %}
+        <input type="submit" value="Signup">
+         </div>
+
+  
+       
+    </form>
+</div>
 
 
-
+ 
 
 {% endblock content%}

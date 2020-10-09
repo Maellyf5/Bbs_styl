@@ -9,7 +9,7 @@
   <title>Document</title>
 
   <link rel="stylesheet" href="{% static 'css/style.css' %}" />
-
+  <link rel="stylesheet" href="{% static 'css/styleforms.css' %}" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
   <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
@@ -62,7 +62,7 @@
                 </ul>
               </li>
               <li class="nav-item listArrow">
-                <a class="dorado" href="{% url 'app:servicios' %}">REGISTRATE</a>
+                <a class="dorado" href="">REGISTRATE</a>
                 <ul>
                   <li>
                     {% if user.is_authenticated %}
@@ -71,7 +71,7 @@
                       <button class="btn btn-primary btn-sm" type="submit">Log Out</button>
                     </form>
                     {% endif %}
-                    <a href="services.html">CLIENTE</a>
+                    <a href="{% url 'accounts:signup' %}">CLIENTE</a>
                     <a href="{% url 'app:profesional' %}">PROFESIONAL</a>
                   </li>
                 </ul>
