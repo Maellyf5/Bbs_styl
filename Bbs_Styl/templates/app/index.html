@@ -71,6 +71,10 @@
                       <button class="btn btn-primary btn-sm" type="submit">Log Out</button>
                     </form>
                     {% endif %}
+
+                    {% if user.is_authenticated %}
+                      <li><a href="{% url 'app:profesional' %}">Mi perfil</a></li>
+                    {% endif %}
                     <a href="{% url 'accounts:signup' %}">CLIENTE</a>
                     <a href="{% url 'app:profesional' %}">PROFESIONAL</a>
                   </li>

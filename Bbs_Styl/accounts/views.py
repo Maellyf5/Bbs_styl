@@ -4,6 +4,11 @@ from django.contrib.auth import login,logout
 from django.http import HttpResponseRedirect
 from .forms import CustomUserCreationForm
 from django.contrib import messages
+from email.message import EmailMessage
+from django.template import RequestContext
+from django.views.generic import *
+from .models import *
+
 
 
 
@@ -20,16 +25,11 @@ def signup_view(request):
             
     else:
         form = CustomUserCreationForm()
+
     return render(request, 'accounts/signup.html', {'form': form})
 
-  
+
        
-
-    
-
-    
- 
- 
 def login_view(request):
     if request.method == 'POST':
         form = AuthenticationForm(data=request.POST)
@@ -46,6 +46,7 @@ def logout_view(request):
     if request.method == 'POST':
         logout(request)
         return redirect('app:inicio')
+
 
 
 

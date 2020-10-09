@@ -1,59 +1,56 @@
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
 
 {% block content%}
-<div class="container-fluid mb-5 marginAviso">
+<div class="container-fluid mb-5 marginAviso ">
   <nav class="navbar bannerCp justify-content-center">
     <p class="bannerP" style="color:black;">Encuentra a tu profesional más cercano</p>
-    <form action="{% url 'app:profesionalCP' %}" method="GET"class="form-inline">
-      <input class="form-control mr-sm-2 text-center" type="search" name="search" placeholder="Codigo Postal" aria-label="Search" />
+    <form action="{% url 'app:profesionalCP' %}" method="GET" class="form-inline">
+      <input class="form-control mr-sm-2 text-center" type="search" name="search" placeholder="Codigo Postal"
+        aria-label="Search" />
       <button class="btn my-2 my-sm-0" style="vertical-align: middle" type="submit" src="#">
         <span>Buscar</span>
       </button>
     </form>
 
-
-
-
-
-
-
   </nav>
-  <div class="row ">
+  <div class="d-flex justify-content-center ">
+    <div class="row CajaAncho d-flex justify-content-center">
 
-    {% for p in peluqueros %}
-    <div class="col-md-3  ftco-animate fadeInUp ftco-animated mrRespon cardPro mt-5 container-fluid mb-5">
-      <div class="blog-entry align-self-stretch text-center">
-        <div class="avatar mx-auto d-flex justify-content-center pt-3">
-          <div class="imgProfesional" style="background-image: url('{{ p.imagen.url }}')"></div>
-        </div>
-
-        <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
-        <ul class="list-unstyled list-inline rating mb-0">
-          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
-          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-          <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-          <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-          <li class="list-inline-item">
-            <p class="text-muted">{{ p.valoracion }}</p>
-          </li>
-        </ul>
-
-
-        <div class="text py-4 d-block ">
-          <div class="meta">
-            <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ p.precio }}$</div>
+      {% for p in peluqueros %}
+      <div class="col-md-3 mrRespon cardPro mt-5 container-fluid mb-5 mr-4 ml-4 ">
+        <div class="blog-entry align-self-stretch text-center ">
+          <div class="avatar mx-auto d-flex justify-content-center pt-3">
+            <div class="imgProfesional" style="background-image: url('{{ p.imagen.url }}')"></div>
           </div>
-          <div><span class="icon-chat "></span>
-            <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
-          </div>
-        </div>
 
+          <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
+          <ul class="list-unstyled list-inline rating mb-0">
+            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
+            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
+            <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
+            <li class="list-inline-item">
+              <p class="text-muted">{{ p.valoracion }}</p>
+            </li>
+          </ul>
+
+
+          <div class="text py-4 d-block ">
+            <div class="meta">
+              <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ p.precio }}$</div>
+            </div>
+            <div><span class="icon-chat "></span>
+              <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
+            </div>
+          </div>
+
+        </div>
       </div>
+
+      {% endfor %}
+
     </div>
-
-    {% endfor %}
-
   </div>
 </div>
 

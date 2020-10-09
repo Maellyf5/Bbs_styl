@@ -2,6 +2,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
 from django import forms
 from django.core.exceptions import ValidationError
+from django.views.generic import *
+
+
+
 
 
 class CustomUserCreationForm(forms.Form):
@@ -9,6 +13,8 @@ class CustomUserCreationForm(forms.Form):
     email = forms.EmailField(label='Enter email')
     password1 = forms.CharField(label='Enter password', widget=forms.PasswordInput)
     password2 = forms.CharField(label='Confirm password', widget=forms.PasswordInput)
+    
+
 
     def clean_username(self):
         username = self.cleaned_data['username'].lower()
@@ -40,3 +46,5 @@ class CustomUserCreationForm(forms.Form):
             self.cleaned_data['password1']
         )
         return user
+
+
