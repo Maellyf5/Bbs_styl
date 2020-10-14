@@ -27,11 +27,6 @@ SECRET_KEY = 'dyk%dzy^qfei=d6@=ajg9o0*&13$erz%u7$dqtrk_+ms$i7@(8'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
-EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '51958c9e81a2cc'
-EMAIL_HOST_PASSWORD = '7f821b2912ca87'
-EMAIL_PORT = '2525'
 
 
 # Application definition
@@ -43,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'widget_tweaks',
     'app',
     'accounts',
     'bootstrap4',

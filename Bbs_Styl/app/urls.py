@@ -12,7 +12,6 @@ urlpatterns = [
     path('servicios', Servicios.as_view(), name='servicios'),
     path('infoServicios/<int:pk>', InfoServicio.as_view(), name='infoServi'),
     path('buscarCP/', BuscadorCP.as_view(), name='profesionalCP'),
-    path('contacto/', Contacto.as_view(), name='contactos'),
 
 
 
