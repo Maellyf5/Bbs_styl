@@ -3,6 +3,9 @@ from django.contrib.contenttypes.models import ContentType
 from django.views.generic import *
 from .models import *
 from django.http import HttpResponseRedirect
+from .forms import Formulario
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 
 
 # Create your views here.
@@ -176,31 +179,44 @@ class BuscadorCP(TemplateView):
 
 
 
-""" 
-class Proyectos(ListView):
-    model = Proyecto
-    template_name = 'app/proyectos.html'
-    context_object_name= 'pro' 
-    queryset = Proyecto.objects.all()
-
- 
-    def get_context_data(self,**kwargs):
-        context=super(Proyectos, self).get_context_data(**kwargs)
-        
-        context['pro'] = Proyecto.objects.all()
-    
-        return context 
-
-class Infoproyectos(DetailView):
-    template_name = 'app/infoproyectos.html'
-    model = Proyecto
+class Contacto(TemplateView):
+    template_name = 'app/formulario.html'
+  
 
     def get_context_data(self,**kwargs):
-        context=super(Infoproyectos, self).get_context_data(**kwargs)
-        idpro = self.kwargs.get('pk',None)
-        context['infop']= Proyecto.objects.get(pk = idpro)
-        context['pro'] = Proyecto.objects.all()
-        return context """
+        context=super(Contacto, self).get_context_data(**kwargs)
+        context['contact_form'] =Formulario()
+        context['mi']= Inicio.objects.all()
+        context['servi'] = Servicio.objects.all()
+        context['contacto']= Footer.objects.all()
+
+        return context
+
+    def post(self, request,*args,**kwargs):
+        nombre = request.POST.get('nombre')
+        mensaje = request.POST.get('mensaje')
+        email = request.POST.get('email')
+
+
+        body= render_to_string(
+            'app/email_content.html', {
+                'nombre':nombre,
+                'mensaje':mensaje,
+                'email':email,
+            },
+        )
+
+        print(nombre)
+
+        email_message = EmailMessage(
+            subject='mensaje de usuario',
+            body=body,
+            from_email=email,
+            to=['koko-yoana@hotmail.es'],
+        )
+        email_message.content_subtype='html'
+        email_message.send()
+        return redirect('app:inicio')
 
 
 
