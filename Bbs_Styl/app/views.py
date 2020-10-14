@@ -3,7 +3,6 @@ from django.contrib.contenttypes.models import ContentType
 from django.views.generic import *
 from .models import *
 from django.http import HttpResponseRedirect
-from .forms import Formulario
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 
