@@ -1,7 +1,7 @@
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} {% load i18n %} {% block content%}
-<section class="dento-blog-area">
+<section class="dento-blog-area marginAviso">
     <div class="container blog">
-        <div class="row  marginAviso">
+        <div class="row">
             <div class="col-12 col-lg-8">
                 {% for p in blog %}
                 <!-- Single Blog Item -->
@@ -26,7 +26,7 @@
        
                 <!-- Pagination -->
                 <nav class="dento-pagination mb-5 mt-5">
-                    <ul class="pagination pagination-lg  justify-content-center mt-4">
+                    <ul class="pagination pagination-md  justify-content-center mt-4">
                         <li class="page-item active">
                             {% if page_obj.has_previous %}
                             <a class="page-link" href="?page={{page_obj.previous_page_number}}"><i class="fa fa-angle-left fa-lg"></i></a> {% endif %}
@@ -42,7 +42,7 @@
 
 
             <!-- Dento Sidebar Area -->
-          
+    
         </div>
       
     </div>

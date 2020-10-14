@@ -12,15 +12,21 @@
         <p> {{ contact_form.nombre.label  }}</p>
         {% render_field contact_form.nombre class+="form-control" %}
    </div>
-    <div class="form-group">
-       {% csrf_token %}
-        <p> {{ contact_form.mensaje.label  }}</p>
-        {% render_field contact_form.mensaje class+="form-control" %}
-   </div>
+    
     <div class="form-group">
        {% csrf_token %}
         <p> {{ contact_form.email.label  }}</p>
         {% render_field contact_form.email class+="form-control" %}
+   </div>
+     <div class="form-group">
+       {% csrf_token %}
+        <p> {{ contact_form.telefono.label  }}</p>
+        {% render_field contact_form.telefono class+="form-control" %}
+   </div>
+   <div class="form-group">
+       {% csrf_token %}
+        <p> {{ contact_form.mensaje.label  }}</p>
+        {% render_field contact_form.mensaje class+="form-control" %}
    </div>
    <div class="actions mb-5">
 <input type="submit" value="Enviar">

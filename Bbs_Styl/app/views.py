@@ -196,6 +196,7 @@ class Contacto(TemplateView):
         nombre = request.POST.get('nombre')
         mensaje = request.POST.get('mensaje')
         email = request.POST.get('email')
+        telefono = request.POST.get('telefono')
 
 
         body= render_to_string(
@@ -203,6 +204,8 @@ class Contacto(TemplateView):
                 'nombre':nombre,
                 'mensaje':mensaje,
                 'email':email,
+                'telefono':telefono,
+
             },
         )
 
