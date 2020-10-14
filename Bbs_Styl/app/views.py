@@ -46,6 +46,7 @@ class Blog(ListView):
     model =  EntradaBlog
     template_name = 'app/blog.html'
     context_object_name= 'blog' 
+    paginate_by = 4
     queryset = EntradaBlog.objects.all()
     
 
@@ -53,13 +54,12 @@ class Blog(ListView):
         context=super(Blog, self).get_context_data(**kwargs)
         context['destacados']= EntradaBlog.objects.filter(destacados = True)[:3]
         context['mi']= Inicio.objects.all()
-        #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
         context['servi']= Servicio.objects.all()
         
         return context 
 
-""" class InfoBlog(DetailView):
+class InfoBlog(DetailView):
     template_name = 'app/infoBlog.html'
     model =  EntradaBlog
 
@@ -69,9 +69,10 @@ class Blog(ListView):
         context['info'] = EntradaBlog.objects.get(pk = idblog)
         context['contacto']= Footer.objects.all()
         context['mi']= Inicio.objects.all()[0]
+        context['servi']= Servicio.objects.all()
         context['template']= 'app:infoblog'
         context['idTemp'] = idblog
-        return context  """    
+        return context    
 
 
 class Profesional(ListView):
@@ -175,49 +176,6 @@ class BuscadorCP(TemplateView):
 
 
 
-
-
-class Contacto(TemplateView):
-    template_name = 'app/formulario.html'
-  
-
-    def get_context_data(self,**kwargs):
-        context=super(Contacto, self).get_context_data(**kwargs)
-        context['contact_form'] =Formulario()
-        context['mi']= Inicio.objects.all()
-        context['servi'] = Servicio.objects.all()
-        context['contacto']= Footer.objects.all()
-
-        return context
-
-    def post(self, request,*args,**kwargs):
-        nombre = request.POST.get('nombre')
-        mensaje = request.POST.get('mensaje')
-        email = request.POST.get('email')
-        telefono = request.POST.get('telefono')
-
-
-        body= render_to_string(
-            'app/email_content.html', {
-                'nombre':nombre,
-                'mensaje':mensaje,
-                'email':email,
-                'telefono':telefono,
-
-            },
-        )
-
-        print(nombre)
-
-        email_message = EmailMessage(
-            subject='mensaje de usuario',
-            body=body,
-            from_email=email,
-            to=['koko-yoana@hotmail.es'],
-        )
-        email_message.content_subtype='html'
-        email_message.send()
-        return redirect('app:inicio')
 
 
 

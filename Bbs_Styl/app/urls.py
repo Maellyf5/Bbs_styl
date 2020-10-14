@@ -11,6 +11,10 @@ urlpatterns = [
     path('servicios', Servicios.as_view(), name='servicios'),
     path('infoServicios/<int:pk>', InfoServicio.as_view(), name='infoServi'),
     path('buscarCP/', BuscadorCP.as_view(), name='profesionalCP'),
+    path('blog', Blog.as_view(), name='blog'),
+    path('infoblog/<int:pk>', InfoBlog.as_view(), name= 'infoblog'),
+    
+
 
 
 
