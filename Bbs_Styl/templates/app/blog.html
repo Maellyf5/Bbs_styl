@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} {% load i18n %} {% block content%}
 <section class="dento-blog-area marginAviso">
     <div class="container blog">
@@ -39,16 +40,31 @@
                     </ul>
                 </nav>
             </div>
+=======
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
 
+{% block content%}
+>>>>>>> parent of 14740c8... template blog
 
+<div class="container-fluid mb-5">
+    <div class="row justify-content-center">
+        <div class="col-12">
+            <!-- Blog Details Area -->
+            <div class="blog-details-area marginAviso text-center">
+                <h2>AVISO LEGAL</h2>
+                {% for p in peluqueros %}
+
+<<<<<<< HEAD
             <!-- Dento Sidebar Area -->
     
+=======
+                <p class="descripcion text-justify mt-4">{{ p.nombre }} </p>
+                {% endfor %}
+            </div>
+>>>>>>> parent of 14740c8... template blog
         </div>
-      
     </div>
-  
-</section>
+</div>
 
-<!-- *****Blog Area End ***** -->
 
 {% endblock content%}

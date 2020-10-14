@@ -60,7 +60,7 @@ class Blog(ListView):
         
         return context 
 
-class InfoBlog(DetailView):
+""" class InfoBlog(DetailView):
     template_name = 'app/infoBlog.html'
     model =  EntradaBlog
 
@@ -70,10 +70,9 @@ class InfoBlog(DetailView):
         context['info'] = EntradaBlog.objects.get(pk = idblog)
         context['contacto']= Footer.objects.all()
         context['mi']= Inicio.objects.all()[0]
-        context['servi']= Servicio.objects.all()
         context['template']= 'app:infoblog'
         context['idTemp'] = idblog
-        return context    
+        return context  """    
 
 
 class Profesional(ListView):
