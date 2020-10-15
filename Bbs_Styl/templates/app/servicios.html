@@ -24,7 +24,7 @@
     </div>
 </div> -->
 
-<section class="service-area section-gap mb-5 ">
+<section class="service-area section-gap">
     <div class="container-fluid">
         <div class="row justify-content-center">
             <div class="col-md-8 text-center">
@@ -35,15 +35,13 @@
                 </div>
             </div>
         </div>
-        <div class="row">
+        <div class="row justify-content-center">
             {% for p in servi %}
-            <div class="col-lg-3 col-sm-6 col-md-3 float-right">
-                
-                <div class="single-service ">
-                    <img class="img-fluid" src="{% static 'img/service1.jpg' %}" alt="">
+            <div class="col-lg-3 col-sm-6 col-md-4 float-right mr-2 ml-2 mb-5 mt-4">
+                <div class="single-service">
+                    <div class="bg-img-servi" style="background-image: url('{{ p.imagen.url }}')"><a href="{% url 'app:infoServi' p.id %}" style="display:block;height:100%;width:100%"></a></div>
                     <h4>{{ p.nombreServicio }}</h4>
-                </div>
-                
+                </div>  
             </div>
             {% endfor %}
         </div>

@@ -16,7 +16,7 @@ class Index(TemplateView):
         context['contacto']= Footer.objects.all()
         context['servi']= Servicio.objects.all()
         context['pelu'] = Profesionales.objects.all()       
-
+        context['destacados']= EntradaBlog.objects.filter(destacados = True)[:3]
  
         return context
 
