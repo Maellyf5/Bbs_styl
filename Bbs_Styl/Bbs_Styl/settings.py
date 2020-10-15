@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'app',
-    'accounts',
     'bootstrap4',
     
     
@@ -89,6 +88,8 @@ DATABASES = {
         'NAME': 'BbsStyl',
         'CLIENT': {
             'host':'mongodb+srv://Bbs:12345@cluster0.pv42x.mongodb.net/test?retryWrites=true&w=majority', 
+          
+
             'username': 'Bbs',
             'password': '12345',
             'port' : 27017,

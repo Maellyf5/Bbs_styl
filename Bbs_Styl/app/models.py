@@ -40,11 +40,6 @@ class EntradaBlog(models.Model):
 
     def __str__(self):         
         return self.titulo
-    
-
-
-
-
 
 class Servicio(models.Model):
     nombreServicio= models.CharField(max_length=80, null= True)
@@ -62,6 +57,12 @@ class Especialidades(models.Model):
     def __str__(self):         
         return self.nombreEspecialidad
 
+class CodigoPostal(models.Model):
+    codigo = models.IntegerField(null=True)
+    
+    def __str__(self):         
+        return str(self.codigo)
+
 class Precio(models.Model):
     precio = models.IntegerField(null=True)
     nombreEspecialidad = models.ManyToManyField(Especialidades)
@@ -69,14 +70,6 @@ class Precio(models.Model):
       
     def __str__(self):         
         return str(self.precio)
-
-class CodigoPostal(models.Model):
-    codigo = models.IntegerField(null=True)
-    
-    
-    def __str__(self):         
-        return str(self.codigo)
-
 
 class Profesionales(models.Model):
     nombre = models.CharField(max_length=80, null=True)
@@ -91,20 +84,3 @@ class Profesionales(models.Model):
         
     def __str__(self):         
         return self.nombre
-
-
-
-    
-class Blog(models.Model):
-    EntradaBlog=models.TextField(max_length=200, null=True,blank=True)
-
-    
-
-
-
-   
-
-
-    
-
-
