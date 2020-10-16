@@ -186,7 +186,7 @@
       </div>
     </div>
   </div>
-  <section class="ftco-section mt-5">
+  <section class="ftco-section mt-5 mb-4">
     <div class="container">
       <div class="row justify-content-center mb-3 pb-3">
         <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated mrRespon">
@@ -196,56 +196,26 @@
         </div>
       </div>
 
-      <div class="row d-flex">
-        {% for p in destacados %}
-        <div class="col-md-4 d-flex ftco-animate fadeInUp ftco-animated mrRespon">
-          <div class="blog-entry align-self-stretch">
-            <h3 class="heading mt-2 titu_card" style="vertical-align: inherit;">{{ p.titulo }}</h3>
-
-            <img alt="blog destacado" class="card-img-top embed-responsive imagen" src="{{ p.imagen.url }}"></a>
-
-
-            <div class="text py-4 d-block">
-              <div class="meta">
-                <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ p.fecha }}</div>
-
-              </div>
-              <div><a href="#" class="meta-chat"><span class="icon-chat"></span>
-                  <font style="vertical-align: inherit;">
-                    <font style="vertical-align: inherit;">Leer mas...</font>
-                  </font>
-                </a></div>
+      <div class="site-section">
+        <div class="container">
+          <div class="row align-items-stretch retro-layout-2">
+            {% for p in destacados %}
+            <div class="col-md-4">
+                <div class="h-entry mb-30 v-height gradient embed-responsive imgDesta" style="background-image: url('{{ p.imagen.url }}')"></div>  
+                <div class="text">
+                  <h2><a href="{% url 'app:infoServi' p.id %}">{{ p.titulo }}</a></h2>
+                  <p class="date">{{ p.fecha }}</p>
+                </div>
+              </a>
             </div>
+            {% endfor %}
           </div>
-        </div>
-        {% endfor %}
-      </div>
+      </div> 
   </section>
 
-<!--   <div class="site-section bg-light">
-    <div class="container">
-      <div class="row align-items-stretch retro-layout-2">
-        <div class="col-md-4">
-          <a href="single.html" class="h-entry mb-30 v-height gradient" style="background-image: url('images/img_1.jpg');">
-            
-            <div class="text">
-              <h2>The AI magically removes moving objects from videos.</h2>
-              <span class="date">July 19, 2019</span>
-            </div>
-          </a>
-        </div>
-      </div>
-  </div> -->
+
+
   {% endblock content %}
-
-  <nav class=" menu-left ">
-
-  </nav>
-
-
-
-
-
 
 
   <footer class="site-footer bg-footer overlay" style="background-image: url('/static/img/manicura.jpg')">

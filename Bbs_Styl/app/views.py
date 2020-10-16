@@ -24,6 +24,7 @@ class Blog(ListView):
     model =  EntradaBlog
     template_name = 'app/blog.html'
     context_object_name= 'blog' 
+    paginate_by = 3
     queryset = EntradaBlog.objects.all()
     
 
@@ -38,6 +39,22 @@ class Blog(ListView):
 
 
         return context
+
+class InfoBlog(DetailView):
+    template_name = 'app/infoBlog.html'
+    model =  EntradaBlog
+
+    def get_context_data(self, **kwargs):
+        context = super(InfoBlog, self).get_context_data(**kwargs)
+        idblog = self.kwargs.get('pk',None)
+        context['info'] = EntradaBlog.objects.get(pk = idblog)
+        context['mi']= Inicio.objects.all()
+        context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
+        context['pelu'] = Profesionales.objects.all() 
+        return context
+
+    
 
 class Servicios(ListView):
     template_name = 'app/servicios.html'

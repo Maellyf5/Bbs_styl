@@ -545,7 +545,7 @@ img {
 
 /*-----------------------------------------SECCION DE SERVICIOS GENERALES*/
 .section-gap {
-  padding: 120px 0;
+  padding: 100px 0;
 }
 
 .single-service {
@@ -664,7 +664,15 @@ img {
 
 }
 
-/* .retro-layout-2 .h-entry.gradient:before {
+/*---------------------IMG BLOG DESTACADOS INICIO ------------*/
+.imgDesta{
+  -o-object-fit: cover;
+    object-fit: cover;
+    height: 250px;
+    width: 200px;
+}
+
+.retro-layout-2 .h-entry.gradient:before {
   z-index: 1;
   content: '';
   position: absolute;
@@ -673,4 +681,68 @@ img {
   bottom: 0;
   left: 0;
   background: linear-gradient(to bottom, transparent 0%, transparent 18%, rgba(0, 0, 0, 0.8) 99%, rgba(0, 0, 0, 0.8) 100%);
-} */
+} 
+
+.retro-layout-2 .h-entry {
+  display: block;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background-size: cover;
+  background-position: center center; 
+}
+
+.retro-layout-2 .h-entry.mb-30 {
+    margin-bottom: 30px; 
+}
+
+.retro-layout-2 .h-entry .date {
+    font-size: 15px; 
+}
+
+.retro-layout-2 .h-entry.gradient {
+    position: relative; 
+}
+
+
+.retro-layout-2 .text {
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  padding: 20px;
+  max-width: 350px; 
+}
+
+.retro-layout-2 .text h2 a{
+    color: #fff;
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 0; 
+}
+
+.retro-layout-2 .text h2 a:hover {
+  color: #ba9237;
+  text-decoration: none;
+}
+
+.retro-layout-2 .text p {
+    color: rgba(255, 255, 255, 0.712); 
+}
+
+/*---------------------FIN -----------*/
+
+/*------------- Blog------------------*/
+
+.imgBlog{
+  -o-object-fit: cover;
+    object-fit: cover;
+    height: 200px;
+    width: 200px;
+}
+
+.padding-grey {
+  background: #fff;
+  -moz-box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
+  -webkit-box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
+  box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
+}

@@ -1,67 +1,9 @@
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
 {% block content%}
-<!-- 
-<div class="container-fluid mb-5">
-    <div class="row justify-content-center">
-        <div class="col-12">
-            
-            <div class="blog-details-area marginAviso text-center">
-                <h2>AVISO LEGAL</h2>
-                {% for p in servi %}
-
-                <p class="descripcion text-justify mt-4">{{ p.nombreServicio }} </p>and
-                
-                    {% for y in p.peluquero.all %}
-                    <span class="dropdown-item-text">{{ y.nombre }}</span> {% endfor %}
-                
-                {% endfor %}
 
 
-
-            </div>
-        </div>
-    </div>
-</div> -->
-
-<section class="service-area section-gap mb-5 marginAviso">
-  <div class="container-fluid">
-    <div class="row justify-content-center">
-      <div class="col-md-8 text-center">
-        <div class="section-title mt-5">
-          <h1>SERVICIOS GENERALES</h1>
-          <nav class="navbar bannerCp justify-content-center">
-            <p class="bannerP" style="color:black;">Encuentra a tu profesional más cercano</p>
-            <form class="form-inline">
-              <input
-                class="form-control mr-sm-2 text-center"
-                type="search"
-                placeholder="Codigo Postal"
-                aria-label="Search"
-              />
-              <button
-                class="btn my-2 my-sm-0"
-                style="vertical-align: middle"
-                type="submit"
-                src="#"
-              >
-                <span>Buscar</span>
-              </button>
-            </form>
-          </nav>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      {% for p in servi %}
-      <div class="col-lg-3 col-sm-6 col-md-3 float-right">
-        <div class="single-service">
-          <img class="img-fluid" src="{% static 'img/service1.jpg' %}" alt="" />
-          <h4>{{ p.nombreServicio }}</h4>
-        </div>
-      </div>
-      {% endfor %}
-    </div>
+<div class="container-fluid mt-4 mb-5 marginAviso text-center">
+  <h3>En construcción...</h3>
   </div>
-</section>
 
 {% endblock content%}
