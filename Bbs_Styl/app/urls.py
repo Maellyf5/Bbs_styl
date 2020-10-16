@@ -13,6 +13,8 @@ urlpatterns = [
     path('cookies', Cookies.as_view(), name='cookies'),
     path('profesionales', Profesional.as_view(), name='profesional'),
     path('buscarCP/', BuscadorCP.as_view(), name='profesionalCP'),
+    path('conocenos', Conoce.as_view(), name='conocenos'),
+
 
 
 

@@ -1,0 +1,33 @@
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
+{% block content%}
+
+
+   
+
+
+     <div class="row marginAviso ">
+        {% for p in conoce %}
+        <div class="col-md-6 ">
+                <img src="{{ p.imagenLogo.url }}" class="mb-3" alt="imagen" />
+
+          <div class="d-flex align-items-center">
+          </div>
+
+        </div>
+        <div class="col-md-5 mrRespon">
+
+          <p class="font-weight text-justify">{% autoescape off %}
+            {{p.texto}}
+          </p>{% endautoescape %}
+
+        </div>
+        {% endfor %}
+      </div>
+
+
+
+
+ 
+
+
+{% endblock content%}

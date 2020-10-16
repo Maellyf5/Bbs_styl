@@ -84,3 +84,19 @@ class Profesionales(models.Model):
         
     def __str__(self):         
         return self.nombre
+
+class Conocenos(models.Model):
+    conocenos = models.CharField(max_length=50, null=True,blank=True)
+    texto = models.TextField(max_length=10000, null=True)
+    imagenLogo = models.ImageField(upload_to='static/img')
+
+    def __str__(self):         
+        return self.conocenos
+
+class Colaboradores(models.Model):
+    nombre = models.CharField(max_length=70)
+    imagen = models.ImageField(upload_to = 'colaborador', default = 'colaborador/profile.png')
+
+    def __str__(self):         
+        return self.nombre
+

@@ -138,3 +138,36 @@ class Cookies(TemplateView):
         context['contacto']= Footer.objects.all()
         context['servi']= Servicio.objects.all()
         return context   
+
+
+class Conoce(ListView):
+    template_name = 'app/conocenos.html'
+    context_object_name= 'conoce' 
+    queryset = Conocenos.objects.all() 
+
+    def get_context_data(self,**kwargs):
+        context=super(Conoce, self).get_context_data(**kwargs)
+        context['mi']= Inicio.objects.all()
+        context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
+        context['pelu'] = Profesionales.objects.all()       
+ 
+        return context
+
+
+class Colaborador(ListView):
+    model = Colaboradores
+    template_name = 'app/conocenos.html'
+    context_object_name= 'colaborador' 
+    queryset = Colaboradores.objects.all() 
+   
+    def get_context_data(self, **kwargs):
+        context=super(Colaborador, self).get_context_data(**kwargs)
+        context['mi']= Inicio.objects.all()
+        context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
+        context['pelu'] = Profesionales.objects.all()       
+        context['conoce'] = Conocenos.objects.all() 
+    
+        return context
+        return context

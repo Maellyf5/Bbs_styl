@@ -20,7 +20,7 @@
         <div class="col-5 menu-left displayLeft mb-5">
           <ul class="navbar-nav ml">
             <li><a class="active dorado" href="{% url 'app:index' %}">INICIO</a></li>
-            <li><a href="about.html" class="dorado mr-3">CONÓCENOS</a></li>
+            <li><a href="{% url 'app:conocenos' %}" class="dorado mr-3">CONÓCENOS</a></li>
             <li><a href="{% url 'app:profesional' %}" class="dorado mr-3">PROFESIONALES</a></li>
 
             <li class="listArrow"><a class="dorado" href="{% url 'app:servicios' %}">SERVICIOS</a>
@@ -49,7 +49,7 @@
             <ul class="navbar-nav justify-content-start d-flex">
 
               <li class="hide nav-item"><a class="active dorado" href="{% url 'app:index' %}">INICIO</a></li>
-              <li class="hide nav-item"><a href="about.html" class="dorado">CONÓCENOS</a></li>
+              <li class="hide nav-item"><a href="{% url 'app:conocenos' %}" class="dorado">CONÓCENOS</a></li>
               <li class="hide nav-item"><a href="{% url 'app:profesional' %}" class="dorado">PROFESIONALES</a></li>
 
               <li class="hide listArrow nav-item"><a class="dorado" href="{% url 'app:servicios' %}">SERVICIOS</a>
