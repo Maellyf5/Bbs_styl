@@ -731,6 +731,7 @@ img {
 
 /*---------------------FIN -----------*/
 
+
 /*------------- Blog------------------*/
 
 .imgBlog{
@@ -747,6 +748,98 @@ img {
   box-shadow: 0px 2px 7px rgba(0,0,0,0.25);
 }
 
+/*---------------blog destacados Right------*/
+
+
+a.linkStyle{
+  color: black;
+}
+
+a.linkStyle:hover {
+  color: #ba9237;
+  text-decoration: none;
+}
+
+.blogRight{
+  -o-object-fit: cover;
+    object-fit: cover;
+    height: 80px;
+    width: 120px;
+  margin-left: 10px
+}
+
+.single-sidebar-widget .title {
+  background: #04091e;
+  /* background: #c5a75fe1; */
+  color: #fff;
+  padding: 12px 20px;
+  margin-bottom: 20px;
+}
+
+.most-popular-widget .single-list {
+  border-bottom: 1px solid #eee;
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+}
+
+.most-popular-widget .single-list:last-child {
+  border-bottom: none;
+}
+
+
+.most-popular-widget .meta li {
+  display: inline-block;
+  color: #777777;
+  margin-right: 10px;
+  font-weight: 300;
+  font-size: 12px;
+}
+
+.most-popular-widget .meta li .far {
+  margin-right: 10px;
+  font-weight: 700;
+}
+
+
+.most-popular-widget .details {
+  padding-left: 20px;
+}
+
+
+.most-popular-widget .details h6:hover {
+  color: #cfaf64f1;
+}
+
+.social-network-widget .social-list li {
+  margin-bottom: 10px;
+  padding: 9px;
+}
+
+.social-network-widget .social-list li a {
+  color: #fff;
+  text-align: right;
+  font-weight: 500;
+  border-left: 1px solid #eee;
+  padding-left: 10px;
+}
+
+.social-network-widget .social-list li i {
+  color: #fff;
+}
+
+.social-network-widget .social-list .fb {
+  background: #4c63a2;
+}
+
+.social-network-widget .social-list .ig {
+  background: #bd649f;
+}
+
+/*---------------FIN BLOG------*/
+
+
+
+/*------------CONOCENOS --------------------------------------------*/
 .contenedorconoce{
   text-align: center;
 }

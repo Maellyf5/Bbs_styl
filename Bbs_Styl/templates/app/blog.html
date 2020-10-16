@@ -17,15 +17,15 @@
                 {% for p in blog %}
                 <!-- Single Blog Item -->
                 <div class="row align-items-center padding-grey mb-4">
-                    <div class="col-lg-6 pl-0">
+                    <div class="col-lg-6 pl-0 pr-0">
                         <div class="feature-img relative">
                             <img class="embed-responsive imgDesta" src="{{ p.imagen.url }}" alt="imagen blog">
                         </div>
                     </div>
                     <div class="col-lg-6 ">
-                        <div class="card-body p-0 ">
-                            <h5 class="card-title mt-2 mb-0" href="#">{{ p.titulo }}</h5>
-                            <span><small class="text-muted">{{ p.fecha }}</small></span>
+                        <div class="card-body p-0 pb-2">
+                            <h5 class="card-title mt-2 mb-0"><a class="linkStyle" href="{% url 'app:infoblog' p.id %}">{{ p.titulo }}</a></h5>
+                            <span><i class="far fa-calendar-alt fa-xs mr-1"></i><small class="text-muted">{{ p.fecha }}</small></span>
                             <p class="card-text mt-2 mb-1">{{ p.descripcion|truncatechars:213 }}</p>
                             <a class="leerMas" href="{% url 'app:infoblog' p.id %}">Leer más</a>     
                         </div>
@@ -49,39 +49,47 @@
                 </nav>
             </div>
 
+            <!-- Blog Sidebar Area -->
 
-            <!-- Dento Sidebar Area -->
-            <div class="col-8 col-lg-4 col-12 col-md-8">
-
-                <div class="dento-sidebar ">
-
-                    <!-- Single Widget Area -->
-                    <div class="single-widget-area news-widget mt-4">
-                        <h5 class="widget-title mb-3">LOS MÁS DESTACADOS</h5>
-
-                        <!-- Single News Area -->
+            <div class="col-lg-4">
+                <div class="sidebars-area padding-grey">
+                    <div class="single-sidebar-widget most-popular-widget">
+                        <h6 class="title">Más destacados</h6>
                         {% for p in destacados %}
-                        <div class="single-news-area d-flex align-items-center row">
-                            <div class="col-8 mb-3">
-                                <img class="imgdesta" src="{{ p.imagen.url }}" alt=" ">
+                        <div class="single-list flex-row d-flex">
+                            <div class="thumb">
+                                <img class=" blogRight" src="{{ p.imagen.url }}" alt="">
                             </div>
-
-                            <div class="col-4">
-                                <a class="title" href="{% url 'app:infoblog' p.id %}" class="post-title ">{{ p.titulo }}</a>
-                                <br>
-                                <span class="post-date ">{{ p.fecha }}</span>
+                            <div class="details">
+                                <a class="linkStyle" href="{% url 'app:infoblog' p.id %}">
+                                    <h6>{{ p.titulo }}</h6>
+                                </a>
+                                <ul class="meta">
+                                    <li><span class="far fa-calendar-alt"></span>{{ p.fecha }}</li>
+                                </ul>
                             </div>
                         </div>
                         {% endfor %}
                     </div>
-
+                    <div class="single-sidebar-widget social-network-widget">
+                        <h6 class="title">Redes Sociales</h6>
+                        <ul class="social-list">
+                            <li class="d-flex justify-content-between align-items-center fb">
+                                <div class="icons d-flex flex-row align-items-center">
+                                    <i class="fab fa-facebook-square fa-2x"></i>
+                                </div>
+                                <a href="{{ p.facebook }}">Danos like</a>
+                            </li>
+                            <li class="d-flex justify-content-between align-items-center ig">
+                                <div class="icons d-flex flex-row align-items-center">
+                                    <i class="fab fa-instagram fa-2x" aria-hidden="true"></i>
+                                </div>
+                                <a href="{{ p.instagram }}">Síguenos</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
-
-
-            </div>
-           
-
-            
+            </div>  
                  
         </div>
     </div>
