@@ -14,48 +14,23 @@
             </div>
             <div class="filters-content">
                 <div class="row grid mt-5">
-                    <div class="single-gallery col-lg-4 col-md-6 all"">
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{% static 'img/g1.jpg' %}" alt="">
-                            </div>
-                            <a href="{% static 'img/g1.jpg' %}" class="img-pop-up">
-                                <div class="middle">
-                                    <div class="text align-self-center d-flex">
-                                        <img src="{% static 'img/preview.png' %}" alt=""></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
+                    {% for p in fotos %}
                     <div class="single-gallery col-lg-4 col-md-6 all">
                         <div class="relative">
                             <div class="thumb">
                                 <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{% static 'img/g2.jpg' %}" alt="">
+                                <img class="image img-fluid mt-1" src="{{ p.imagen.url }}" alt="">
                             </div>
-                            <a href="{% static 'img/g2.jpg' %}" class="img-pop-up">
-                                <div class="middle">
-                                    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
+                            <a href="{{ p.imagen.url }}" class="img-pop-up">
+                                <div class="middle" >
+                                    <div class="text align-self-center d-flex">
+                                        <img src="{% static 'img/preview.png' %}"  alt=""></div>
                                 </div>
                             </a>
                         </div>
                     </div>
-                    <div class="single-gallery col-lg-4 col-md-6 all" >
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid" src="{% static 'img/g3.jpg' %}" alt="">
-                            </div>
-                            <a href="{% static 'img/g3.jpg' %}" class="img-pop-up">
-                                <div class="middle">
-                                    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
-                                </div>
-                            </a>
-
-                        </div>
-                    </div>
-
+                        {% endfor %}
+                    </div> 
                 </div>
             </div>
         </div>

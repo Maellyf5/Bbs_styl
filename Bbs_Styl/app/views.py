@@ -174,11 +174,14 @@ class Colaborador(ListView):
     
 class Fotos(TemplateView):
     template_name = 'app/galeria.html'
+    model= Galeria
+    queryset = Galeria.objects.all() 
 
     def get_context_data(self,**kwargs):
         context=super(Fotos, self).get_context_data(**kwargs)
         context['mi']= Inicio.objects.all()
         context['contacto']= Footer.objects.all()
         context['servi']= Servicio.objects.all()
+        context['fotos'] = Galeria.objects.all() 
         return context  
         
