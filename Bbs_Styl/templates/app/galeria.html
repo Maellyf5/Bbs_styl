@@ -1,0 +1,63 @@
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
+
+{% block content%}
+    <section class="gallery-area marginAviso" id="gallery">
+        <div class="container galeria ">
+            <div class="row justify-content-center">
+                <div class="col-md-8 text-center mt-5">
+                    <div class="section-title">
+                        <h1>Recent Style Images</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                            magna aliqua ad minim veniam</p>
+                    </div>
+                </div>
+            </div>
+            <div class="filters-content">
+                <div class="row grid mt-5">
+                    <div class="single-gallery col-lg-4 col-md-6 all"">
+                        <div class="relative">
+                            <div class="thumb">
+                                <div class="overlay overlay-bg"></div>
+                                <img class="image img-fluid" src="{% static 'img/g1.jpg' %}" alt="">
+                            </div>
+                            <a href="{% static 'img/g1.jpg' %}" class="img-pop-up">
+                                <div class="middle">
+                                    <div class="text align-self-center d-flex">
+                                        <img src="{% static 'img/preview.png' %}" alt=""></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="single-gallery col-lg-4 col-md-6 all">
+                        <div class="relative">
+                            <div class="thumb">
+                                <div class="overlay overlay-bg"></div>
+                                <img class="image img-fluid" src="{% static 'img/g2.jpg' %}" alt="">
+                            </div>
+                            <a href="{% static 'img/g2.jpg' %}" class="img-pop-up">
+                                <div class="middle">
+                                    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="single-gallery col-lg-4 col-md-6 all" >
+                        <div class="relative">
+                            <div class="thumb">
+                                <div class="overlay overlay-bg"></div>
+                                <img class="image img-fluid" src="{% static 'img/g3.jpg' %}" alt="">
+                            </div>
+                            <a href="{% static 'img/g3.jpg' %}" class="img-pop-up">
+                                <div class="middle">
+                                    <div class="text align-self-center d-flex"><img src="{% static 'img/preview.png' %}" alt=""></div>
+                                </div>
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content%}

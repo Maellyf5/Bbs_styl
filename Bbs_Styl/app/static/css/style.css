@@ -852,3 +852,22 @@ a.linkStyle:hover {
   width: 200px;
   text-align: center;
 }
+
+/*-----------------GALERIA----------------------------------*/
+
+.img-fluid {
+  margin-bottom: -6px;
+  cursor: pointer
+}
+
+.img-fluid:hover {
+  opacity: 0.6;
+  transition: 0.3s;
+}
+
+
+
+
+
+
+
