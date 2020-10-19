@@ -3,6 +3,9 @@ from django.contrib.contenttypes.models import ContentType
 from django.views.generic import *
 from .models import *
 from django.http import HttpResponseRedirect
+from .forms import Formulario, FormPro
+from django.core.mail import EmailMessage
+from django.template.loader import render_to_string
 
 
 # Create your views here.
@@ -184,4 +187,92 @@ class Fotos(TemplateView):
         context['servi']= Servicio.objects.all()
         context['fotos'] = Galeria.objects.all() 
         return context  
+
+
+
+
+class Contacto(TemplateView):
+    template_name = 'app/contacto.html'
+  
+
+    def get_context_data(self,**kwargs):
+        context=super(Contacto, self).get_context_data(**kwargs)
+        context['contact_form'] =Formulario()
+        context['pro'] = Inicio.objects.all()
+        context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
+        return context
+
+    def post(self, request,*args,**kwargs):
+        nombre = request.POST.get('nombre')
+        mensaje = request.POST.get('mensaje')
+        email = request.POST.get('email')
+        telefono = request.POST.get('telefono')
+
+
+        body= render_to_string(
+            'app/email_content.html', {
+                'nombre':nombre,
+                'mensaje':mensaje,
+                'email':email,
+                'telefono':telefono,
+            },
+        )
+
+        print(nombre)
+
+        email_message = EmailMessage(
+            subject='mensaje de usuario',
+            body=body,
+            from_email=email,
+            to=['koko-yoana@hotmail.es'],
+        )
+        email_message.content_subtype='html'
+        email_message.send()
+        return redirect('app:inicio')
+
+
+class ReProfesional(TemplateView):
+    template_name = 'app/reprofesional.html'
+  
+
+    def get_context_data(self,**kwargs):
+        context=super(ReProfesional, self).get_context_data(**kwargs)
+        context['contact_form'] =FormPro()
+        context['pro'] = Inicio.objects.all()
+        context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
+        return context
+
+    def post(self, request,*args,**kwargs):
+        nombre = request.POST.get('nombre')
+        mensaje = request.POST.get('mensaje')
+        email = request.POST.get('email')
+        telefono = request.POST.get('telefono')
+        peluqueria = request.POST.get('peluqueria')
         
+
+
+        body= render_to_string(
+            'app/email_content_pro.html', {
+                'nombre':nombre,
+                'mensaje':mensaje,
+                'email':email,
+                'telefono':telefono,
+                'peluqueria':peluqueria,
+                
+            },
+        )
+
+        print(nombre)
+
+        email_message = EmailMessage(
+            subject='mensaje de usuario',
+            body=body,
+            from_email=email,
+            to=['koko-yoana@hotmail.es'],
+        )
+        email_message.content_subtype='html'
+        email_message.send()
+        return redirect('app:inicio')
+

@@ -15,7 +15,9 @@ urlpatterns = [
     path('buscarCP/', BuscadorCP.as_view(), name='profesionalCP'),
     path('conocenos', Conoce.as_view(), name='conocenos'),
     path('galeria',Fotos.as_view(), name='galeria'),
- 
+    path('contacto/', Contacto.as_view(), name='contactos'),
+    path('registrate/', ReProfesional.as_view(), name='reprofesional'),
+
     
 
 
