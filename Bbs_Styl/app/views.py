@@ -4,8 +4,10 @@ from django.views.generic import *
 from .models import *
 from django.http import HttpResponseRedirect
 from .forms import Formulario, FormPro
+from django.forms import MultipleChoiceField
 from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
+from random import choices
 
 
 # Create your views here.
@@ -208,7 +210,7 @@ class Contacto(TemplateView):
         mensaje = request.POST.get('mensaje')
         email = request.POST.get('email')
         telefono = request.POST.get('telefono')
-
+        peluqueria = request.POST.get('peluqueria')
 
         body= render_to_string(
             'app/email_content.html', {
@@ -216,6 +218,7 @@ class Contacto(TemplateView):
                 'mensaje':mensaje,
                 'email':email,
                 'telefono':telefono,
+                'peluqueria':peluqueria
             },
         )
 
@@ -259,7 +262,10 @@ class ReProfesional(TemplateView):
                 'mensaje':mensaje,
                 'email':email,
                 'telefono':telefono,
-                'peluqueria':peluqueria,
+                'peluqueria':peluqueria
+
+
+
                 
             },
         )
