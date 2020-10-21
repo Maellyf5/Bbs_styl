@@ -840,18 +840,7 @@ a.linkStyle:hover {
 
 
 /*------------CONOCENOS --------------------------------------------*/
-.contenedorconoce{
-  text-align: center;
-}
 
-.imgconoce {
-  background-image: url(http://cdn2.hubspot.net/hubfs/763617/images/img-left.png?t=1466090614807);
-  padding: 5px 10px 5px 10px;
-  margin: 2px;
-  display:inline-block;
-  width: 200px;
-  text-align: center;
-}
 
 /*-----------------GALERIA----------------------------------*/
 
@@ -864,6 +853,15 @@ a.linkStyle:hover {
   opacity: 0.6;
   transition: 0.3s;
 }
+/*-----------------Fin galeria----------------------------------*/
+ .conocenos{
+font-family: 'Dancing Script', cursive;
+ width:1500px;
+ height: 750px;
+ }
+
+ 
+
 
 
 

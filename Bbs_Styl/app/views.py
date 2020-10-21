@@ -252,7 +252,7 @@ class ReProfesional(TemplateView):
         mensaje = request.POST.get('mensaje')
         email = request.POST.get('email')
         telefono = request.POST.get('telefono')
-        peluqueria = request.POST.get('peluqueria')
+        especialidad = request.POST.get('especialidad')
         
 
 
@@ -262,7 +262,7 @@ class ReProfesional(TemplateView):
                 'mensaje':mensaje,
                 'email':email,
                 'telefono':telefono,
-                'peluqueria':peluqueria
+                'especialidad':especialidad,
 
 
 
