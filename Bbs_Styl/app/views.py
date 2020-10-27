@@ -282,3 +282,10 @@ class ReProfesional(TemplateView):
         email_message.send()
         return redirect('app:inicio')
 
+
+def main_view(request):
+    obj = Rating.objects.filter(score=0).order_by("?").first()
+    context ={
+        'object': obj
+    }
+    return render(request, 'app/profesionales.html', context)

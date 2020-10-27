@@ -860,6 +860,9 @@ font-family: 'Dancing Script', cursive;
  height: 750px;
  }
 
+.checked {
+  color: orange;
+}
  
 
 

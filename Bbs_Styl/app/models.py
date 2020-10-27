@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.contenttypes.fields import GenericRelation
 from django.contrib.contenttypes.models import ContentType
+from django.core.validators import MaxValueValidator, MinValueValidator
 
 
 
@@ -22,10 +23,9 @@ class Footer(models.Model):
     horario = models.CharField(max_length=80, null=True)
     mail = models.EmailField(null= True,blank=True)
     instagram = models.URLField(null=True,blank=True)
-    facebook= models.URLField(null=True,blank=True)
-    aviso= models.TextField(max_length=10000, null=True,blank=True)
-    cookies= models.TextField(max_length=10000, null=True,blank=True)
-    
+    facebook = models.URLField(null=True,blank=True)
+    aviso = models.TextField(max_length=10000, null=True,blank=True)
+    cookies = models.TextField(max_length=10000, null=True,blank=True)
     
     def __str__(self):         
         return self.mail
@@ -108,3 +108,16 @@ class Galeria(models.Model):
 
     def __str__(self):         
         return self.nomImgGaleria
+
+
+class Rating(models.Model):
+    image = models.ImageField(upload_to='images/')
+    score = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(0),
+        ]
+    )
+
+    def __str__(self):
+        return str(self.pk)
