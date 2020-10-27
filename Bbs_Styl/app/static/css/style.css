@@ -844,14 +844,21 @@ a.linkStyle:hover {
 
 /*-----------------GALERIA----------------------------------*/
 
-.img-fluid {
+.img-fluida {
   margin-bottom: -6px;
   cursor: pointer
 }
 
-.img-fluid:hover {
+.img-fluida:hover {
   opacity: 0.6;
   transition: 0.3s;
+}
+.img-pop-up{
+  position: relative;
+  z-index: 80;
+  top:300px;
+  background-color: red;
+  right: 500px;
 }
 /*-----------------Fin galeria----------------------------------*/
  .conocenos{

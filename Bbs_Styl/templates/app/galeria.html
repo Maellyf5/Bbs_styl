@@ -1,38 +1,38 @@
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
 
 {% block content%}
-    <section class="gallery-area marginAviso" id="gallery">
-        <div class="container galeria ">
-            <div class="row justify-content-center">
-                <div class="col-md-8 text-center mt-5">
-                    <div class="section-title">
-                        <h1>Recent Style Images</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                            magna aliqua ad minim veniam</p>
-                    </div>
-                </div>
-            </div>
-            <div class="filters-content">
-                <div class="row grid mt-5">
-                    {% for p in fotos %}
-                    <div class="single-gallery col-lg-4 col-md-6 all">
-                        <div class="relative">
-                            <div class="thumb">
-                                <div class="overlay overlay-bg"></div>
-                                <img class="image img-fluid mt-1" src="{{ p.imagen.url }}" alt="">
-                            </div>
-                            <a href="{{ p.imagen.url }}" class="img-pop-up">
-                                <div class="middle" >
-                                    <div class="text align-self-center d-flex">
-                                        <img src="{% static 'img/preview.png' %}"  alt=""></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                        {% endfor %}
-                    </div> 
-                </div>
-            </div>
+<section class="ftco-section mt-5 mb-4 marginAviso">
+    <div class="contenedor">
+      <div class="row justify-content-center mb-3 pb-3">
+        <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated mrRespon">
+          <h2 class="mb-3 mt-4 ">NUESTRA GALERIA DE FOTOS</h2>
         </div>
-    </section>
+      </div>
+
+      <div class="site-section">
+        <div class="container">
+          <div class="row align-items-stretch retro-layout-2">
+            {% for p in fotos %}
+            <div class="col-md-3">
+                
+                <div class="h-entry mb-30 v-height gradient embed-responsive imgDesta" style="background-image: url('{{ p.imagen.url }}')">
+                    <a href="{{ p.imagen.url }}" class="img-pop-up"></a>
+                </div>
+                
+            </div>
+            {% endfor %}
+          </div>
+      </div> 
+      <div class="relative">
+        <div class="thumb">
+            <div class="overlay overlay-bg"></div>
+            <img class="image img-fluid" src="img/gallery/g2.jpg" alt="">
+        </div>
+        <a href="img/gallery/g2.jpg" class="img-pop-up">
+        
+  </section>
+
+
+
+    
 {% endblock content%}

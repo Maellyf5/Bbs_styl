@@ -101,8 +101,6 @@ class Colaboradores(models.Model):
         return self.nombre
     
 class Galeria(models.Model):
-    tituloPag = models.TextField(max_length=10000, null=True)
-    descripcionpag = models.TextField(null=True)
     imagen = models.ImageField(upload_to='static/img')
     nomImgGaleria = models.CharField(max_length=70)
 
