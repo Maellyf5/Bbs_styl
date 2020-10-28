@@ -73,17 +73,21 @@ class Precio(models.Model):
 
 class Profesionales(models.Model):
     nombre = models.CharField(max_length=80, null=True)
-    valoracion = models.IntegerField(null=True)
     disponibilidad = models.TextField(max_length=200, null=True,blank=True)
     imagen = models.ImageField(upload_to='static/img')
     nombreEspecialidades = models.ManyToManyField(Especialidades)
     CodigoPostales = models.ManyToManyField(CodigoPostal,related_name=("profesionales"))
     precioEspecialidades = models.ManyToManyField(Precio)
-
-   
-        
+    valoracion = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(0),
+        ]
+    )
+      
     def __str__(self):         
         return self.nombre
+
 
 class Conocenos(models.Model):
     conocenos = models.CharField(max_length=50, null=True,blank=True)

@@ -52,9 +52,7 @@
 
       {% endfor %}
 
-      {% for p in object %}
-       {{ p.score }}
-     {% endfor %}
+
 
     </div>
   </div>
@@ -62,6 +60,17 @@
 
 
 
+
+{% for p in peluqueros %}
+
+  {% if p.valoracion %}
+  <i class="fas fa-star amber-text"{{ p.valoracion  }} ></i>  
+                          
+  {% endif %}
+
+    
+
+{% endfor %}
 
 
 {% endblock content%}

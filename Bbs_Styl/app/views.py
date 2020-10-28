@@ -105,6 +105,7 @@ class Profesional(ListView):
         context['contacto']= Footer.objects.all()
         context['servicios']= Servicio.objects.all()
         context['servi']= Servicio.objects.all()
+      
 
         return context
 
