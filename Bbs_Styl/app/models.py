@@ -78,6 +78,12 @@ class Profesionales(models.Model):
     nombreEspecialidades = models.ManyToManyField(Especialidades)
     CodigoPostales = models.ManyToManyField(CodigoPostal,related_name=("profesionales"))
     precioEspecialidades = models.ManyToManyField(Precio)
+    telefono = models.IntegerField(null= True,blank=True)
+    email = models.EmailField(null= True,blank=True)
+    PerfilGaleria1 = models.ImageField(upload_to='static/img',blank=True)
+    PerfilGaleria2 = models.ImageField(upload_to='static/img',blank=True)
+    PerfilGaleria3 = models.ImageField(upload_to='static/img',blank=True)
+    PerfilGaleria4 = models.ImageField(upload_to='static/img',blank=True)
     valoracion = models.IntegerField(default=0,
         validators=[
             MaxValueValidator(5),
