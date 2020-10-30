@@ -29,19 +29,40 @@
           </div>
 
           <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star checked"></span>
-          <span class="fa fa-star"></span>
-          <span class="fa fa-star"></span>
-          <p class="text-muted">{{ p.valoracion }}</p>
+         
+          {% if p.valoracion == 1  %}
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+
+          {% if p.valoracion == 2 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+
+          {% endif %}
+          
+          {% if p.valoracion == 3 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if p.valoracion == 4 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if p.valoracion == 5 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}
 
 
 
           <div class="text py-4 d-block ">
-            <div class="meta">
-              <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ p.precio }}$</div>
-            </div>
+            
             <div><span class="icon-chat "></span>
               <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
             </div>
@@ -61,16 +82,6 @@
 
 
 
-{% for p in peluqueros %}
-
-  {% if p.valoracion %}
-  <i class="fas fa-star amber-text"{{ p.valoracion  }} ></i>  
-                          
-  {% endif %}
-
-    
-
-{% endfor %}
 
 
 {% endblock content%}

@@ -5,8 +5,13 @@
 <div class="container-fluid mb-5 marginAviso">
 
   {% if post %}
-
-  <p>Profesionales Encontrados:{{post|length}} profesional</p>
+     {% if post|length == 1 %}
+        <p>Profesionales Encontrados:{{post|length}} profesional</p>
+     {% endif %}
+      {% if post|length > 1 %}
+        <p>Profesionales Encontrados:{{post|length}} profesionales</p>
+     {% endif %}
+      
   <div class="d-flex justify-content-center ">
     <div class="row CajaAncho d-flex justify-content-center">
 
@@ -20,16 +25,36 @@
           </div>
 
           <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ i.nombre }}</h3>
-          <ul class="list-unstyled list-inline rating mb-0">
-            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"> </i></li>
-            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-            <li class="list-inline-item mr-0"><i class="fas fa-star amber-text"></i></li>
-            <li class="list-inline-item"><i class="fas fa-star-half-alt amber-text"></i></li>
-            <li class="list-inline-item">
-              <p class="text-muted">{{ i.valoracion }}</p>
-            </li>
-          </ul>
+          
+          {% if i.valoracion == 1  %}
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+
+          {% if i.valoracion == 2 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+
+          {% endif %}
+          
+          {% if i.valoracion == 3 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if i.valoracion == 4 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if i.valoracion == 5 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+
 
 
           <div class="text py-4 d-block ">

@@ -96,7 +96,7 @@ class InfoServicio(DetailView):
 class Profesional(ListView):
     template_name = 'app/profesionales.html'
     context_object_name= 'peluqueros' 
-    queryset = Profesionales.objects.all() 
+    queryset = Profesionales.objects.all()
     
     def get_context_data(self,**kwargs):
         context=super(Profesional, self).get_context_data(**kwargs)
@@ -161,22 +161,6 @@ class Conoce(ListView):
         return context
 
 
-class Colaborador(ListView):
-    model = Colaboradores
-    template_name = 'app/conocenos.html'
-    context_object_name= 'colaborador' 
-    queryset = Colaboradores.objects.all() 
-   
-    def get_context_data(self, **kwargs):
-        context=super(Colaborador, self).get_context_data(**kwargs)
-        context['mi']= Inicio.objects.all()
-        context['contacto']= Footer.objects.all()
-        context['servi']= Servicio.objects.all()
-        context['pelu'] = Profesionales.objects.all()       
-        context['conoce'] = Conocenos.objects.all() 
-    
-        return context
-        return context
     
 class Fotos(TemplateView):
     template_name = 'app/galeria.html'
@@ -284,9 +268,4 @@ class ReProfesional(TemplateView):
         return redirect('app:inicio')
 
 
-def main_view(request):
-    obj = Rating.objects.filter(score=0).order_by("?").first()
-    context ={
-        'object': obj
-    }
-    return render(request, 'app/profesionales.html', context)
+

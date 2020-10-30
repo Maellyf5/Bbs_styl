@@ -17,7 +17,6 @@ urlpatterns = [
     path('galeria',Fotos.as_view(), name='galeria'),
     path('contacto/', Contacto.as_view(), name='contactos'),
     path('registrate/', ReProfesional.as_view(), name='reprofesional'),
-    path('', main_view, name="main-view"),
     
 
 

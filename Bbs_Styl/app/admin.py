@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Inicio, EntradaBlog, Footer,Servicio,Especialidades,CodigoPostal,Precio,Profesionales,Conocenos,Colaboradores,Galeria,Rating
+from .models import Inicio, EntradaBlog, Footer,Servicio,Especialidades,CodigoPostal,Precio,Profesionales,Conocenos,Galeria
 
 
 # Register your models here.
@@ -12,8 +12,6 @@ admin.site.register(CodigoPostal)
 admin.site.register(Precio)
 admin.site.register(Profesionales)
 admin.site.register(Conocenos)
-admin.site.register(Colaboradores)
 admin.site.register(Galeria)
-admin.site.register(Rating)
 
 

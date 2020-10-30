@@ -97,12 +97,7 @@ class Conocenos(models.Model):
     def __str__(self):         
         return self.conocenos
 
-class Colaboradores(models.Model):
-    nombre = models.CharField(max_length=70)
-    imagen = models.ImageField(upload_to = 'colaborador', default = 'colaborador/profile.png')
 
-    def __str__(self):         
-        return self.nombre
     
 class Galeria(models.Model):
     imagen = models.ImageField(upload_to='static/img')
@@ -111,15 +106,3 @@ class Galeria(models.Model):
     def __str__(self):         
         return self.nomImgGaleria
 
-
-class Rating(models.Model):
-    image = models.ImageField(upload_to='images/')
-    score = models.IntegerField(default=0,
-        validators=[
-            MaxValueValidator(5),
-            MinValueValidator(0),
-        ]
-    )
-
-    def __str__(self):
-        return str(self.pk)
