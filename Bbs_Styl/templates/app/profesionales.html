@@ -29,7 +29,7 @@
           </div>
 
           <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
-          {% for y in p.puntuacion_fk.all %}
+          {% for y in p.puntuacion_fk.all %} 
             {% if y.puntuacion == 1  %}
               <span class="fa fa-star checked"></span>
             {% endif %}
