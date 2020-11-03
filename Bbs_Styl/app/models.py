@@ -90,24 +90,14 @@ class Profesionales(models.Model):
     nombreEspecialidades = models.ManyToManyField(Especialidades)
     CodigoPostales = models.ManyToManyField(CodigoPostal,related_name=("profesionales"))
     precioEspecialidades = models.ManyToManyField(Precio)
-<<<<<<< Updated upstream
     telefono = models.IntegerField(null= True,blank=True)
     email = models.EmailField(null= True,blank=True)
     PerfilGaleria1 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria2 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria3 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria4 = models.ImageField(upload_to='static/img',blank=True)
-    valoracion = models.IntegerField(default=0,
-        validators=[
-            MaxValueValidator(5),
-            MinValueValidator(0),
-        ]
-    )
-      
-=======
     puntuacion_fk = models.ManyToManyField(Valoracion,related_name=("profesionales"))
     
->>>>>>> Stashed changes
     def __str__(self):         
         return self.nombre
 
