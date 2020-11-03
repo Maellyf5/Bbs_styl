@@ -71,6 +71,18 @@ class Precio(models.Model):
     def __str__(self):         
         return str(self.precio)
 
+
+
+class Valoracion(models.Model):
+    puntuacion = models.IntegerField(default=0,
+        validators=[
+            MaxValueValidator(5),
+            MinValueValidator(0),
+        ]
+    )
+    def __str__(self):         
+        return str(self.puntuacion)
+
 class Profesionales(models.Model):
     nombre = models.CharField(max_length=80, null=True)
     disponibilidad = models.TextField(max_length=200, null=True,blank=True)
@@ -78,6 +90,7 @@ class Profesionales(models.Model):
     nombreEspecialidades = models.ManyToManyField(Especialidades)
     CodigoPostales = models.ManyToManyField(CodigoPostal,related_name=("profesionales"))
     precioEspecialidades = models.ManyToManyField(Precio)
+<<<<<<< Updated upstream
     telefono = models.IntegerField(null= True,blank=True)
     email = models.EmailField(null= True,blank=True)
     PerfilGaleria1 = models.ImageField(upload_to='static/img',blank=True)
@@ -91,6 +104,10 @@ class Profesionales(models.Model):
         ]
     )
       
+=======
+    puntuacion_fk = models.ManyToManyField(Valoracion,related_name=("profesionales"))
+    
+>>>>>>> Stashed changes
     def __str__(self):         
         return self.nombre
 

@@ -29,38 +29,37 @@
           </div>
 
           <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
-         
-          {% if p.valoracion == 1  %}
-            <span class="fa fa-star checked"></span>
-          {% endif %}
+          {% for y in p.puntuacion_fk.all %}
+            {% if y.puntuacion == 1  %}
+              <span class="fa fa-star checked"></span>
+            {% endif %}
 
-          {% if p.valoracion == 2 %}
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
+            {% if y.puntuacion == 2 %}
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
 
-          {% endif %}
-          
-          {% if p.valoracion == 3 %}
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          {% endif %}
-          {% if p.valoracion == 4 %}
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          {% endif %}
-          {% if p.valoracion == 5 %}
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-            <span class="fa fa-star checked"></span>
-          {% endif %}
+            {% endif %}
+            
+            {% if y.puntuacion == 3 %}
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            {% endif %}
+            {% if y.puntuacion == 4 %}
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            {% endif %}
+            {% if y.puntuacion == 5 %}
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+              <span class="fa fa-star checked"></span>
+            {% endif %}
 
-
-
+          {% endfor %}
           <div class="text py-4 d-block ">
             
             <div><span class="icon-chat "></span>
