@@ -71,17 +71,17 @@ class Precio(models.Model):
     def __str__(self):         
         return str(self.precio)
 
-
-
-class Valoracion(models.Model):
-    puntuacion = models.IntegerField(default=0,
+class Puntuacion(models.Model):
+    valoracion = models.IntegerField(default=0,
         validators=[
             MaxValueValidator(5),
             MinValueValidator(0),
         ]
     )
     def __str__(self):         
-        return str(self.puntuacion)
+        return str(self.valoracion)
+
+
 
 class Profesionales(models.Model):
     nombre = models.CharField(max_length=80, null=True)
@@ -92,11 +92,11 @@ class Profesionales(models.Model):
     precioEspecialidades = models.ManyToManyField(Precio)
     telefono = models.IntegerField(null= True,blank=True)
     email = models.EmailField(null= True,blank=True)
+    valoraciones = models.ManyToManyField(Puntuacion)
     PerfilGaleria1 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria2 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria3 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria4 = models.ImageField(upload_to='static/img',blank=True)
-    puntuacion_fk = models.ManyToManyField(Valoracion,related_name=("profesionales"))
     
     def __str__(self):         
         return self.nombre
