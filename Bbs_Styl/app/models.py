@@ -29,7 +29,6 @@ class Footer(models.Model):
     
     def __str__(self):         
         return self.mail
- 
 
 class EntradaBlog(models.Model):
     titulo = models.CharField(max_length=70)
@@ -81,8 +80,6 @@ class Puntuacion(models.Model):
     def __str__(self):         
         return str(self.valoracion)
 
-
-
 class Profesionales(models.Model):
     nombre = models.CharField(max_length=80, null=True)
     disponibilidad = models.TextField(max_length=200, null=True,blank=True)
@@ -118,4 +115,3 @@ class Galeria(models.Model):
 
     def __str__(self):         
         return self.nomImgGaleria
-

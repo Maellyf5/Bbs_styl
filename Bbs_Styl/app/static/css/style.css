@@ -853,13 +853,7 @@ a.linkStyle:hover {
   opacity: 0.6;
   transition: 0.3s;
 }
-.img-pop-up{
-  position: relative;
-  z-index: 80;
-  top:300px;
-  background-color: red;
-  right: 500px;
-}
+
 /*-----------------Fin galeria----------------------------------*/
  .conocenos{
 font-family: 'Dancing Script', cursive;
@@ -873,6 +867,21 @@ font-family: 'Dancing Script', cursive;
  
 
 
+.justify-content-center {
+    -ms-flex-pack: center!important;
+    justify-content: center!important;
+}
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+*, ::after, ::before {
+    box-sizing: border-box;
+}
 
 
 

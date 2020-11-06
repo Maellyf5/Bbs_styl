@@ -266,6 +266,3 @@ class ReProfesional(TemplateView):
         email_message.content_subtype='html'
         email_message.send()
         return redirect('app:inicio')
-
-
-
