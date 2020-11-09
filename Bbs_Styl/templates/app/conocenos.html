@@ -2,15 +2,19 @@
 {% block content%}
 
 
-   
 
-
-     <div class="row marginAviso conocenos">
-        {% for p in conoce %}
-        <div class="col-md-6 imgconoce ">
-                <img src="{{ p.imagenLogo.url }}" class="mb-3" alt="imagen" />
-
+     <div class="contenedor conocenos marginAviso">
+      <div class="row align-items-center mb-5">
+        <div class="col-lg-12 text-center">
+            <div class="section-title">
+                <h1>¡Hola mi nombre es Nieves!</h1>
+                <p>Estilista de peluquería con más de 21 años de trayectoria, 10 de ellos con salón propio en Madrid junto a mi hermana y 5 años por cuenta propia con servicio a domicilio.</p>
+            </div>
+            <br><br>
         </div>
+      
+        {% for p in conoce %}
+
         <div class="col-md-5 mrRespon">
 
           <p class="font-weight text-justify">{% autoescape off %}
@@ -18,13 +22,15 @@
           </p>{% endautoescape %}
 
         </div>
+        <div class="col-md-6 ">
+          <img src="{{ p.imagenLogo.url }}" style="width:150%;" class="mb-3" alt="imagen" />
+
+      </div>
         {% endfor %}
       </div>
+     </div>
 
 
-
-
- 
 
 
 {% endblock content%}

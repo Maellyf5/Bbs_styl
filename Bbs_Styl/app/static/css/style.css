@@ -855,11 +855,7 @@ a.linkStyle:hover {
 }
 
 /*-----------------Fin galeria----------------------------------*/
- .conocenos{
-font-family: 'Dancing Script', cursive;
- width:1500px;
- height: 750px;
- }
+
 
 .checked {
   color: orange;
@@ -883,7 +879,9 @@ font-family: 'Dancing Script', cursive;
     box-sizing: border-box;
 }
 
-
+.conocenos{
+  padding:0 auto;
+}
 
 
 
