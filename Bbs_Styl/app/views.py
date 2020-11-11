@@ -83,11 +83,14 @@ class InfoServicio(DetailView):
     def get_context_data(self,**kwargs):
         context=super(InfoServicio, self).get_context_data(**kwargs)
         idSer = self.kwargs.get('pk',None)
+        context['especialidad'] = Especialidades.objects.filter(servicio_id=idSer)
         context['infoSer']= Servicio.objects.get(pk = idSer)
         context['servi'] = Servicio.objects.all()
         context['mi']= Inicio.objects.all()
         context['contacto']= Footer.objects.all()
-        context['pelu'] = Profesionales.objects.all()       
+        context['pelu'] = Profesionales.objects.all() 
+        
+              
 
         
 

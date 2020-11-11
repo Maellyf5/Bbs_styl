@@ -1,9 +1,98 @@
-{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
 {% block content%}
 
 
 <div class="container-fluid mt-4 mb-5 marginAviso text-center">
   <h3>En construcción...</h3>
+</div>
+{% for p in especialidad %}
+<div class="carousel-item">
+  <div class="imgTestimonio" style="background-image: url('{{ p.imagen.url }}')"></div>
+  <div class="carousel-caption d-none d-md-block">
+    <h4 class="font-weight-bold mt-4 colorN"> {{ p.nombreEspecialidad }} </h4>
   </div>
+</div>
+{% endfor %}
+
+
+
+
+
+{% for p in especialidad %}
+  <h4 class="font-weight-bold mt-4 colorN"> {{ p.nombreEspecialidad }} </h4>
+
+{% endfor %}
+
+
+
+
+
+
+
+
+
+<section class="text-center fondo">
+
+
+
+  <!-- Grid row -->
+  <div>
+
+      <!--Carousel Wrapper-->
+      <div id="multi-item-example" class="carousel slide carousel-multi-item" data-ride="carousel">
+
+
+          <!--Controls-->
+          <div class="controls-top pt-3">
+              <a class="light-blue darken-4" href="#multi-item-example" data-slide="prev"><i class="fas fa-chevron-left mb-5"></i></a>
+              <a class="light-blue darken-4" href="#multi-item-example" data-slide="next"><i class="fas fa-chevron-right mb-5"></i></a>
+          </div>
+          <!--Controls-->
+
+
+
+          <!--Slides-->
+          <div class="carousel-inner" role="listbox">
+
+              <!--First slide-->
+              {% for p in especialidad %} {% cycle 'start' '' '' as slidestart silent %} {% cycle '' '' 'end' as slideend silent %} {% if slidestart == 'start' %}
+              <div class="carousel-item {% if forloop.first %} active {% endif %}">
+                  <div class="row justify-content-around">
+                      {% endif %}
+
+                      <div class="col-md-4">
+                          <div class="testimonial">
+                              <!--Avatar-->
+                              <div class="avatar mx-auto d-flex justify-content-center">
+                                  <div class="imgTestimonio"  src="{{ p.imagen.url }}" alt=""></div>
+                              </div>
+                              <!--Content-->
+                              <h4 class="font-weight-bold mt-4 colorN"> {{ p.nombreEspecialidad }} </h4>
+
+                          </div>
+                      </div>
+                      <!-- Comprueba cierre de slide-->
+                      {% if slideend == 'end' or forloop.last %}
+                  </div>
+              </div>
+              {% endif %} {% endfor %}
+
+
+
+          </div>
+          <!--Slides-->
+
+
+      </div>
+
+  </div>
+  <!--Carousel Wrapper-->
+
+  </div>
+  <!-- Grid row -->
+
+</section>
+<!-- Section: Testimonials v.4 -->
+
 
 {% endblock content%}

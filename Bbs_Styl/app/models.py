@@ -52,7 +52,7 @@ class Servicio(models.Model):
 class Especialidades(models.Model):
     nombreEspecialidad= models.CharField(max_length=80, null= True)
     servicio= models.ForeignKey(Servicio, related_name="especialidad",on_delete=models.CASCADE, max_length=80, null= True )
-
+    imagen = models.ImageField(upload_to='static/img')
     def __str__(self):         
         return self.nombreEspecialidad
 
