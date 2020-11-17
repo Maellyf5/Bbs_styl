@@ -64,9 +64,15 @@
                 <a class="dorado" href=""> MI PERFIL</a>
                 <ul>
                   <li>
-                                     
+
                     <a href="{% url 'app:reprofesional' %}">REGISTRATE</a>
-                    <a href="{% url 'app:index' %}">LOG OUT</a>
+
+                    {% if user.is_authenticated %}
+                    <form action="{% url 'app:logout' %}" method="post">
+                      {% csrf_token %}
+                      <button class="btn btn-primary btn-sm" type="submit">Cerrar Sesion</button>
+                    </form>
+                    {% endif %} <a href="{% url 'app:login' %}">LOG OUT</a>
                   </li>
                 </ul>
               </li>
@@ -202,16 +208,17 @@
           <div class="row align-items-stretch retro-layout-2">
             {% for p in destacados %}
             <div class="col-md-4">
-                <div class="h-entry mb-30 v-height gradient embed-responsive imgDesta" style="background-image: url('{{ p.imagen.url }}')"></div>  
-                <div class="text">
-                  <h2><a href="{% url 'app:infoServi' p.id %}">{{ p.titulo }}</a></h2>
-                  <p class="date">{{ p.fecha }}</p>
-                </div>
+              <div class="h-entry mb-30 v-height gradient embed-responsive imgDesta"
+                style="background-image: url('{{ p.imagen.url }}')"></div>
+              <div class="text">
+                <h2><a href="{% url 'app:infoServi' p.id %}">{{ p.titulo }}</a></h2>
+                <p class="date">{{ p.fecha }}</p>
+              </div>
               </a>
             </div>
             {% endfor %}
           </div>
-      </div> 
+        </div>
   </section>
 
 

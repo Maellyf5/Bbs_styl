@@ -9,7 +9,10 @@ from django.core.mail import EmailMessage
 from django.template.loader import render_to_string
 from random import choices
 from django.db.models import Avg
-
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
+from django.contrib.auth import login, logout
+ 
+ 
 # Create your views here.
 
 class Index(TemplateView):
@@ -269,3 +272,33 @@ class ReProfesional(TemplateView):
         email_message.content_subtype='html'
         email_message.send()
         return redirect('app:inicio')
+
+def signup_view(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('app:inicio')
+    else:
+        form = UserCreationForm()
+    return render(request, 'app/signup.html', {'form': form})
+
+     
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            return redirect('app:inicio')
+    else:
+        form = AuthenticationForm()
+    return render(request, 'app/login.html', {'form': form})
+
+def logout_view(request):
+    if request.method == 'POST':
+        logout(request)
+        return render(request, 'app/login.html')
+
+
+
+ 
+ 
