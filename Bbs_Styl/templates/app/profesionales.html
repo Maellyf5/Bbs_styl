@@ -1,4 +1,4 @@
-{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
+{% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
 
 {% block content%}
 <div class="container-fluid mb-5 marginAviso ">
@@ -14,14 +14,14 @@
 
   </nav>
 
-
+<a href="https://wa.me/34644497593">Wassap</a>
 
 
 
   <div class="d-flex justify-content-center ">
     <div class="row CajaAncho d-flex justify-content-center">
 
-      {% for p in peluqueros %}
+    {% for p in peluqueros %}
       <div class="col-md-3 mrRespon cardPro mt-5 container-fluid mb-5 mr-4 ml-4 ">
         <div class="blog-entry align-self-stretch text-center ">
           <div class="avatar mx-auto d-flex justify-content-center pt-3">
@@ -29,39 +29,47 @@
           </div>
 
           <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
-          {% for y in p.valoraciones.all %} 
-            {% if y.valoracion == 1  %}
-              <span class="fa fa-star checked"></span>
-            {% endif %}
-
-            {% if y.valoracion == 2 %}
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-
-            {% endif %}
-            
-            {% if y.valoracion == 3 %}
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            {% endif %}
-            {% if y.valoracion == 4 %}
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            {% endif %}
-            {% if y.valoracion == 5 %}
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            {% endif %}
-
+          {{ contador }}
+          {{ sumaDatos }}
+          {% for dato in p.valoraciones.all %}
+               {{ contador }}
+               {{ sumaDatos = sumaDatos+dato.valoracion }}
           {% endfor %}
+           {{ media=sumaDatos/contador }}
+
+
+          {% if media == 1 %}
+          <span class="fa fa-star checked"></span>
+          {% endif %}
+
+          {% if media == 2 %}
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+
+          {% endif %}
+
+          {% if media == 3 %}
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if media == 4 %}
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if media == 5 %}
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          {% endif %} --
+
+
           <div class="text py-4 d-block ">
-            
+
             <div><span class="icon-chat "></span>
               <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
             </div>

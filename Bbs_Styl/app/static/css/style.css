@@ -883,6 +883,14 @@ a.linkStyle:hover {
   padding:0 auto;
 }
 
-
+.imgTestimonio {
+    height:300px;
+    width: 300px;
+    /*los siguientes valores son independientes del tamaño del círculo */
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: 100% auto;
+    
+}
 
 

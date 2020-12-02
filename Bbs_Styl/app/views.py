@@ -107,13 +107,19 @@ class Profesional(ListView):
     def get_context_data(self,**kwargs):
         context=super(Profesional, self).get_context_data(**kwargs)
         context['mi']= Inicio.objects.all()
+        pro=Profesionales.objects.all()
+        for p in pro:
+            print(p.valoraciones.all)
+
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
         context['servicios']= Servicio.objects.all()
         context['servi']= Servicio.objects.all()
-      
-
         return context
+
+
+
+    
 
 class BuscadorCP(TemplateView):
     template_name = 'app/profesionalcp.html'
@@ -273,6 +279,35 @@ class ReProfesional(TemplateView):
         email_message.send()
         return redirect('app:inicio')
 
+
+
+
+
+""" 
+class Login(TemplateView):
+    template_name = 'app/login.html'
+
+    def get_context_data(self,**kwargs):
+        context=super(Login, self).get_context_data(**kwargs)
+        context['pro'] = Inicio.objects.all()
+        context['contacto']= Footer.objects.all()
+        context['servi']= Servicio.objects.all()
+        return context
+
+    def login(self,request):
+        if request.method == 'POST':
+            form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            return redirect('app:inicio')
+        else:
+            form = AuthenticationForm()
+        return render(request, 'app/login.html', {'form': form})
+
+    def post(self,request):
+        if request.method == 'POST':
+            logout(request)
+        return render(request, 'app/login.html')
+ """
 def signup_view(request):
     if request.method == 'POST':
         form = UserCreationForm(request.POST)
@@ -296,9 +331,7 @@ def login_view(request):
 def logout_view(request):
     if request.method == 'POST':
         logout(request)
-        return render(request, 'app/login.html')
-
-
+        return render(request, 'app/index.html')
 
  
  
