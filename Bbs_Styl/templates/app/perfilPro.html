@@ -1,5 +1,161 @@
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %} 
 
 {% block content%}
+<div class="container-fluid mb-5 marginAviso">
+    <section id="section3 ">
+        <div class="container padding">
+            <div class="row">
+                <div class="col-lg-3 col-md-4">
+                    <!--left col-->
+                    <div class="text-center">
+                        <h3>{{ perfilPro.nombre }}</h3>
+                        <div class="avatar mx-auto d-flex justify-content-center pt-3">
+                            <div class="imgInfoPro" style="background-image: url('{{ perfilPro.imagen.url }}')"></div>
+                        </div>
+                        {% for y in perfilPro.valoraciones.all %} 
+                        {% if y.valoracion == 1  %}
+                          <span class="fa fa-star checked mt-4"></span>
+                        {% endif %}
+            
+                        {% if y.valoracion == 2 %}
+                          <span class="fa fa-star checked mt-4"></span>
+                          <span class="fa fa-star checked"></span>
+            
+                        {% endif %}
+                        
+                        {% if y.valoracion == 3 %}
+                          <span class="fa fa-star checked mt-4"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                        {% endif %}
+                        {% if y.valoracion == 4 %}
+                          <span class="fa fa-star checked mt-4"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                        {% endif %}
+                        {% if y.valoracion == 5 %}
+                          <span class="fa fa-star checked mt-4"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                          <span class="fa fa-star checked"></span>
+                        {% endif %}
+            
+                      {% endfor %}
+                        <div class="mt-4">
+                            <p><b>Aquí iría la descripción</b> amet consectetur, adipisicing elit. Ipsum eaque rerum, in, beatae, nostrum atque illo quasi nam nisi possimus</p>
+                        </div>
+                    </div><br>
+                    <div class="info-card mb-3">
+                        <h6 class="card-header black semibold text-center">Contacto</h6>
+                        <div class="col-md-8">
+                           Teléfono: {{ perfilPro.telefono  }} <a href="{{ perfilPro.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
+                                
+                        </div>
+
+                        <div class="col-md-8">
+                            <p>Email: {{ perfilPro.email }}</p>
+                        </div>
+
+                        <div class="col-md-8">
+                            <p>Horario: {{ perfilPro.disponibilidad}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <!--/col-3-->
+                <div class="col-lg-9 col-md-8">
+                    <ul class="nav nav-tabs" id="myTab" role="tablist">
+                        <li class="nav-item">
+                            <a class="nav-link active linea_a" id="home-tab" data-toggle="tab" href="#home" role="tab"
+                                aria-controls="home" aria-selected="true">Perfil</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link linea_a" id="galeria-tab" data-toggle="tab" href="#galeria" role="tab"
+                                aria-controls="galeria" aria-selected="false">Galería</a>
+                        </li>
+                    </ul>
+                    <div class="tab-content" id="myTabContent">
+                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                            <h4 class="text-center mt-4">Servicio</h4>
+                            <div class="row mt-4">
+                                <div class="col-md-6">
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Men's Haircut</span></h3>
+                                            <span class="price">$20.00</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Children Haircut</span></h3>
+                                            <span class="price">$29.00</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Beard Cut</span></h3>
+                                            <span class="price">$20.00</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Men's Haircut</span></h3>
+                                            <span class="price">$20.00</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                
+                                <div class="col-md-6">
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Women's Haircut</span></h3>
+                                            <span class="price">$49.91</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Men's Haircut</span></h3>
+                                            <span class="price">$20.00</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Men's Haircut</span></h3>
+                                            <span class="price">$20.00</span>
+                                        </div>
+
+                                    </div>
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Men's Haircut</span></h3>
+                                            <span class="price">$20.00</span>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">...</div>
+                        
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+    </section>
+</div>
+
 
 {% endblock content%}

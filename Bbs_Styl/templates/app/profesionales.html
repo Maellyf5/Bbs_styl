@@ -28,14 +28,8 @@
             <div class="imgProfesional" style="background-image: url('{{ p.imagen.url }}')"></div>
           </div>
 
-          <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombre }}</h3>
-          {{ contador }}
-          {{ sumaDatos }}
-          {% for dato in p.valoraciones.all %}
-               {{ contador }}
-               {{ sumaDatos = sumaDatos+dato.valoracion }}
-          {% endfor %}
-           {{ media=sumaDatos/contador }}
+          <a href="{% url 'app:PerfilProfesional' p.id %} " style="vertical-align: inherit; color: black; text-decoration: none;"><h3 class="heading titu_card mt-5">{{ p.nombre }}</h3></a>          {{ contador }}
+<!--  -->
 
 
           {% if media == 1 %}
