@@ -2,6 +2,21 @@
 
 {% block content%}
 <div class="container-fluid mb-5 marginAviso">
+    <div class="row justify-content-center mb-3 pb-3">
+        <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated mrRespon">
+          <h2 class="mb-3 mt-4 ">TU PROFESIONAL</h2>
+        </div>
+      </div>
+    <nav class="navbar bannerCp justify-content-center mb-5">
+        <p class="bannerser">Encuentra a tu profesional más cercano</p>
+        <form action="{% url 'app:profesionalCP' %}" method="GET" class="form-inline">
+          <input class="form-control mr-sm-2 text-center" type="search" name="search" placeholder="Codigo Postal"
+            aria-label="Search" />
+          <button class="btn my-2 my-sm-0" style="vertical-align: middle" type="submit" src="#">
+            <span>Buscar</span>
+          </button>
+        </form>
+      </nav>
     <section id="section3 ">
         <div class="container padding">
             <div class="row">

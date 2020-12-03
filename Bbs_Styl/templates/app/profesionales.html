@@ -2,6 +2,11 @@
 
 {% block content%}
 <div class="container-fluid mb-5 marginAviso ">
+  <div class="row justify-content-center mb-3 pb-3">
+    <div class="col-md-7 heading-section ftco-animate text-center fadeInUp ftco-animated mrRespon">
+      <h2 class="mb-3 mt-4 ">NUESTROS PROFESIONALES</h2>
+    </div>
+  </div>
   <nav class="navbar bannerCp justify-content-center">
     <p class="bannerP" style="color:black;">Encuentra a tu profesional más cercano</p>
     <form action="{% url 'app:profesionalCP' %}" method="GET" class="form-inline">
@@ -14,10 +19,6 @@
 
   </nav>
 
-<a href="https://wa.me/34644497593">Wassap</a>
-
-
-
   <div class="d-flex justify-content-center ">
     <div class="row CajaAncho d-flex justify-content-center">
 
@@ -25,8 +26,9 @@
       <div class="col-md-3 mrRespon cardPro mt-5 container-fluid mb-5 mr-4 ml-4 ">
         <div class="blog-entry align-self-stretch text-center ">
           <div class="avatar mx-auto d-flex justify-content-center pt-3">
-            <div class="imgProfesional" style="background-image: url('{{ p.imagen.url }}')"></div>
+            <div class="imgProfesional" style="background-image: url('{{ p.imagen.url }}')"></div> 
           </div>
+          <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.Servicio }}</h3>
 
           <a href="{% url 'app:PerfilProfesional' p.id %} " style="vertical-align: inherit; color: black; text-decoration: none;"><h3 class="heading titu_card mt-5">{{ p.nombre }}</h3></a>          {{ contador }}
 <!--  -->

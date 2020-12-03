@@ -95,6 +95,7 @@ class Profesionales(models.Model):
     PerfilGaleria2 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria3 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria4 = models.ImageField(upload_to='static/img',blank=True)
+    ServicioPrincipal = models.TextField(max_length=80, null=True)
     
     def __str__(self):         
         return self.nombre

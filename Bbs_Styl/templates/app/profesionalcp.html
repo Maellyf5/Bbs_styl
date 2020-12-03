@@ -23,8 +23,7 @@
           <div class="avatar mx-auto d-flex justify-content-center pt-3">
             <div class="imgProfesional" style="background-image: url('{{ i.imagen.url }}')"></div>
           </div>
-
-          <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ i.nombre }}</h3>
+          
           
           {% if i.valoracion == 1  %}
             <span class="fa fa-star checked"></span>
@@ -59,11 +58,13 @@
 
           <div class="text py-4 d-block ">
             <div class="meta">
-              <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ i.precio }}$</div>
+              <div style="vertical-align: inherit;" style="vertical-align: inherit;">{{ i.ServicioPrincipal }}$</div>
             </div>
             <div><span class="icon-chat "></span>
               <p class="descripcion text-justify mt-4 text-center">{{ i.disponibilidad }} </p>
             </div>
+            <div><span class="icon-chat "></span>
+              <p class="descripcion text-justify mt-4 text-center">{{ i.ServicioPrincipal }} </p>
           </div>
 
         </div>

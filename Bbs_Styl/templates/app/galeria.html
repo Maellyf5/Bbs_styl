@@ -8,6 +8,16 @@
           <h2 class="mb-3 mt-4 ">NUESTRA GALERIA DE FOTOS</h2>
         </div>
       </div>
+      <nav class="navbar bannerCp justify-content-center mb-5">
+        <p class="bannerser">Encuentra a tu profesional más cercano</p>
+        <form action="{% url 'app:profesionalCP' %}" method="GET" class="form-inline">
+          <input class="form-control mr-sm-2 text-center" type="search" name="search" placeholder="Codigo Postal"
+            aria-label="Search" />
+          <button class="btn my-2 my-sm-0" style="vertical-align: middle" type="submit" src="#">
+            <span>Buscar</span>
+          </button>
+        </form>
+      </nav>
 
       <div class="site-section">
         <div class="container">

@@ -93,9 +93,6 @@ class InfoServicio(DetailView):
         context['contacto']= Footer.objects.all()
         context['pelu'] = Profesionales.objects.all() 
         
-              
-
-        
 
         return context
 
