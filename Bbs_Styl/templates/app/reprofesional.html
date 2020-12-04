@@ -4,12 +4,12 @@
 <form action="/contacto/" method="POST">
    {% csrf_token %}
 
-   <div class="row marginAviso">
+   <div class="marginAviso">
 
       <div class="col-md-4 offset-md-4">
 
          <div class="form-group">
-            <h3 style="color: black;">Registrate como profesional</h3>
+            <h3 style="color: black;margin-left: 40px;margin-bottom: 30px;">TRABAJA CON NOSOTROS</h3>
             <p> {{ contact_form.nombre.label  }}</p>
             {% render_field contact_form.nombre class+="form-control" %}
          </div>
@@ -36,11 +36,12 @@
             {% render_field contact_form.mensaje class+="form-control" %}
          </div>
 
-         <div class="actions mb-5">
-            <input type="submit" value="Enviar">
+         <div class="actions mb-4" >
+            <input type="submit" value="ENVIAR" style="width:400px;height:50px;">
          </div>
       </div>
    </div>
+  
    {% endblock content%}
 
 </form>

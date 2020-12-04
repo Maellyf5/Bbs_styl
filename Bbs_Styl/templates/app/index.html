@@ -60,21 +60,9 @@
                   {% endfor %}
                 </ul>
               </li>
-              <li class="nav-item listArrow">
-                <a class="dorado" href=""> MI PERFIL</a>
-                <ul>
-                  <li>
-
-                    <a href="{% url 'app:reprofesional' %}">REGISTRATE</a>
-
-                    {% if user.is_authenticated %}
-                    <form action="{% url 'app:logout' %}" method="post">
-                      {% csrf_token %}
-                      <button class="btn btn-primary btn-sm" type="submit">Cerrar Sesion</button>
-                    </form>
-                    {% endif %} <a href="{% url 'app:login' %}">LOG OUT</a>
-                  </li>
-                </ul>
+              <li class="nav-item">
+                <a class="dorado" href="{% url 'app:reprofesional' %}">REGISTRATE</a>
+                
               </li>
               <li class="nav-item"><a class="dorado" href="{% url 'app:contactos' %}">CONTACTO</a></li>
 
