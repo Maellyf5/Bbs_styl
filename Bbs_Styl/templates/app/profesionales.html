@@ -33,6 +33,7 @@
           <a href="{% url 'app:PerfilProfesional' p.id %} " style="vertical-align: inherit; color: black; text-decoration: none;"><h3 class="heading titu_card mt-5">{{ p.nombre }}</h3></a>          {{ contador }}
 <!--  -->
 
+<<<<<<< HEAD
           {% for y in p.valoraciones.all %} 
             {% if y.valoracion == 1  %}
               <span class="fa fa-star checked"></span>
@@ -61,6 +62,39 @@
               <span class="fa fa-star checked"></span>
             {% endif %}  
           {% endfor %} 
+=======
+
+          {% if valoracion == 1 %}
+          <span class="fa fa-star checked"></span>
+          {% endif %}
+
+          {% if valoracion == 2 %}
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+
+          {% endif %}
+
+          {% if valoracion == 3 %}
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if valoracion == 4 %}
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if valoracion == 5 %}
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          <span class="fa fa-star checked"></span>
+          {% endif %} --
+
+
+>>>>>>> master
           <div class="text py-4 d-block ">
 
             <div><span class="icon-chat "></span>
