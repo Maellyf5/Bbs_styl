@@ -60,21 +60,9 @@
                   {% endfor %}
                 </ul>
               </li>
-              <li class="nav-item listArrow">
-                <a class="dorado" href=""> MI PERFIL</a>
-                <ul>
-                  <li>
-
-                    <a href="{% url 'app:reprofesional' %}">REGISTRATE</a>
-
-                    {% if user.is_authenticated %}
-                    <form action="{% url 'app:logout' %}" method="post">
-                      {% csrf_token %}
-                      <button class="btn btn-primary btn-sm" type="submit">Cerrar Sesion</button>
-                    </form>
-                    {% endif %} <a href="{% url 'app:login' %}">LOG OUT</a>
-                  </li>
-                </ul>
+              <li class="nav-item">
+                <a class="dorado" href="{% url 'app:reprofesional' %}">REGISTRATE</a>
+                
               </li>
               <li class="nav-item"><a class="dorado" href="{% url 'app:contactos' %}">CONTACTO</a></li>
 
@@ -297,7 +285,7 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js "></script>
   <script src="https://kit.fontawesome.com/94d365e8cc.js " crossorigin="anonymous "></script>
   <script src="https://img1.wsimg.com/tcc/tcc_l.combined.1.0.6.min.js "></script>
-  <script src="{% static 'js/main.js' %} "></script>
+  <script src="{% static 'js/purecookie.js' %} "></script>
 </body>
 
 </html>
