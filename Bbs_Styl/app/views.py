@@ -123,15 +123,12 @@ class PerfilProfesional(DetailView):
         context = super(PerfilProfesional, self).get_context_data(**kwargs)
         idpro = self.kwargs.get('pk',None)
         context['perfilPro'] = Profesionales.objects.get(pk = idpro)
+        context['espe'] = Especialidades.objects.filter(nombreEspecialidad=idpro)
         context['mi']= Inicio.objects.all()
         context['contacto']= Footer.objects.all()
         context['servi']= Servicio.objects.all()
 
         return context    
-
-
-
-    
 
 class BuscadorCP(TemplateView):
     template_name = 'app/profesionalcp.html'

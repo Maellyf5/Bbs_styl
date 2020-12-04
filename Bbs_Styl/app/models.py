@@ -47,12 +47,18 @@ class Servicio(models.Model):
 
     def __str__(self):         
         return self.nombreServicio
-    
+
+class Precio(models.Model):
+    precio = models.IntegerField(null=True)
+      
+    def __str__(self):         
+        return str(self.precio)
 
 class Especialidades(models.Model):
     nombreEspecialidad= models.CharField(max_length=80, null= True)
     servicio= models.ForeignKey(Servicio, related_name="especialidad",on_delete=models.CASCADE, max_length=80, null= True )
     imagen = models.ImageField(upload_to='static/img')
+    precio = models.ForeignKey(Precio,on_delete=models.CASCADE, max_length=80, null= True )
     def __str__(self):         
         return self.nombreEspecialidad
 
@@ -62,13 +68,6 @@ class CodigoPostal(models.Model):
     def __str__(self):         
         return str(self.codigo)
 
-class Precio(models.Model):
-    precio = models.IntegerField(null=True)
-    nombreEspecialidad = models.ManyToManyField(Especialidades)
-
-      
-    def __str__(self):         
-        return str(self.precio)
 
 class Puntuacion(models.Model):
     valoracion = models.IntegerField(default=0,
@@ -86,7 +85,6 @@ class Profesionales(models.Model):
     imagen = models.ImageField(upload_to='static/img')
     nombreEspecialidades = models.ManyToManyField(Especialidades)
     CodigoPostales = models.ManyToManyField(CodigoPostal,related_name=("profesionales"))
-    precioEspecialidades = models.ManyToManyField(Precio)
     whatsapp = models.URLField(null= True,blank=True)
     telefono = models.IntegerField(null=True,blank=True)
     email = models.EmailField(null= True,blank=True)
@@ -95,7 +93,6 @@ class Profesionales(models.Model):
     PerfilGaleria2 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria3 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria4 = models.ImageField(upload_to='static/img',blank=True)
-    ServicioPrincipal = models.TextField(max_length=80, null=True)
     
     def __str__(self):         
         return self.nombre
