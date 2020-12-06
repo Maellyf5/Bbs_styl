@@ -109,6 +109,22 @@
                                         </div>
 
                                     </div>
+
+                                    <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
+                                        <div class="d-flex text align-items-center">
+                                            <h3><span>Men's Haircut</span></h3>
+                                            <span class="price">$20.00</span>
+                                        </div>
+
+                                        {% for x in perfilPro.nombreEspecialidades.all %}
+                                            {% for z in x.servicio.all %}
+                                            <h2><span>{{ z.nombreServicio }}</span></h2>
+                                            {% endfor %}
+                                            <h4><span>{{ x.nombreEspecialidad }}</span></h4><br>
+                                        {% endfor %}
+
+                                    </div>
+
                                 </div>
                 
                                 <div class="col-md-6">
@@ -140,6 +156,7 @@
                                         </div>
 
                                     </div>
+                                    
 
                                 </div>
                             </div>
