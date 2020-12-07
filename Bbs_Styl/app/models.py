@@ -84,6 +84,7 @@ class Profesionales(models.Model):
     disponibilidad = models.TextField(max_length=200, null=True,blank=True)
     imagen = models.ImageField(upload_to='static/img')
     nombreEspecialidades = models.ManyToManyField(Especialidades)
+    nombreServicio = models.CharField(max_length=80,null=True)
     CodigoPostales = models.ManyToManyField(CodigoPostal,related_name=("profesionales"))
     whatsapp = models.URLField(null= True,blank=True)
     telefono = models.IntegerField(null=True,blank=True)

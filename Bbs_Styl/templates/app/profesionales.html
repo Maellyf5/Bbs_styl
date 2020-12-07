@@ -22,16 +22,23 @@
   <div class="d-flex justify-content-center ">
     <div class="row CajaAncho d-flex justify-content-center">
 
+      {% for x in peluqueros.nombreServicio.all %}
+      {% for z in x.servicio.all %}
+      <h2><span>{{ z.nombreServicio }}</span></h2>
+      {% endfor %}
+      <h4><span>{{ x.nombreEspecialidad }}</span></h4><br>
+  {% endfor %}
+
+
     {% for p in peluqueros %}
       <div class="col-md-3 mrRespon cardPro mt-5 container-fluid mb-5 mr-4 ml-4 ">
         <div class="blog-entry align-self-stretch text-center ">
           <div class="avatar mx-auto d-flex justify-content-center pt-3">
             <div class="imgProfesional" style="background-image: url('{{ p.imagen.url }}')"></div> 
           </div>
-          <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.precio }}</h3>
-
           <a href="{% url 'app:PerfilProfesional' p.id %} " style="vertical-align: inherit; color: black; text-decoration: none;"><h3 class="heading titu_card mt-5">{{ p.nombre }}</h3></a>
-          
+          <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ p.nombreServicio }}</h3> 
+
           {% for y in p.valoraciones.all %} 
             {% if y.valoracion == 1  %}
               <span class="fa fa-star checked"></span>
@@ -66,6 +73,7 @@
               <p class="descripcion text-justify mt-4 text-center">{{ p.disponibilidad }} </p>
             </div>
           </div>
+          <a class="leerMas" href="{% url 'app:PerfilProfesional' p.id %} " ">Ver más</a>
 
         </div>
       </div>
