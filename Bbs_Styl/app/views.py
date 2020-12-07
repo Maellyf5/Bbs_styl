@@ -111,6 +111,7 @@ class Profesional(ListView):
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
         context['servicios']= Servicio.objects.all()
+        context['espe']= Especialidades.objects.all()
         context['servi']= Servicio.objects.all()
         return context
     
