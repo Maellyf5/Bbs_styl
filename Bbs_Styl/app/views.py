@@ -75,7 +75,9 @@ class Servicios(ListView):
         context['mi']= Inicio.objects.all()
         context['servi']= Servicio.objects.all()
         context['contacto']= Footer.objects.all()
-        context['pelu'] = Profesionales.objects.all()       
+        context['pelu'] = Profesionales.objects.all()  
+
+        
 
         return context
 
@@ -106,7 +108,7 @@ class Profesional(ListView):
         context['mi']= Inicio.objects.all()
         pro=Profesionales.objects.all()
         for p in pro:
-            print(p.valoraciones.all)
+            print(p.nombreEspecialidades.all)
 
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()

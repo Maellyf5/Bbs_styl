@@ -79,7 +79,7 @@
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                             {% for z in perfilPro.nombreEspecialidades.all %}<!--no trae los servicios todavía-->
-                            <h4 class="text-center mt-4">{{ z.nombreServicio }}</h4> 
+                            <h4 class="text-center mt-4">{{ z.servicio }}</h4> 
                             {% endfor %} 
                             <div class="row mt-4">
                                 {% for x in perfilPro.nombreEspecialidades.all %}
@@ -87,7 +87,7 @@
                                     <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
                                         <div class="d-flex text align-items-center">
                                             <h3><span>{{ x.nombreEspecialidad }}</span></h3>
-                                            <span class="price">$20.00</span>
+                                            <span class="price">{{ x.precio }}$</span>
                                         </div>
                                     </div>
                                 </div>

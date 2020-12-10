@@ -61,12 +61,13 @@
           {% endfor %}
 
           <div>
+            
             {% for z in p.nombreEspecialidades.all %}
-                {% for m in z.servicio.all %}
-                  <span>{{ m.nombreServicio }}</span> <!--Aún no trae el nombre de los servicios que ofrece el profesional-->
-                {% endfor %}
-            <!-- <p class="mt-3">{{ z.nombreEspecialidad }}</p> -->
+              
+                  <span>{{ z.servicio }}</span> <!--Aún no trae el nombre de los servicios que ofrece el profesional-->
             {% endfor %}
+            <!-- <p class="mt-3">{{ z.nombreEspecialidad }}</p> -->
+      
 
           </div>
             <p class="descripcion text-justify mt-3 text-center">Horario: {{ p.disponibilidad }} </p>
