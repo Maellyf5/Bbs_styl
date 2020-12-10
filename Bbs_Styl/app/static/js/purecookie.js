@@ -1,6 +1,6 @@
 // --- Config --- //
 var purecookieTitle = "Cookies."; // Title
-var purecookieDesc = "Esta página web utiliza cookies para analizar de forma anónima y estadística el uso que haces de la web,mejorar los contenidos y tu experiencia de naegación.."; // Description
+var purecookieDesc = "Esta página web utiliza cookies para analizar de forma anónima y estadística el uso que haces de la web,mejorar los contenidos y tu experiencia de navegación.."; // Description
 var purecookieLink = '<a href="cookie-policy.html" target="_blank">Política de Cookies?</a>'; // Cookiepolicy link
 var purecookieButton = "Aceptar"; // Button text
 var purecookiesButton = "Rechazar"; // Button text

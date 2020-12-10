@@ -63,13 +63,18 @@
           <div>
             
             {% for z in p.nombreEspecialidades.all %}
-              
+              {% if z.servicio.id == z.servicio.id %}
+                hola
+                {{ else }}
+                {{ z.servicio }}
+              {% endif %}
                   <span>{{ z.servicio }}</span> <!--Aún no trae el nombre de los servicios que ofrece el profesional-->
             {% endfor %}
             <!-- <p class="mt-3">{{ z.nombreEspecialidad }}</p> -->
       
 
           </div>
+          
             <p class="descripcion text-justify mt-3 text-center">Horario: {{ p.disponibilidad }} </p>
           <a href="{% url 'app:PerfilProfesional' p.id %}" class="Vermas">Ver más</a>
         </div>

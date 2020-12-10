@@ -78,7 +78,7 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            {% for z in perfilPro.nombreEspecialidades.all %}<!--no trae los servicios todavía-->
+                            {% for z in perfilPro.nombreEspecialidades.all %}<!--trae los servicios todavía-->
                             <h4 class="text-center mt-4">{{ z.servicio }}</h4> 
                             {% endfor %} 
                             <div class="row mt-4">
