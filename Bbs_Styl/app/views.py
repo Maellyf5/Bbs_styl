@@ -67,7 +67,7 @@ class InfoBlog(DetailView):
 class Servicios(ListView):
     template_name = 'app/servicios.html'
     context_object_name= 'servi' 
-    queryset = Servicio.objects.all() 
+    queryset = Servicio.objects.all()
     model = Servicio
     
     def get_context_data(self,**kwargs):
@@ -75,9 +75,13 @@ class Servicios(ListView):
         context['mi']= Inicio.objects.all()
         context['servi']= Servicio.objects.all()
         context['contacto']= Footer.objects.all()
-        context['pelu'] = Profesionales.objects.all()  
+        context['pelu'] = Profesionales.objects.all() 
 
-        
+      
+
+
+
+    
 
         return context
 
@@ -106,16 +110,14 @@ class Profesional(ListView):
     def get_context_data(self,**kwargs):
         context=super(Profesional, self).get_context_data(**kwargs)
         context['mi']= Inicio.objects.all()
-        pro=Profesionales.objects.all()
-        for p in pro:
-            print(p.nombreEspecialidades.all)
-
         #context['template']= 'app:blog' 
         context['contacto']= Footer.objects.all()
         context['servicios']= Servicio.objects.all()
         context['espe']= Especialidades.objects.all()
         context['servi']= Servicio.objects.all()
         return context
+
+
     
     
 class PerfilProfesional(DetailView):
@@ -284,7 +286,7 @@ class ReProfesional(TemplateView):
             subject='mensaje de usuario',
             body=body,
             from_email=email,
-            to=['koko-yoana@hotmail.es'],
+            to=['Bbs_styl@hotmail.com'],
         )
         email_message.content_subtype='html'
         email_message.send()

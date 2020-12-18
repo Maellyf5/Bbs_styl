@@ -97,6 +97,16 @@ class Profesionales(models.Model):
     def __str__(self):         
         return self.nombre
 
+        
+    @property
+    def servicios(self):
+        serviciosSinRep = []
+        for especialidad in self.nombreEspecialidades:
+         if especialidad.servicio in serviciosSinRep:
+            serviciosSinRep.append(especialidad.servicio)
+
+        return serviciosSinRep
+
 
 class Conocenos(models.Model):
     conocenos = models.CharField(max_length=50, null=True,blank=True)

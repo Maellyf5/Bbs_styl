@@ -22,7 +22,7 @@
           </div>
           <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ i.Servicio }}</h3>
 
-          <a href="{% url 'app:PerfilProfesional' i.id %} " style="vertical-align: inherit; color: black; text-decoration: none;"></a><h3 class="heading titu_card mt-5">{{ i.nombre }}</h3></a>
+          <a href="{% url 'app:PerfilProfesional' i.id %} " style="vertical-align: inherit; color: black; text-decoration: none;"><h3 class="heading titu_card mt-5">{{ i.nombre }}</h3></a>
 <!--  -->
 
           {% for y in i.valoraciones.all %} 
@@ -53,6 +53,26 @@
               <span class="fa fa-star checked"></span>
             {% endif %}  
           {% endfor %} 
+           <div>
+          
+       
+            {% for z in i.nombreEspecialidades.all %}
+                   
+                
+                  
+                  {% if z.servicio %}
+                    {{ z.servicio }}
+                    
+               
+                  {% endif %}
+                
+                
+            {% endfor %}
+            
+            <!-- <p class="mt-3">{{ z.nombreEspecialidad }}</p> -->
+      
+
+          </div>
           <div class="text py-4 d-block ">
 
             <div><span class="icon-chat "></span>

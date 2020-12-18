@@ -61,15 +61,22 @@
           {% endfor %}
 
           <div>
+          
+       
+            {% for servicio in p.servicio %}
+                   
+                
             
-            {% for z in p.nombreEspecialidades.all %}
-              {% if z.servicio.id == z.servicio.id %}
-                hola
-                {{ else }}
-                {{ z.servicio }}
-              {% endif %}
-                  <span>{{ z.servicio }}</span> <!--Aún no trae el nombre de los servicios que ofrece el profesional-->
+                  
+                      
+                       {{ z.servicio }}
+                     
+                    
+                
+                
             {% endfor %}
+       
+            
             <!-- <p class="mt-3">{{ z.nombreEspecialidad }}</p> -->
       
 
