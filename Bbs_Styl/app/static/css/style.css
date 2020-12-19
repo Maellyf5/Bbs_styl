@@ -896,6 +896,16 @@ a.linkStyle:hover {
 }
 /*----------------INFOPROFESIONAL----------*/
 
+.boxContact{
+  border: 1px black;
+}
+.imgInfoPro{
+  -o-object-fit: cover;
+    object-fit: cover;
+    height: 350px;
+    width: 300px;
+}
+
 a.Vermas{
   color: black;
 }
@@ -1038,3 +1048,4 @@ span {
   font-size: 1.7em;
   text-decoration: none;
 }
+

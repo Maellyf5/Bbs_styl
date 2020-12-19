@@ -44,22 +44,24 @@
             
                       {% endfor %}
                         <div class="mt-4">
-                            <p><b>Aquí iría la descripción</b> amet consectetur, adipisicing elit. Ipsum eaque rerum, in, beatae, nostrum atque illo quasi nam nisi possimus</p>
+                            <p>{{ perfilPro.descripcion }}</p>
                         </div>
                     </div><br>
                     <div class="info-card mb-3">
                         <h6 class="card-header black semibold text-center">Contacto</h6>
-                        <div class="col-md-8">
-                           Teléfono: {{ perfilPro.telefono  }} <a href="{{ perfilPro.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
+                        <div class="col-md-12">
+                           <b>Teléfono:</b> {{ perfilPro.telefono  }} <a href="{{ perfilPro.whatsapp }}"><i class="fab fa-whatsapp"></i></a>
                                 
                         </div>
 
-                        <div class="col-md-8">
-                            <p>Email: {{ perfilPro.email }}</p>
+                        <div class="col-md-12">
+                            <p><b>Email:</b> {{ perfilPro.email }}</p>
                         </div>
-
-                        <div class="col-md-8">
-                            <p>Horario: {{ perfilPro.disponibilidad}}</p>
+                        <div class="col-md-12">
+                            {% autoescape off %}
+                            <p><b>Horario:</b> <br>
+                                {{ perfilPro.disponibilidad}}</p>
+                            {% endautoescape %}
                         </div>
                     </div>
 
@@ -78,23 +80,54 @@
                     </ul>
                     <div class="tab-content" id="myTabContent">
                         <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                            {% for z in perfilPro.nombreEspecialidades.all %}<!--trae los servicios todavía-->
-                            <h4 class="text-center mt-4">{{ z.servicio }}</h4> 
-                            {% endfor %} 
+                            
+                            <h4 class="text-center mt-4">Especialidades</h4> 
+                            
                             <div class="row mt-4">
                                 {% for x in perfilPro.nombreEspecialidades.all %}
                                 <div class="col-md-6">
                                     <div class="pricing-entry ftco-animate fadeInUp ftco-animated">
                                         <div class="d-flex text align-items-center">
                                             <h3><span>{{ x.nombreEspecialidad }}</span></h3>
-                                            <span class="price">{{ x.precio }}$</span>
+                                            <span class="price">{{ x.precio }}€</span>
                                         </div>
                                     </div>
                                 </div>
                                 {% endfor %}
                             </div>
                         </div>
-                        <div class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">...</div>
+                        <div class="tab-pane fade" id="galeria" role="tabpanel" aria-labelledby="galeria-tab">
+                            <div class="container mt-5">
+                                <div class="row align-items-stretch retro-layout-2">
+                                    <div class="col-md-6">
+                                        {% if perfilPro.PerfilGaleria1 %}
+                                      <div class="h-entry mb-30 v-height embed-responsive imgDesta"
+                                        style="background-image: url('{{ perfilPro.PerfilGaleria1.url }}')"></div>
+                                        {% endif %}
+                                    </div>
+                                    <div class="col-md-6">
+                                        {% if perfilPro.PerfilGaleria2 %}
+                                        <div class="h-entry mb-30 v-height embed-responsive imgDesta"
+                                          style="background-image: url('{{ perfilPro.PerfilGaleria2.url }}')"></div>
+                                          {% endif %}
+                                      </div>
+                                      <div class="col-md-6">
+                                        {% if perfilPro.PerfilGaleria3 %}
+                                        <div class="h-entry mb-30 v-height embed-responsive imgDesta"
+                                          style="background-image: url('{{ perfilPro.PerfilGaleria3.url }}')"></div>
+                                          {% endif %}
+                                      </div>
+                                      <div class="col-md-6">
+                                        {% if perfilPro.PerfilGaleria4 %}
+                                        <div class="h-entry mb-30 v-height embed-responsive imgDesta"
+                                          style="background-image: url('{{ perfilPro.PerfilGaleria4.url }}')"></div>
+                                        {% endif %}
+                                      </div>
+                                </div>
+
+
+                            </div> 
+                        </div>
                         
                     </div>
 

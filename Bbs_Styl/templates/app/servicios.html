@@ -1,28 +1,6 @@
 {% extends 'app/index.html' %} {% load static %} {% load bootstrap4 %}
 
 {% block content%}
-<!-- 
-<div class="container-fluid mb-5">
-    <div class="row justify-content-center">
-        <div class="col-12">
-            
-            <div class="blog-details-area marginAviso text-center">
-                <h2>AVISO LEGAL</h2>
-                {% for p in servi %}
-
-                <p class="descripcion text-justify mt-4">{{ p.nombreServicio }} </p>and
-                
-                    {% for y in p.peluquero.all %}
-                    <span class="dropdown-item-text">{{ y.nombre }}</span> {% endfor %}
-                
-                {% endfor %}
-
-
-
-            </div>
-        </div>
-    </div>
-</div> -->
 
 <section class="service-area section-gap">
     <div class="container-fluid">
@@ -30,8 +8,6 @@
             <div class="col-md-8 text-center">
                 <div class="section-title mt-5">
                     <h1>Nuestros Servicios</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore
-                        magna aliqua ad minim veniam</p>
                 </div>
             </div>
         </div>
@@ -50,8 +26,8 @@
             {% for p in servi %}
             <div class="col-lg-3 col-sm-6 col-md-4 float-right mr-2 ml-2 mb-5 mt-4 padding-grey pl-0 pr-0">
                 <div class="single-service">
-                    <div class="bg-img-servi" style="background-image: url('{{ p.imagen.url }}')"><a href="{% url 'app:infoServi' p.id %}" style="display:block;height:100%;width:100%"></a></div>
-                    <h4>{{ p.nombreServicio }}</h4>
+                    <div class="bg-img-servi" style="background-image: url('{{ p.imagen.url }}')"><a href="{% url 'app:infoServi' p.id %}" style="display:block;height:100%;width:100%"><h4>{{ p.nombreServicio }}</h4></a></div>
+                    
                 </div>  
             </div>
             {% endfor %}

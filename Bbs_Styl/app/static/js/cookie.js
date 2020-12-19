@@ -1,11 +1,9 @@
 // --- Config --- //
 var purecookieTitle = "Tu privacidad es importante para nosotros."; // Title
 var purecookieDesc = "En ACOGEM no utilizamos ninguna cookie, no se recaba ni cede datos de carácter personal de los usuarios a terceros,puedes visitar nuestra web tranquilamente."; // Description
-
-
 var purecookieButton = "Gracias"; // Button text
 
-// ---        --- //
+// --- --- //
 
 
 function pureFadeIn(elem, display) {

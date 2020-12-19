@@ -89,6 +89,7 @@ class Profesionales(models.Model):
     telefono = models.IntegerField(null=True,blank=True)
     email = models.EmailField(null= True,blank=True)
     valoraciones = models.ManyToManyField(Puntuacion)
+    descripcion = models.TextField(null= True,blank=True)
     PerfilGaleria1 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria2 = models.ImageField(upload_to='static/img',blank=True)
     PerfilGaleria3 = models.ImageField(upload_to='static/img',blank=True)
@@ -101,12 +102,9 @@ class Profesionales(models.Model):
     @property
     def servicios(self):
         serviciosSinRep = []
-        for especialidad in self.nombreEspecialidades.all() :
+        for especialidad in self.nombreEspecialidades.all():
             if especialidad.servicio not in serviciosSinRep:
                     serviciosSinRep.append(especialidad.servicio)
-
-           
-
 
         return serviciosSinRep
 
