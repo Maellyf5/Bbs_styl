@@ -101,9 +101,12 @@ class Profesionales(models.Model):
     @property
     def servicios(self):
         serviciosSinRep = []
-        for especialidad in self.nombreEspecialidades:
-         if especialidad.servicio in serviciosSinRep:
-            serviciosSinRep.append(especialidad.servicio)
+        for especialidad in self.nombreEspecialidades.all() :
+            if especialidad.servicio not in serviciosSinRep:
+                    serviciosSinRep.append(especialidad.servicio)
+
+           
+
 
         return serviciosSinRep
 
