@@ -907,11 +907,11 @@ a.linkStyle:hover {
 }
 
 a.Vermas{
-  color: black;
+  color: rgb(134, 110, 44);
 }
 
 a.Vermas:hover {
-  color: #ba9237;
+  color: #cea23e;
   text-decoration: none;
 }
 

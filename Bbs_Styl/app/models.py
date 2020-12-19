@@ -104,9 +104,10 @@ class Profesionales(models.Model):
         serviciosSinRep = []
         for especialidad in self.nombreEspecialidades.all():
             if especialidad.servicio not in serviciosSinRep:
-                    serviciosSinRep.append(especialidad.servicio)
+                serviciosSinRep.append(especialidad.servicio)
+        values = ', '.join(str(v) for v in serviciosSinRep)        
 
-        return serviciosSinRep
+        return values
 
 
 class Conocenos(models.Model):

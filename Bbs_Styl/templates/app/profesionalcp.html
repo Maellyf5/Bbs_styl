@@ -6,82 +6,66 @@
 
   {% if post %}
   {% if post|length == 1 %}
-  <p>Profesionales Encontrados:{{post|length}} profesional</p>
+  <p>Profesionales encontrados:{{post|length}} profesional</p>
   {% endif %}
   {% if post|length > 1 %}
-  <p>Profesionales Encontrados:{{post|length}} profesionales</p>
+  <p>Profesionales encontrados:{{post|length}} profesionales</p>
   {% endif %}
  <div class="d-flex justify-content-center ">
     <div class="row CajaAncho d-flex justify-content-center">
 
     {% for i in post %}
-      <div class="col-md-3 mrRespon cardPro mt-5 container-fluid mb-5 mr-4 ml-4 ">
-        <div class="blog-entry align-self-stretch text-center ">
-          <div class="avatar mx-auto d-flex justify-content-center pt-3">
-            <div class="imgProfesional" style="background-image: url('{{ i.imagen.url }}')"></div> 
-          </div>
-          <h3 class="heading titu_card mt-5" style="vertical-align: inherit;">{{ i.Servicio }}</h3>
-
-          <a href="{% url 'app:PerfilProfesional' i.id %} " style="vertical-align: inherit; color: black; text-decoration: none;"><h3 class="heading titu_card mt-5">{{ i.nombre }}</h3></a>
-<!--  -->
-
-          {% for y in i.valoraciones.all %} 
-            {% if y.valoracion == 1  %}
-              <span class="fa fa-star checked"></span>
-            {% endif %}
-
-            {% if y.valoracion == 2 %}
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-
-            {% endif %}
-            
-            {% if y.valoracion == 3 %}
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            {% endif %}
-            {% if y.valoracion == 4 %}
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            {% endif %}
-            {% if y.valoracion == 5 %}
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-              <span class="fa fa-star checked"></span>
-            {% endif %}  
-          {% endfor %} 
-           <div>
-          
-       
-            {% for z in i.nombreEspecialidades.all %}
-                   
-                
-                  
-                  {% if z.servicio %}
-                    {{ z.servicio }}
-                    
-               
-                  {% endif %}
-                
-                
-            {% endfor %}
-            
-            <!-- <p class="mt-3">{{ z.nombreEspecialidad }}</p> -->
-      
-
-          </div>
-          <div class="text py-4 d-block ">
-
-            <div><span class="icon-chat "></span>
-              <p class="descripcion text-justify mt-4 text-center">{{ i.disponibilidad }} </p>
-            </div>
-          </div>
-
+    <div class="col-md-3 mrRespon cardPro mt-5 container-fluid mb-5 mr-4 ml-4 pb-3">
+      <div class="blog-entry align-self-stretch text-center ">
+        <div class="avatar mx-auto d-flex justify-content-center pt-3">
+          <div class="imgProfesional" style="background-image: url('{{ i.imagen.url }}')"></div> 
         </div>
+        <a href="{% url 'app:PerfilProfesional' i.id %} " style="vertical-align: inherit; color: black; text-decoration: none;"><h3 class="heading titu_card mt-3">{{ i.nombre }}</h3></a>
+
+        {% for y in i.valoraciones.all %} 
+          {% if y.valoracion == 1  %}
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+
+          {% if y.valoracion == 2 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+
+          {% endif %}
+          
+          {% if y.valoracion == 3 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if y.valoracion == 4 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}
+          {% if y.valoracion == 5 %}
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+            <span class="fa fa-star checked"></span>
+          {% endif %}  
+        {% endfor %}
+
+        <div>
+          <p class="mt-3"><b>{{ i.servicios }}</b></p>
+        </div>
+        
+          <p class="descripcion text-justify mt-3 text-center">
+            Horario: <br>
+            {% autoescape off %} 
+             {{ i.disponibilidad }} 
+             {% endautoescape %}
+          </p>
+        <a href="{% url 'app:PerfilProfesional' i.id %}" class="Vermas">Ver más</a>
       </div>
+    </div>
 
       {% endfor %}
 

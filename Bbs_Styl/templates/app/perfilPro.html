@@ -58,10 +58,12 @@
                             <p><b>Email:</b> {{ perfilPro.email }}</p>
                         </div>
                         <div class="col-md-12">
-                            {% autoescape off %}
-                            <p><b>Horario:</b> <br>
-                                {{ perfilPro.disponibilidad}}</p>
+                            <p><b>Horario:</b><br>
+                            {% autoescape off %} 
+                            {{ perfilPro.disponibilidad}}
                             {% endautoescape %}
+                        </p>
+                            
                         </div>
                     </div>
 
