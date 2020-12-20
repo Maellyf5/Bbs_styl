@@ -1,5 +1,4 @@
 // --- Config --- //
-var purecookieTitle = "Cookies."; // Title
 var purecookieDesc = "Esta página web utiliza cookies para analizar de forma anónima y estadística el uso que haces de la web,mejorar los contenidos y tu experiencia de navegación.."; // Description
 var purecookieLink = '<a href="cookie-policy.html" target="_blank">Política de Cookies?</a>'; // Cookiepolicy link
 var purecookieButton = "Aceptar"; // Button text
@@ -61,7 +60,7 @@ function eraseCookie(name) {
 
 function cookieConsent() {
     if (!getCookie('purecookieDismiss')) {
-        document.body.innerHTML += '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieTitle"><a>' + purecookieTitle + '</a></div><div class="cookieDesc"><p>' + purecookieDesc + ' ' + purecookieLink + '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' + purecookieButton + '</a></div></div>';
+        document.body.innerHTML += '<div class="cookieConsentContainer" id="cookieConsentContainer"><div class="cookieDesc"><p>' + purecookieDesc + ' ' + purecookieLink + '</p></div><div class="cookieButton"><a onClick="purecookieDismiss();">' + purecookieButton + '</a></div></div>';
 
         pureFadeIn("cookieConsentContainer");
     }
