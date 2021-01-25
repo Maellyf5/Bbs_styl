@@ -15,7 +15,7 @@
        
         <div class="row">
             <div class="col-12 col-lg-8">
-                {% for p in blog %}
+                {% for p in blog %} {% autoescape off %}
                 <!-- Single Blog Item -->
                 <div class="row align-items-center padding-grey mb-4">
                     <div class="col-lg-6 pl-0 pr-0">
@@ -32,6 +32,8 @@
                         </div>
                     </div>
                 </div>
+      {% endautoescape %}
+                
                 {% endfor %}
 
               <!-- Pagination -->

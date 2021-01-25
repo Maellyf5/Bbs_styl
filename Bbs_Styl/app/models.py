@@ -40,6 +40,9 @@ class EntradaBlog(models.Model):
     def __str__(self):         
         return self.titulo
 
+    class Meta:
+        ordering = ['-fecha']
+
 class Servicio(models.Model):
     nombreServicio= models.CharField(max_length=80, null= True)
     imagen = models.ImageField(upload_to='static/img')
