@@ -33,6 +33,7 @@ EMAIL_HOST_USER = '51958c9e81a2cc'
 EMAIL_HOST_PASSWORD = '7f821b2912ca87'
 EMAIL_PORT = '2525'
 
+
 # Application definition
 
 INSTALLED_APPS = [

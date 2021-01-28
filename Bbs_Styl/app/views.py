@@ -238,7 +238,7 @@ class Contacto(TemplateView):
             subject='mensaje de usuario',
             body=body,
             from_email=email,
-            to=['koko-yoana@hotmail.es'],
+            to=['Bbs_styl@hotmail.com'],
         )
         email_message.content_subtype='html'
         email_message.send()
