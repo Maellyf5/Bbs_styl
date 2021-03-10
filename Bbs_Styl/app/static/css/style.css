@@ -1063,9 +1063,14 @@ element.style {
     width: 100%;
     box-sizing: border-box;
     padding: 30px 30px 30px 30px;
-    background: white;
+    background: #a58c53;
     overflow: hidden;
     position: fixed;
     bottom: 30px;
     display: none;
 }
+div .logo {
+    flex: 1 0 18.666667%;;
+    max-width: 77.666667%;
+}
+
