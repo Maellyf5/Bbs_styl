@@ -49,7 +49,7 @@ class Blog(ListView):
         return context
 
 class InfoBlog(DetailView):
-    template_name = 'app/infoBlog.html'
+    template_name = 'app/infoblog.html'
     model =  EntradaBlog
 
     def get_context_data(self, **kwargs):
