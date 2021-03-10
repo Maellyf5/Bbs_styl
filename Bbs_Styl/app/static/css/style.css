@@ -1002,7 +1002,7 @@ span {
 
 
  /*los siguientes valores son independientes del tamaño del círculo */
-
+/* 
 .cookieConsentContainer {
     z-index: 999;
     width: 100%;
@@ -1014,7 +1014,7 @@ span {
     position: fixed;
     bottom: 30px;
     display: none;
-}
+} */
 
 #cookie #wrapper {
   padding: 30px;
@@ -1042,8 +1042,30 @@ span {
   margin-bottom: 10px;
   margin-left: 20px;
 }
+#rechazar {
+  color: red;
+  margin-bottom: 10px;
+  margin-left: 20px;
+}
 .cookieDesc{
   margin-left: 20px;
   margin-top: 10px;
 }
 
+
+element.style {
+    opacity: 1;
+    display: block;
+}
+
+.cookieConsentContainer {
+    z-index: 999;
+    width: 100%;
+    box-sizing: border-box;
+    padding: 30px 30px 30px 30px;
+    background: white;
+    overflow: hidden;
+    position: fixed;
+    bottom: 30px;
+    display: none;
+}
